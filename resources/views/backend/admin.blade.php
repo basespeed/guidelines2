@@ -1,5 +1,5 @@
 @include('base.header')
-<div class="guidelines_admin">
+<div class="guidelines_admin" data-content="{{Route('test')}}">
     <div class="task_bar">
         <div class="logo">
             <a href="{{asset('/admin')}}"><img src="images/logo.png" alt="logo"></a>

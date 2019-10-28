@@ -1063,6 +1063,36 @@
         });
     }
 
+    function ajaxCreateGuideline() {
+        $('.menu_admin .logo .upload_logo').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl+'/ajax/create/logo';
+
+            var id = $('.id_project').val();
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data= $(this)[0].files[0];
+            form_data.append("file", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+
+            $.ajax({
+                type:'POST',
+                url:url,
+                contentType: false,
+                processData: false,
+                headers: { "X-CSRF-Token": $("meta[name='csrf-token']").attr("content") },
+                data:form_data,
+                success:function(data){
+                    console.log(data.success);
+                }
+            });
+        });
+    }
+
     function __init() {
         ready();
         login_admin();
@@ -1076,6 +1106,7 @@
         loadmoreAdmin();
         upload_font();
         searchProject();
+        ajaxCreateGuideline();
     }
 
     __init();

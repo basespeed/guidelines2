@@ -14,6 +14,8 @@
 
 Route::get('/','controllerBase@getBase');
 
+Route::get('/getclear','controllerBase@getclear');
+
 Route::group(['namespace'=>'admin'],function(){
     //login
     Route::group(['prefix'=>'login'],function(){
@@ -83,6 +85,13 @@ Route::group(['namespace'=>'insert'],function (){
     Route::group(['prefix'=>'insert'],function (){
         Route::post('/guidelineDetails','insertController@postInsertGuidelinesDetails')->name('insertGuidelinesDetails');
     });
+});
+
+//Ajax Create guidelines
+Route::group(['namespace'=>'ajax\create'],function (){
+   Route::group(['prefix'=>'ajax/create'],function (){
+        Route::post('/logo','ControllerAjaxCreate@getLogo')->name('test');
+   });
 });
 
 Route::any('/{page?}',function(){
