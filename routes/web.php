@@ -24,7 +24,7 @@ Route::group(['namespace'=>'admin'],function(){
     });
 
     //logout
-    Route::get('/logout', 'controllerLogout@getLogout');
+    Route::get('/checklogout', 'controllerLogout@getLogout')->name('checkLogout');
 
     //list project
     Route::group(['prefix'=>'admin'],function(){
@@ -55,7 +55,7 @@ Route::group(['namespace'=>'admin'],function(){
 //view guidelines
 Route::group(['namespace'=>'clients'],function (){
     Route::group(['prefix'=>'/'],function (){
-        Route::get('/{slug}','controllerGuideline@getGuideline');
+        Route::get('/{slug}','controllerGuideline@getGuidelineEdit');
     });
 });
 
@@ -90,7 +90,29 @@ Route::group(['namespace'=>'insert'],function (){
 //Ajax Create guidelines
 Route::group(['namespace'=>'ajax\create'],function (){
    Route::group(['prefix'=>'ajax/create'],function (){
-        Route::post('/logo','ControllerAjaxCreate@getLogo')->name('test');
+        Route::post('/logo','ControllerAjaxCreate@getLogo')->name('logo');
+        Route::post('/getLayout1','ControllerAjaxCreate@getLayout1')->name('getLayout1');
+        Route::post('/getLayout3','ControllerAjaxCreate@getLayout3')->name('getLayout3');
+        Route::post('/getLayout4','ControllerAjaxCreate@getLayout4')->name('getLayout4');
+        Route::post('/getLayout5','ControllerAjaxCreate@getLayout5')->name('getLayout5');
+        Route::post('/getLayout6','ControllerAjaxCreate@getLayout6')->name('getLayout6');
+        Route::post('/getLayout7','ControllerAjaxCreate@getLayout7')->name('getLayout7');
+        Route::post('/getLayout8','ControllerAjaxCreate@getLayout8')->name('getLayout8');
+        Route::post('/getLayout9','ControllerAjaxCreate@getLayout9')->name('getLayout9');
+        Route::post('/getLayout10','ControllerAjaxCreate@getLayout10')->name('getLayout10');
+        Route::post('/getLayout11','ControllerAjaxCreate@getLayout11')->name('getLayout11');
+        Route::post('/getLayout12','ControllerAjaxCreate@getLayout12')->name('getLayout12');
+        Route::post('/getLayout13','ControllerAjaxCreate@getLayout13')->name('getLayout13');
+        Route::post('/getLayout14','ControllerAjaxCreate@getLayout14')->name('getLayout14');
+        Route::post('/getLayout15','ControllerAjaxCreate@getLayout15')->name('getLayout15');
+        Route::post('/getLayout16','ControllerAjaxCreate@getLayout16')->name('getLayout16');
+        Route::post('/getLayout17','ControllerAjaxCreate@getLayout17')->name('getLayout17');
+        Route::post('/getLayout18','ControllerAjaxCreate@getLayout18')->name('getLayout18');
+   });
+   Route::group(['namespace' => 'ajax\del'], function (){
+      Route::group(['prefix'=>'ajax/del'],function (){
+          Route::post('/delLogo','ControllerAjaxDel@getLogo')->name('delLogo');
+      });
    });
 });
 

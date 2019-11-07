@@ -25,6 +25,6 @@ class controllerBase extends Controller
         DB::table('sk_image')->delete();
         DB::table('sk_font')->delete();
         DB::table('sk_color')->delete();
-        return 'abc';
+        return 'clear';
     }
 }

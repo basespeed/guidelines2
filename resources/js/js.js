@@ -35,7 +35,7 @@
 
         $(this).prop('disabled', true);
 
-        $('.cp-full').colorpicker({
+        $('.cp-full1').colorpicker({
             parts: ['map', 'bar', 'hex', 'rgb', 'cmyk', 'footer'],
             showOn: 'both',
             colorFormat: ['EXACT', 'cp,mp,yp,kp'],
@@ -70,9 +70,9 @@
                 var c2 = String(Math.round(cmyk[2]));
                 var c3 = String(Math.round(cmyk[3]));
 
-                $('.cp-full').attr('enable');
+                $('.cp-full1').attr('enable');
 
-                $('.cp-full').val('#'+hex);
+                $('.cp-full1').val('#'+hex);
 
                 $('.list_color:nth-child(1) .info ul li:nth-child(3)').text('HEX CODE: #'+hex);
 
@@ -98,6 +98,43 @@
                 $('.list_color:nth-child(1) .color_item:nth-child(8)').css('background','rgba('+r+','+g+','+b+',0.3)');
                 $('.list_color:nth-child(1) .color_item:nth-child(9)').css('background','rgba('+r+','+g+','+b+',0.2)');
                 $('.list_color:nth-child(1) .color_item:nth-child(10)').css('background','rgba('+r+','+g+','+b+',0.1)');
+
+                //Layout7
+                /*color1*/
+                var section7_color1 = $('.section7_color1').val();
+                var id_color1 = $('.id_color1_layout7').val();
+
+                setTimeout(function () {
+                    var hex = section7_color1;
+                    var rgb = $('.section7_rgb1').val();
+                    var cmyk = $('.section7_cmyk1').val();
+                    var getUrl = window.location;
+                    var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+                    var url = baseUrl + '/ajax/create/getLayout7';
+
+                    var id = $('.id_project').val();
+                    var slug = $('.slug_project').val();
+
+                    var form_data = new FormData();
+                    form_data.append("section7_color1", hex);
+                    form_data.append("id", id);
+                    form_data.append("slug", slug);
+                    form_data.append("rgb", rgb);
+                    form_data.append("cmyk", cmyk);
+                    form_data.append("id_color1", id_color1);
+
+                    $.ajax({
+                        type: 'POST',
+                        url: url,
+                        contentType: false,
+                        processData: false,
+                        headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                        data: form_data,
+                        success: function (data) {
+                            console.log(data.success);
+                        }
+                    });
+                },100);
             },
 
         });
@@ -165,6 +202,44 @@
                 $('.list_color2 .color_item:nth-child(8)').css('background','rgba('+r+','+g+','+b+',0.3)');
                 $('.list_color2 .color_item:nth-child(9)').css('background','rgba('+r+','+g+','+b+',0.2)');
                 $('.list_color2 .color_item:nth-child(10)').css('background','rgba('+r+','+g+','+b+',0.1)');
+
+                //layout7
+                var section7_color2 = $('.section7_color2').val();
+                var id_color2 = $('.id_color2_layout7').val();
+
+                /*color2*/
+                setTimeout(function () {
+                    var hex = section7_color2;
+                    var rgb = $('.section7_rgb2').val();
+                    var cmyk = $('.section7_cmyk2').val();
+
+                    var getUrl = window.location;
+                    var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+                    var url = baseUrl + '/ajax/create/getLayout7';
+
+                    var id = $('.id_project').val();
+                    var slug = $('.slug_project').val();
+
+                    var form_data = new FormData();
+                    form_data.append("section7_color2", hex);
+                    form_data.append("id", id);
+                    form_data.append("slug", slug);
+                    form_data.append("rgb", rgb);
+                    form_data.append("cmyk", cmyk);
+                    form_data.append("id_color2", id_color2);
+
+                    $.ajax({
+                        type: 'POST',
+                        url: url,
+                        contentType: false,
+                        processData: false,
+                        headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                        data: form_data,
+                        success: function (data) {
+                            console.log(data.success);
+                        }
+                    });
+                },100);
             },
 
         });
@@ -226,6 +301,43 @@
                 let ga2 = $('.ga2').val();
 
                 $('.get_gar1').css('background','linear-gradient(to right, '+ga1+', '+ga2+')');
+
+                /*layout8*/
+                var section8_ga1 = $('.section8_ga1').val();
+                var id_color1 = $('.insert_color1').val();
+
+                setTimeout(function () {
+                    var hex = section8_ga1;
+                    var rgb = $('.section8_rgb1').val();
+                    var cmyk = $('.section8_cmyk1').val();
+
+                    var getUrl = window.location;
+                    var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+                    var url = baseUrl + '/ajax/create/getLayout8';
+
+                    var id = $('.id_project').val();
+                    var slug = $('.slug_project').val();
+
+                    var form_data = new FormData();
+                    form_data.append("section8_ga1", hex);
+                    form_data.append("id", id);
+                    form_data.append("slug", slug);
+                    form_data.append("rgb", rgb);
+                    form_data.append("cmyk", cmyk);
+                    form_data.append("id_color1", id_color1);
+
+                    $.ajax({
+                        type: 'POST',
+                        url: url,
+                        contentType: false,
+                        processData: false,
+                        headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                        data: form_data,
+                        success: function (data) {
+                            console.log(data.success);
+                        }
+                    });
+                },100);
             },
 
         });
@@ -287,6 +399,43 @@
                 let ga2 = $('.ga2').val();
 
                 $('.get_gar1').css('background','linear-gradient(to right, '+ga1+', '+ga2+')');
+
+                //Layout8
+                var section8_ga2 = $('.ga2').val();
+                var id_color1 = $('.insert_color1').val();
+
+                setTimeout(function () {
+                    var hex = section8_ga2;
+                    var rgb = $('.section8_rgb2').val();
+                    var cmyk = $('.section8_cmyk2').val();
+
+                    var getUrl = window.location;
+                    var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+                    var url = baseUrl + '/ajax/create/getLayout8';
+
+                    var id = $('.id_project').val();
+                    var slug = $('.slug_project').val();
+
+                    var form_data = new FormData();
+                    form_data.append("section8_ga2", hex);
+                    form_data.append("id", id);
+                    form_data.append("slug", slug);
+                    form_data.append("rgb", rgb);
+                    form_data.append("cmyk", cmyk);
+                    form_data.append("id_color1", id_color1);
+
+                    $.ajax({
+                        type: 'POST',
+                        url: url,
+                        contentType: false,
+                        processData: false,
+                        headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                        data: form_data,
+                        success: function (data) {
+                            console.log(data.success);
+                        }
+                    });
+                },100);
             },
 
         });
@@ -348,6 +497,43 @@
                 let ga4 = $('.ga4').val();
 
                 $('.get_gar2').css('background','linear-gradient(to right, '+ga3+', '+ga4+')');
+
+                //Layout8
+                var section8_ga3 = $('.ga3').val();
+                var id_color2 = $('.insert_color2').val();
+
+                setTimeout(function () {
+                    var hex = section8_ga3;
+                    var rgb = $('.section8_rgb3').val();
+                    var cmyk = $('.section8_cmyk3').val();
+
+                    var getUrl = window.location;
+                    var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+                    var url = baseUrl + '/ajax/create/getLayout8';
+
+                    var id = $('.id_project').val();
+                    var slug = $('.slug_project').val();
+
+                    var form_data = new FormData();
+                    form_data.append("section8_ga3", hex);
+                    form_data.append("id", id);
+                    form_data.append("slug", slug);
+                    form_data.append("rgb", rgb);
+                    form_data.append("cmyk", cmyk);
+                    form_data.append("id_color2", id_color2);
+
+                    $.ajax({
+                        type: 'POST',
+                        url: url,
+                        contentType: false,
+                        processData: false,
+                        headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                        data: form_data,
+                        success: function (data) {
+                            console.log(data.success);
+                        }
+                    });
+                },100);
             },
 
         });
@@ -409,6 +595,44 @@
                 let ga4 = $('.ga4').val();
 
                 $('.get_gar2').css('background','linear-gradient(to right, '+ga3+', '+ga4+')');
+
+                //Layout8
+                var section8_ga4 = $('.ga4').val();
+                var id_color2 = $('.insert_color2').val();
+
+
+                setTimeout(function () {
+                    var hex = section8_ga4;
+                    var rgb = $('.section8_rgb4').val();
+                    var cmyk = $('.section8_cmyk4').val();
+
+                    var getUrl = window.location;
+                    var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+                    var url = baseUrl + '/ajax/create/getLayout8';
+
+                    var id = $('.id_project').val();
+                    var slug = $('.slug_project').val();
+
+                    var form_data = new FormData();
+                    form_data.append("section8_ga4", hex);
+                    form_data.append("id", id);
+                    form_data.append("slug", slug);
+                    form_data.append("rgb", rgb);
+                    form_data.append("cmyk", cmyk);
+                    form_data.append("id_color2", id_color2);
+
+                    $.ajax({
+                        type: 'POST',
+                        url: url,
+                        contentType: false,
+                        processData: false,
+                        headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                        data: form_data,
+                        success: function (data) {
+                            console.log(data.success);
+                        }
+                    });
+                },100);
             },
 
         });
@@ -670,12 +894,14 @@
         $('.fullpage_admin section.section4 .btn_ground1 i').on('click', function () {
             $(this).parent().removeClass('border-hide');
             $(this).parent().find('img').show();
+            $(this).parent().find('img').attr('src','images/editlogo.png');
             $(this).parent().css('background','none');
         });
 
         $('.fullpage_admin section.section4 .btn_ground2 i').on('click', function () {
             $(this).parent().removeClass('border-hide');
             $(this).parent().find('img').show();
+            $(this).parent().find('img').attr('src','images/editlogo.png');
             $(this).parent().css('background','none');
         });
 
@@ -709,6 +935,7 @@
         $('.fullpage_admin .btn_ground_idea i').on('click', function () {
             $(this).parent().removeClass('border-hide');
             $(this).siblings('img').show();
+            $(this).siblings('img').attr('src','images/editlogo.png');
             $(this).parent().css('background','none');
         });
 
@@ -722,6 +949,7 @@
         $('.fullpage_admin .btn_ground_size i').on('click', function () {
             $(this).parent().removeClass('border-hide');
             $(this).siblings('img').show();
+            $(this).siblings('img').attr('src','images/editlogo.png');
             $(this).parent().css('background','none');
         });
 
@@ -734,6 +962,7 @@
 
         $('.fullpage_admin .btn_ground_logo i').on('click', function () {
             $(this).siblings('img').show();
+            $(this).siblings('img').attr('src','images/editlogo.png');
             $(this).parent().removeClass('active');
             $(this).parent().css('background','none');
         });
@@ -1064,6 +1293,7 @@
     }
 
     function ajaxCreateGuideline() {
+        //logo
         $('.menu_admin .logo .upload_logo').on('change',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
@@ -1073,11 +1303,14 @@
             var id = $('.id_project').val();
             var slug = $('.slug_project').val();
 
+            var id_logo = $('.id_logo').val();
+
             var form_data = new FormData();
             var attachment_data= $(this)[0].files[0];
             form_data.append("file", attachment_data);
             form_data.append("id", id);
             form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
 
             $.ajax({
                 type:'POST',
@@ -1091,6 +1324,1182 @@
                 }
             });
         });
+
+        //Layout1
+        $('.section1_upload_background').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout1';
+
+            var id = $('.id_project').val();
+            var id_back = $('.id_background_layout1').val();
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("file", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_back", id_back);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+
+        //Layout3
+        $(document).on('change','.section3_upload_background',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout3';
+
+            var id = $('.id_project').val();
+            var id_back = $('.id_background_layout3').val();
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("file", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_back", id_back);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+
+        //Layout4
+        /*logo1*/
+        $('.section4_upload_background1').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout4';
+
+            var id = $('.id_project').val();
+            var id_logo = $('.id_logo1_layout4').val();
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section4_upload_background1", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+        /*vector1*/
+        $('.section4_file_vector1').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout4';
+
+            var id = $('.id_project').val();
+            var id_vector1 = $('.id_vector1_layout4').val();
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section4_file_vector1", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_vector1", id_vector1);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+        /*image zip1*/
+        $('.section4_file_img1').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout4';
+
+            var id = $('.id_project').val();
+            var id_zip_image1 = $('.id_zip_img1').val();
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section4_file_img1", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_zip_image1", id_zip_image1);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+        /*image2*/
+        $('.section4_upload_background2').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout4';
+
+            var id = $('.id_project').val();
+            var id_logo2 = $('.id_logo2_layout4').val();
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section4_upload_background2", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo2", id_logo2);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+        /*vector2*/
+        $('.section4_file_vector2').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout4';
+
+            var id = $('.id_project').val();
+            var id_vector2 = $('.id_vector2_layout4').val();
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section4_file_vector2", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_vector2", id_vector2);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+        /*image zip2*/
+        $('.section4_file_img2').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout4';
+
+            var id = $('.id_project').val();
+            var id_image_zip2 = $('.id_zip_img2_layout4').val();
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section4_file_img2", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_image_zip2", id_image_zip2);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+
+
+        //Layout5
+        $('.section5_upload_background2').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout5';
+
+            var id = $('.id_project').val();
+            var id_logo = $('.id_logo_layout5').val();
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section5_upload_background2", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+        $(document).on('change','textarea.text_idea.section5_text',function () {
+            var val = $(this).val();
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout5';
+
+            var id = $('.id_project').val();
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            form_data.append("section5_text", val);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+
+        //Layout6
+        $('.section6_upload_background2').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout6';
+
+            var id = $('.id_project').val();
+            var id_logo = $('.id_logo_layout6').val();
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section6_upload_background2", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+
+
+        //Layout9
+        $('.section9_upload_font_th').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout9';
+
+            var id = $('.id_project').val();
+            var id_font = $('.id_font1_layout9').val();
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section9_upload_font_th", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_font", id_font);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+
+        $('.section9_upload_font_bt').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout9';
+
+            var id = $('.id_project').val();
+            var id_font = $('.id_font2_layout9').val();
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section9_upload_font_bt", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_font", id_font);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+
+        $('.section9_upload_font_vb').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout9';
+
+            var id = $('.id_project').val();
+            var id_font = $('.id_font3_layout9').val();
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section9_upload_font_bt", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_font", id_font);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+
+        //layout10
+        $('.section10_upload_background2').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout10';
+
+            var id = $('.id_project').val();
+            var id_logo = $('.id_logo_layout10').val();
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section10_upload_background2", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+
+        //layout11
+        $('.section11_upload_background2').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout11';
+
+            var id = $('.id_project').val();
+            var id_logo = $('.id_logo1_layout11').val();
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section11_upload_background2", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+        $('.section11_upload_background22').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout11';
+
+            var id = $('.id_project').val();
+            var id_logo = $('.id_logo2_layout11').val();
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section11_upload_background22", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+
+        //layout12
+        $('.section12_upload_background2').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout12';
+
+            var id = $('.id_project').val();
+            var id_logo = $('.id_logo1_layout12').val();
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section12_upload_background2", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+        $('.section12_upload_background22').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout12';
+
+            var id = $('.id_project').val();
+            var id_logo = $('.id_logo2_layout12').val();
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section12_upload_background22", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+
+        //layout13
+        /*l1*/
+        $('.section13_upload_vector').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout13';
+
+            var id = $('.id_project').val();
+            var id_logo = $('.id_vector1_layout13').val();
+
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section13_upload_vector", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+        $('.section13_upload_img').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout13';
+
+            var id = $('.id_project').val();
+            var id_logo = $('.id_image1_layout13').val();
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section13_upload_img", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+        /*l2*/
+        $('.section13_upload_vector2').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout13';
+
+            var id = $('.id_project').val();
+            var id_logo = $('.id_vector2_layout13').val();
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section13_upload_vector2", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+        $('.section13_upload_img2').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout13';
+
+            var id = $('.id_project').val();
+            var id_logo = $('.id_image2_layout13').val();
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section13_upload_img2", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+        /*l3*/
+        $('.section13_upload_vector3').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout13';
+
+            var id = $('.id_project').val();
+            var id_logo = $('.id_vector3_layout13').val();
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section13_upload_vector3", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+        $('.section13_upload_img3').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout13';
+
+            var id = $('.id_project').val();
+            var id_logo = $('.id_image3_layout13').val();
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section13_upload_img3", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+        /*L4*/
+        $('.section13_upload_vector4').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout13';
+
+            var id = $('.id_project').val();
+            var id_logo = $('.id_vector4_layout13').val();
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section13_upload_vector4", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+        $('.section13_upload_img4').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout13';
+
+            var id = $('.id_project').val();
+            var id_logo = $('.id_image4_layout13').val();
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section13_upload_img4", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+
+        //layout14
+        $('.section14_upload_background2').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout14';
+
+            var id = $('.id_project').val();
+            var id_logo = $('.id_logo_layout14').val();
+
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section14_upload_background2", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+
+        //layout15
+        $('.section15_upload_background1').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout15';
+
+            var id = $('.id_project').val();
+            var id_logo = $('.id_logo1_layout15').val();
+
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section15_upload_background1", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+        $('.section15_upload_background2').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout15';
+
+            var id = $('.id_project').val();
+            var id_logo = $('.id_logo2_layout15').val();
+
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section15_upload_background2", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+        $('.section15_upload_background3').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout15';
+
+            var id = $('.id_project').val();
+            var id_logo = $('.id_logo3_layout15').val();
+
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section15_upload_background3", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+
+        //layout16
+        $('.section16_upload_background1').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout16';
+
+            var id = $('.id_project').val();
+            var id_logo = $('.id_logo_layout16').val();
+
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section16_upload_background1", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+
+        //layout17
+        $('.section17_upload_background2').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout17';
+
+            var id = $('.id_project').val();
+            var id_logo = $('.id_logo_layout17').val();
+
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section17_upload_background2", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+
+        //layout18
+        $('.section18_upload_img').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout18';
+
+            var id = $('.id_project').val();
+            var id_logo = $('.id_zip_layout18').val();
+
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section18_upload_img", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+        $('.section18_upload_background1').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout18';
+
+            var id = $('.id_project').val();
+            var id_logo = $('.id_img1_layout18').val();
+
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section18_upload_background1", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+        $('.section18_upload_background2').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout18';
+
+            var id = $('.id_project').val();
+            var id_logo = $('.id_img2_layout18').val();
+
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section18_upload_background2", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+        $('.section18_upload_background3').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout18';
+
+            var id = $('.id_project').val();
+            var id_logo = $('.id_img3_layout18').val();
+
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section18_upload_background3", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+        $('.section18_upload_background4').on('change',function () {
+            var file_data = $(this).prop('files')[0];
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/create/getLayout18';
+
+            var id = $('.id_project').val();
+            var id_logo = $('.id_img4_layout18').val();
+
+            var slug = $('.slug_project').val();
+
+            var form_data = new FormData();
+            var attachment_data = $(this)[0].files[0];
+            form_data.append("section18_upload_background4", attachment_data);
+            form_data.append("id", id);
+            form_data.append("slug", slug);
+            form_data.append("id_logo", id_logo);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });
+    }
+
+    function DeleteGuideline() {
+        /*$('.close_logo_admin').on('click', function () {
+           var id = $(this).attr('data-id');
+
+            var form_data = new FormData();
+            form_data.append("id", id);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    console.log(data.success);
+                }
+            });
+        });*/
     }
 
     function __init() {

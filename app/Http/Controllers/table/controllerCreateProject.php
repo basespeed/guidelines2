@@ -37,6 +37,7 @@ class controllerCreateProject extends Controller
                 $table->bigInteger('id_project_menu')->nullable();
                 $table->bigInteger('id_layout_menu')->nullable();
                 $table->string('name_menu')->nullable();
+                $table->bigInteger('order_menu')->nullable();
                 $table->timestamps();
             });
 
@@ -54,6 +55,7 @@ class controllerCreateProject extends Controller
                 $table->bigInteger('id_layout_menu_child')->nullable();
                 $table->bigInteger('id_menu_menu_child')->nullable();
                 $table->string('name_menu_child')->nullable();
+                $table->bigInteger('order_menu_child')->nullable();
                 $table->timestamps();
             });
 
@@ -89,6 +91,7 @@ class controllerCreateProject extends Controller
                 $table->string('image_mime')->nullable();
                 $table->string('image_url')->nullable();
                 $table->string('image_zip')->nullable();
+                $table->bigInteger('image_order')->nullable();
                 $table->bigInteger('image_type')->nullable();
                 $table->timestamps();
             });
@@ -124,6 +127,7 @@ class controllerCreateProject extends Controller
                 $table->bigInteger('id_project_font')->nullable();
                 $table->bigInteger('layout_font')->nullable();
                 $table->string('font')->nullable();
+                $table->string('order_font')->nullable();
                 $table->timestamps();
             });
 
@@ -145,6 +149,7 @@ class controllerCreateProject extends Controller
                 $table->string('hex2')->nullable();
                 $table->string('rgb2')->nullable();
                 $table->string('cmyk2')->nullable();
+                $table->bigInteger('order_color')->nullable();
                 $table->timestamps();
             });
 

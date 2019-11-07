@@ -12,6 +12,6 @@ class controllerLogout extends Controller
         Session::forget('session_guideline_fix_login');
         Session::forget('session_guideline_username');
 
-        return redirect()->intended('login');
+        return redirect()->intended('/');
     }
 }

@@ -1,5 +1,5 @@
 @include('base.header')
-<div class="guidelines_admin" data-content="{{Route('test')}}">
+<div class="guidelines_admin" data-content="{{Route('logo')}}">
     <div class="task_bar">
         <div class="logo">
             <a href="{{asset('/admin')}}"><img src="images/logo.png" alt="logo"></a>
@@ -10,7 +10,7 @@
 
             <div class="logout">
                 <span>Hello | </span>
-                <a href="{{asset('/logout')}}"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                <a href="{{Route('checkLogout')}}"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
             </div>
 
             <div class="name">{{Session::get('session_guideline_username')}}</div>

@@ -4,13 +4,13 @@ namespace App\Http\Controllers\clients;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 
 class controllerGuideline extends Controller
 {
-    public function getGuideline($slug){
-        if(Session::get('session_guideline_fix_login_clients')){
+    public function getGuidelineEdit($slug){
+        if(true){
             //id project
             $id_project = DB::table('sk_project')->select('id')->where('slug',$slug)->get();
             foreach ($id_project as $project){

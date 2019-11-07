@@ -7,7 +7,6 @@
                     <a href="{{asset($slug)}}"><img src="{{url('/').'/public'.$data->image_url}}" alt="logo" /></a>
                 @endif
             @endforeach
-
         </div>
         <ul id="menu">
             @php $count = 0; @endphp
@@ -25,6 +24,7 @@
                                 $count_child++;
                             @endphp
                             <li data-menuanchor="sec{{$count_child}}"><a href="{{asset($slug.'#sec'.$count_child)}}">{{$child->name_menu_child}}</a>
+                                @if(Session::has('session_guideline_admin'))
                                 <div class="list_edit">
                                     <div class="edit">
                                         <a href="{{asset('edit/guidelines/'.$slug)}}#sec{{$count_child}}"><img src="images/writing.png" alt="edit"></a>
@@ -33,6 +33,7 @@
                                         <a href="{{asset('edit/guidelines/'.$slug)}}#sec{{$count_child}}"><img src="images/rubbish-bin.png" alt="delete"></a>
                                     </div>
                                 </div>
+                                @endif
                             </li>
                         @endif
                     @endforeach
@@ -41,6 +42,7 @@
                     @endphp
                     </ul>
 
+                    @if(Session::has('session_guideline_admin'))
                     <div class="list_edit">
                         <div class="edit">
                             <a href="{{asset('edit/guidelines/'.$slug)}}#sec1"><img src="images/writing.png" alt="edit"></a>
@@ -49,16 +51,17 @@
                             <a href="{{asset('edit/guidelines/'.$slug)}}#sec1"><img src="images/rubbish-bin.png" alt="delete"></a>
                         </div>
                     </div>
-
+                    @endif
                     <i class="fa fa-caret-down" aria-hidden="true"></i>
                 </li>
 
             @endforeach
-
         </ul>
 
         <div class="copyright_menu">
+            @if(Session::has('session_guideline_admin'))
             <button class="btn_send_menu_admin">+ Create new item</button>
+            @endif
             <p>Created by Saokim | Copyright 2019</p>
         </div>
     </div>
@@ -147,74 +150,86 @@
             </section>
         @endif
 
-        <?php
-            $arr_img = [];
-            $arr_zip = [];
-        ?>
 
-        @foreach($data_image as $data)
-            @if($data->image_type == 1 && $data->layout_image == 4)
-                <?php
-                    $url_img = url('/').'/public'.$data->image_url;
-                    $arr_img[] = $url_img;
-                ?>
-            @endif
-
-            @if($data->image_type == 4 && $data->layout_image == 4)
-                <?php
-                    $url_zip = url('/').'/public'.$data->image_zip;
-                    $arr_zip[] = $url_zip;
-                ?>
-            @endif
-        @endforeach
         <section class="section section4">
             <div class="in">
                 <h2>0.2 <p>Logo chuẩn</p></h2>
                 <div class="list_logo">
+                    @foreach($data_image as $data)
+                        @if($data->layout_image == 4)
+                            @if($data->image_order == 1)
+                                @php
+                                    $image1 = url('/').'/public'.$data->image_url;
+                                @endphp
+                            @elseif($data->image_order == 2)
+                                @php
+                                    $vector1 = url('/').'/public'.$data->image_url;
+                                @endphp
+                            @elseif($data->image_order == 3)
+                                @php
+                                    $image_zip1 = url('/').'/public'.$data->image_url;
+                                @endphp
+                            @elseif($data->image_order == 4)
+                                @php
+                                    $image2 = url('/').'/public'.$data->image_url;
+                                @endphp
+                            @elseif($data->image_order == 5)
+                                @php
+                                    $vector2 = url('/').'/public'.$data->image_url;
+                                @endphp
+                            @elseif($data->image_order == 6)
+                                @php
+                                    $image_zip2 = url('/').'/public'.$data->image_url;
+                                @endphp
+                            @endif
+                        @endif
+                    @endforeach
+
                     <div class="item">
                         <div class="insider">
                             <div class="logo">
-                                @if(isset($arr_img[0]))
-                                    <img src="<?php echo $arr_img[0]; ?>" width="448px" alt="logo"/>
+                                @if(isset($image1))
+                                    <img src="{{$image1}}" width="448px" alt="logo"/>
                                 @else
                                     <img src="images/logo4.png" alt="logo"/>
                                 @endif
                             </div>
                             <h3>Logo định dạng ngang</h3>
 
-                            @if(isset($arr_zip[0]))
-                                <a href="{{$arr_zip[0]}}" class="btn1">Dowload file vector</a>
+                            @if(isset($vector1))
+                                <a href="{{$vector1}}" class="btn1">Dowload file vector</a>
                             @else
                                 <a href="#" class="btn1">Dowload file vector</a>
                             @endif
 
-                            @if(isset($arr_zip[1]))
-                                <a href="{{$arr_zip[1]}}" class="btn2">Dowload hình ảnh</a>
+                            @if(isset($image_zip1))
+                                <a href="{{$image_zip1}}" class="btn2">Dowload hình ảnh</a>
                             @else
                                 <a href="#" class="btn2">Dowload hình ảnh</a>
                             @endif
 
                         </div>
                     </div>
+
                     <div class="item">
                         <div class="insider">
                             <div class="logo">
-                                @if(isset($arr_img[1]))
-                                    <img src="<?php echo $arr_img[1]; ?>" width="286px" alt="logo"/>
+                                @if(isset($image2))
+                                    <img src="{{$image2}}" width="286px" alt="logo"/>
                                 @else
                                     <img src="images/logo5.png" width="286px" alt="logo"/>
                                 @endif
                             </div>
                             <h3>Logo định dạng ngang</h3>
 
-                            @if(isset($arr_zip[2]))
-                                <a href="{{$arr_zip[2]}}" class="btn1">Dowload file vector</a>
+                            @if(isset($vector2))
+                                <a href="{{$vector2}}" class="btn1">Dowload file vector</a>
                             @else
                                 <a href="#" class="btn1">Dowload file vector</a>
                             @endif
 
-                            @if(isset($arr_zip[3]))
-                                <a href="{{$arr_zip[3]}}" class="btn2">Dowload hình ảnh</a>
+                            @if(isset($image_zip2))
+                                <a href="{{$image_zip2}}" class="btn2">Dowload hình ảnh</a>
                             @else
                                 <a href="#" class="btn2">Dowload hình ảnh</a>
                             @endif
@@ -421,6 +436,7 @@
                             <p>Mọi sản phẩm truyền thông thương hiệu của AGRISECO đều bắt buộc phải sử dụng font chữ đã quy định để đảm bảo tính nhận diện cùng với tính đồng bộ nhất quán của thương hiệu.</p>
                             <div class="btn">
                                 @foreach($data_font as $key => $font)
+                                    @if($font->layout_font == 9)
                                     @if($key == 0)
                                         @php
                                             $url = url('/').'/public'.$font->font;
@@ -436,6 +452,7 @@
                                             $url = url('/').'/public'.$font->font;
                                         @endphp
                                         <a href="{{$url}}" class="font3">Download font văn bản</a>
+                                    @endif
                                     @endif
                                 @endforeach
                             </div>
@@ -466,42 +483,26 @@
             </div>
         </section>
 
-        <section  class="section section10">
+        <section  class="section section10 section6">
             <div class="in">
                 <h2>0.8 <p>Không gian trống tối thiểu</p></h2>
 
-                <div class="list_color">
+                <div class="list_color list_logo">
                     <div class="item">
                         <div class="content">
                             <p>Trong thiết kế logo việc lựa chọn và sử dụng font chữ là vô cùng quan trọng.</p>
                             <p>Ngoài ra chúng tôi cũng đưa ra font chữ trình bày văn bản (thể hiện trong các ứng dụng văn phòng) và font chữ gợi ý khác đồng bộ với font chữ thương hiệu và tạo bản sắc riêng cho thương hiệu.</p>
                             <p>Mọi sản phẩm truyền thông thương hiệu của AGRISECO đều bắt buộc phải sử dụng font chữ đã quy định để đảm bảo tính nhận diện cùng với tính đồng bộ nhất quán của thương hiệu.</p>
-                            <div class="btn">
-                                @foreach($data_font as $key => $font)
-                                    @if($key == 0)
-                                        @php
-                                            $url = url('/').'/public'.$font->font;
-                                        @endphp
-                                        <a href="{{$url}}" class="font1">Download font thương hiệu</a>
-                                    @elseif($key == 1)
-                                        @php
-                                            $url = url('/').'/public'.$font->font;
-                                        @endphp
-                                        <a href="{{$url}}" class="font2">Download font bổ trợ</a>
-                                    @elseif($key == 2)
-                                        @php
-                                            $url = url('/').'/public'.$font->font;
-                                        @endphp
-                                        <a href="{{$url}}" class="font3">Download font văn bản</a>
-                                    @endif
-                                @endforeach
-                            </div>
                         </div>
                     </div>
                     <div class="item">
                         <div class="content">
                             <div class="list">
-                                <img src="images/Group 3848.png" width="657px" alt="logo"/>
+                                @foreach($data_image as $data)
+                                    @if($data->image_type == 1 && $data->layout_image == 10)
+                                        <img src="{{url('/').'/public'.$data->image_url}}" alt="logo">
+                                    @endif
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -523,10 +524,15 @@
                     <div class="item">
                         <div class="content">
                             @foreach($data_image as $data)
-                                @if($data->image_type == 1 && $data->layout_image == 11)
+                                @if($data->image_type == 1 && $data->layout_image == 11 && $data->image_order == 1)
                                     <div class="list">
                                         <img src="{{url('/').'/public'.$data->image_url}}" alt="logo">
                                         <h3>Logo định dạng nguyên bản</h3>
+                                    </div>
+                                @elseif($data->image_type == 1 && $data->layout_image == 11 && $data->image_order == 2)
+                                    <div class="list">
+                                        <img src="{{url('/').'/public'.$data->image_url}}" alt="logo">
+                                        <h3>Logo trên nền nhận diện</h3>
                                     </div>
                                 @endif
                             @endforeach
@@ -551,10 +557,15 @@
                     <div class="item">
                         <div class="content">
                             @foreach($data_image as $data)
-                                @if($data->image_type == 1 && $data->layout_image == 12)
+                                @if($data->image_type == 1 && $data->layout_image == 12 && $data->image_order == 1)
                                     <div class="list_g">
                                         <div class="img"><img src="{{url('/').'/public'.$data->image_url}}" alt="logo"></div>
                                         <h3>Khi chỉ có biểu tượng</h3>
+                                    </div>
+                                @elseif($data->image_type == 1 && $data->layout_image == 12 && $data->image_order == 2)
+                                    <div class="list_g">
+                                        <div class="img"><img src="{{url('/').'/public'.$data->image_url}}" alt="logo"/></div>
+                                        <h3>Khi hiển thị đầy đủ</h3>
                                     </div>
                                 @endif
                             @endforeach
@@ -579,20 +590,87 @@
                     <div class="item">
                         <div class="list_logo">
                             @foreach($data_image as $data)
-                                @if($data->image_type == 1 && $data->layout_image == 13)
-                                    <div class="item">
-                                        <div class="insider">
-                                            <div class="logo">
-                                                <img src="{{url('/').'/public'.$data->image_url}}" alt="logo" />
-                                            </div>
-                                            <h3>Logo định dạng ngang</h3>
-
-                                            <a href="{{url('/').'/public'.$data->image_zip}}" class="btn1">Dowload file vector</a>
-                                            <a href="{{url('/').'/public'.$data->image_url}}" class="btn2">Dowload hình ảnh</a>
-                                        </div>
-                                    </div>
+                                @if($data->image_order == 1 && $data->layout_image == 13)
+                                    @php
+                                        $data1 = url('/').'/public'.$data->image_url;
+                                    @endphp
+                                @elseif($data->image_order == 2 && $data->layout_image == 13)
+                                    @php
+                                        $data2 = url('/').'/public'.$data->image_url;
+                                    @endphp
+                                @elseif($data->image_order == 3 && $data->layout_image == 13)
+                                    @php
+                                        $data3 = url('/').'/public'.$data->image_url;
+                                    @endphp
+                                @elseif($data->image_order == 4 && $data->layout_image == 13)
+                                    @php
+                                        $data4 = url('/').'/public'.$data->image_url;
+                                    @endphp
+                                @elseif($data->image_order == 5 && $data->layout_image == 13)
+                                    @php
+                                        $data5 = url('/').'/public'.$data->image_url;
+                                    @endphp
+                                @elseif($data->image_order == 6 && $data->layout_image == 13)
+                                    @php
+                                        $data6 = url('/').'/public'.$data->image_url;
+                                    @endphp
+                                @elseif($data->image_order == 7 && $data->layout_image == 13)
+                                    @php
+                                        $data7 = url('/').'/public'.$data->image_url;
+                                    @endphp
+                                @elseif($data->image_order == 8 && $data->layout_image == 13)
+                                    @php
+                                        $data8 = url('/').'/public'.$data->image_url;
+                                    @endphp
                                 @endif
                             @endforeach
+                            <div class="item">
+                                <div class="insider">
+                                    <div class="logo">
+                                        <img src="{{$data2}}" alt="logo" />
+                                    </div>
+                                    <h3>Logo âm bản</h3>
+
+                                    <a href="{{$data1}}" class="btn1">Dowload file vector</a>
+                                    <a href="{{$data2}}" class="btn2">Dowload hình ảnh</a>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="insider">
+                                    <div class="logo">
+                                        <img src="{{$data4}}" alt="logo" />
+                                    </div>
+                                    <h3>Logo dương bản</h3>
+
+                                    <a href="{{$data3}}" class="btn1">Dowload file vector</a>
+                                    <a href="{{$data4}}" class="btn2">Dowload hình ảnh</a>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="insider">
+                                    <div class="logo">
+                                        <img src="{{$data6}}" alt="logo" />
+                                    </div>
+                                    <h3>Logo dương bản</h3>
+
+                                    <a href="{{$data5}}" class="btn1">Dowload file vector</a>
+                                    <a href="{{$data6}}" class="btn2">Dowload hình ảnh</a>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="insider">
+                                    <div class="logo">
+                                        <img src="{{$data8}}" alt="logo" />
+                                    </div>
+                                    <h3>Logo dương bản</h3>
+
+                                    <a href="{{$data7}}" class="btn1">Dowload file vector</a>
+                                    <a href="{{$data8}}" class="btn2">Dowload hình ảnh</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -642,12 +720,30 @@
                         <div class="content">
                             <div class="list_logo">
                                 @foreach($data_image as $data)
-                                    @if($data->image_type == 1 && $data->layout_image == 15)
+                                    @if($data->image_order == 1 && $data->layout_image == 15)
                                         <div class="item">
                                             <div class="insider">
                                                 <div class="logo">
                                                     <img src="{{url('/').'/public'.$data->image_url}}" alt="logo" />
                                                 </div>
+                                            </div>
+                                        </div>
+                                    @elseif($data->image_order == 2 && $data->layout_image == 15)
+                                        <div class="item">
+                                            <div class="insider">
+                                                <div class="logo">
+                                                    <img src="{{url('/').'/public'.$data->image_url}}" alt="logo" />
+                                                </div>
+                                                <h3>Chuyển logo thành dạng có nền trắng bên dưới</h3>
+                                            </div>
+                                        </div>
+                                    @elseif($data->image_order == 3 && $data->layout_image == 15)
+                                        <div class="item">
+                                            <div class="insider">
+                                                <div class="logo">
+                                                    <img src="{{url('/').'/public'.$data->image_url}}" alt="logo" />
+                                                </div>
+                                                <h3>Chuyển logo thành âm bản và đặt trên nền màu nhận diện</h3>
                                             </div>
                                         </div>
                                     @endif
@@ -725,7 +821,7 @@
                             <p>Mọi sản phẩm truyền thông thương hiệu của AGRISECO đều bắt buộc phải sử dụng font chữ đã quy định để đảm bảo tính nhận diện cùng với tính đồng bộ nhất quán của thương hiệu.</p>
                         </div>
                         @foreach($data_image as $data)
-                            @if($data->image_type == 1 && $data->layout_image == 18)
+                            @if($data->image_type == 4 && $data->layout_image == 18)
                                 <a href="{{url('/').'/public'.$data->image_zip}}">Dowload hình ảnh</a>
                             @endif
                         @endforeach
@@ -735,9 +831,23 @@
                             <div class="insider">
                                 @foreach($data_image as $data)
                                     @if($data->image_type == 1 && $data->layout_image == 18)
-                                        <div class="item">
-                                            <div class="in"><img src="{{url('/').'/public'.$data->image_url}}" alt="logo" /></div>
-                                        </div>
+                                        @if($data->image_order == 1)
+                                            <div class="item">
+                                                <div class="in"><img src="{{url('/').'/public'.$data->image_url}}" alt="logo" /></div>
+                                            </div>
+                                        @elseif($data->image_order == 2)
+                                            <div class="item">
+                                                <div class="in"><img src="{{url('/').'/public'.$data->image_url}}" alt="logo" /></div>
+                                            </div>
+                                        @elseif($data->image_order == 3)
+                                            <div class="item">
+                                                <div class="in"><img src="{{url('/').'/public'.$data->image_url}}" alt="logo" /></div>
+                                            </div>
+                                        @elseif($data->image_order == 4)
+                                            <div class="item">
+                                                <div class="in"><img src="{{url('/').'/public'.$data->image_url}}" alt="logo" /></div>
+                                            </div>
+                                        @endif
                                     @endif
                                 @endforeach
                             </div>

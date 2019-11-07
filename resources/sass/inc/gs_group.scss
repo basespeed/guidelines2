@@ -1219,10 +1219,7 @@
     }
 
     .section10{
-        @extend .section9;
-        .content {
-            padding-left: 0 !important;
-        }
+      @extend .section6;
     }
 
     .section11{

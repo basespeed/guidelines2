@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Redirect;
 class controllerLogin extends Controller
 {
     public function getLogin(){
-        if(Session::forget('session_guideline_fix_login')){
+        if(Session::get('session_guideline_fix_login')){
             return redirect()->intended('admin');
         }else{
             return view('backend.login');
@@ -91,11 +91,12 @@ class controllerLogin extends Controller
                 }
                 if ($success == true) {
                     Session::put('session_guideline_fix_login', 'succes');
+                    Session::put('session_guideline_admin', 'admin_sk');
                     $users = DB::table('dm_user')->Where('email', $email)->orWhere('username',$email)->get();
                     foreach ($users as $user){
                         Session::put('session_guideline_username', $user->username);
                     }
-                    return redirect()->intended('admin');
+                    return redirect()->intended('admin')->with('session_guideline_fix_login_clients','succes_clients');
                 }
                 else {
                     return redirect()->intended('login');
