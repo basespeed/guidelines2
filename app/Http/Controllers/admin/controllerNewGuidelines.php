@@ -502,30 +502,30 @@ class controllerNewGuidelines extends Controller
                 $name_project = $get_project->project_name;
             }
 
-
             $slug_project_name = to_slug($name_project);
             $update = DB::table('sk_project')->where('name_project', $request->get_invite_user_slt_project)->update(['slug' => to_slug($name_project)]);
 
             //insert menu default
 
-            $insert_default = DB::table('sk_menu')->insertGetId(array('name_menu' => 'Giới thiệu', 'id_project_menu' => $project_id, 'created_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),));
-            $insert_default = DB::table('sk_menu')->insertGetId(array('name_menu' => 'Thông tin quan trọng', 'id_project_menu' => $project_id, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
-            $insert_default_parent = DB::table('sk_menu')->insertGetId(array('name_menu' => 'Logo guidelines', 'id_project_menu' => $project_id, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
+            $insert_default1 = DB::table('sk_menu')->insertGetId(array('name_menu' => 'Giới thiệu', 'id_project_menu' => $project_id,'id_layout_menu'=>1, 'created_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),));
+            $insert_default2 = DB::table('sk_menu')->insertGetId(array('name_menu' => 'Thông tin quan trọng', 'id_project_menu' => $project_id,'id_layout_menu'=>2, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
+            $insert_default_parent = DB::table('sk_menu')->insertGetId(array('name_menu' => 'Logo guidelines', 'id_project_menu' => $project_id,'id_layout_menu'=>3, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
 
-            $insert_default_child = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Logo', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
-            $insert_default_child = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Ý nghĩa logo', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
-            $insert_default_child = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Tỷ lệ đồ họa', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
-            $insert_default_child = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Màu sắc', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
-            $insert_default_child = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Màu hạn chế', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
-            $insert_default_child = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Dải màu hỗ trợ', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
-            $insert_default_child = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Font chữ sử dụng', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
-            $insert_default_child = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Không gian trống tối thiểu', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
-            $insert_default_child = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Các dạng thức sử dụng logo', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
-            $insert_default_child = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Kích thước logo tối thiểu', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
-            $insert_default_child = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Thi công dạng nổi, dạng chìm', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
-            $insert_default_child = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Đặt trên nền ảnh', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
-            $insert_default_child = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Trường hợp tránh sử dụng', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
-            $insert_default_child = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Phối cảnh logo', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
+            $insert_default_child4 = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Logo', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent,'id_layout_menu_child'=>4, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
+            $insert_default_child5 = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Ý nghĩa logo', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent,'id_layout_menu_child'=>5, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
+            $insert_default_child6 = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Tỷ lệ đồ họa', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent,'id_layout_menu_child'=>6, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
+            $insert_default_child7 = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Màu sắc', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent,'id_layout_menu_child'=>7, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
+            $insert_default_child8 = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Màu hạn chế', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent,'id_layout_menu_child'=>8, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
+            $insert_default_child9 = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Dải màu hỗ trợ', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent,'id_layout_menu_child'=>9, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
+            $insert_default_child10 = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Font chữ sử dụng', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent,'id_layout_menu_child'=>10, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
+            $insert_default_child11 = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Không gian trống tối thiểu', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent,'id_layout_menu_child'=>11, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
+            $insert_default_child12 = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Các dạng thức sử dụng logo', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent,'id_layout_menu_child'=>12, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
+            $insert_default_child13 = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Kích thước logo tối thiểu', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent,'id_layout_menu_child'=>13, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
+            $insert_default_child14 = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Thi công dạng nổi, dạng chìm', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent,'id_layout_menu_child'=>14, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
+            $insert_default_child15 = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Đặt trên nền ảnh', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent,'id_layout_menu_child'=>15, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
+            $insert_default_child16 = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Trường hợp tránh sử dụng', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent,'id_layout_menu_child'=>16, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
+            $insert_default_child17 = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Phối cảnh logo', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent,'id_layout_menu_child'=>17, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
+            $insert_default_child18 = DB::table('sk_menu_child')->insertGetId(array('name_menu_child' => 'Phối cảnh logo 2', 'id_project_menu_child' => $project_id,'id_menu_menu_child'=>$insert_default_parent,'id_layout_menu_child'=>18, 'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),));
 
             return view('backend.newGuidelines',[
                 'id'=>$project_id,
@@ -572,6 +572,24 @@ class controllerNewGuidelines extends Controller
                 'id_img2_layout18' => $id_img2_layout18,
                 'id_img3_layout18' => $id_img3_layout18,
                 'id_img4_layout18' => $id_img4_layout18,
+                'id_menu1'=>$insert_default1,
+                'id_menu2'=>$insert_default2,
+                'id_menu3'=>$insert_default_parent,
+                'id_menu4'=>$insert_default_child4,
+                'id_menu5'=>$insert_default_child5,
+                'id_menu6'=>$insert_default_child6,
+                'id_menu7'=>$insert_default_child7,
+                'id_menu8'=>$insert_default_child8,
+                'id_menu9'=>$insert_default_child9,
+                'id_menu10'=>$insert_default_child10,
+                'id_menu11'=>$insert_default_child11,
+                'id_menu12'=>$insert_default_child12,
+                'id_menu13'=>$insert_default_child13,
+                'id_menu14'=>$insert_default_child14,
+                'id_menu15'=>$insert_default_child15,
+                'id_menu16'=>$insert_default_child16,
+                'id_menu17'=>$insert_default_child17,
+                'id_menu18'=>$insert_default_child18,
             ]);
 
         }else{

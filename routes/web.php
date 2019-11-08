@@ -49,7 +49,6 @@ Route::group(['namespace'=>'admin'],function(){
     Route::group(['prefix'=>'create'],function (){
         Route::post('/menu','controllerMenuGuidelines@postMenuGuidelines');
     });
-
 });
 
 //view guidelines

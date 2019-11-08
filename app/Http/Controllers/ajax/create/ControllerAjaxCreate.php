@@ -109,6 +109,7 @@ class ControllerAjaxCreate extends Controller
             'image_name' => $file_name,
             'image_mime' => $mime_file,
             'image_url' => $folder_image,
+            'image_menu' => $request->id_menu,
             'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
         ]);
 
@@ -160,6 +161,7 @@ class ControllerAjaxCreate extends Controller
             'image_name' => $file_name,
             'image_mime' => $mime_file,
             'image_url' => $folder_image,
+            'image_menu' => $request->id_menu,
             'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
         ]);
 
@@ -214,6 +216,7 @@ class ControllerAjaxCreate extends Controller
                      'image_name' => $file_name,
                      'image_mime' => $mime_file,
                      'image_url' => $folder_image,
+                     'image_menu_child' => $request->id_menu,
                      'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
                  ]);
             }
@@ -258,6 +261,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -303,6 +307,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -347,6 +352,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -391,6 +397,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -435,6 +442,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -487,6 +495,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }elseif(isset($request->section5_text)){
@@ -543,6 +552,7 @@ class ControllerAjaxCreate extends Controller
             'image_name' => $file_name,
             'image_mime' => $mime_file,
             'image_url' => $folder_image,
+            'image_menu_child' => $request->id_menu,
             'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
         ]);
     }
@@ -558,6 +568,7 @@ class ControllerAjaxCreate extends Controller
                 'hex' => $request->section7_color1,
                 'rgb' => $request->rgb,
                 'cmyk' => $request->cmyk,
+                'color_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -567,6 +578,7 @@ class ControllerAjaxCreate extends Controller
                 'hex' => $request->section7_color2,
                 'rgb' => $request->rgb,
                 'cmyk' => $request->cmyk,
+                'color_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -585,6 +597,7 @@ class ControllerAjaxCreate extends Controller
                 'hex' => $request->section8_ga1,
                 'rgb' => $request->rgb,
                 'cmyk' => $request->cmyk,
+                'color_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }elseif(isset($request->section8_ga2)){
@@ -592,6 +605,7 @@ class ControllerAjaxCreate extends Controller
                 'hex2' => $request->section8_ga2,
                 'rgb2' => $request->rgb,
                 'cmyk2' => $request->cmyk,
+                'color_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -601,6 +615,7 @@ class ControllerAjaxCreate extends Controller
                 'hex' => $request->section8_ga3,
                 'rgb' => $request->rgb,
                 'cmyk' => $request->cmyk,
+                'color_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }elseif(isset($request->section8_ga4)){
@@ -608,6 +623,7 @@ class ControllerAjaxCreate extends Controller
                 'hex2' => $request->section8_ga4,
                 'rgb2' => $request->rgb,
                 'cmyk2' => $request->cmyk,
+                'color_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -658,6 +674,7 @@ class ControllerAjaxCreate extends Controller
              * */
             $update = DB::table('sk_font')->where('id_font',$request->id_font)->update([
                 'font' => $folder_image,
+                'font_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -699,6 +716,7 @@ class ControllerAjaxCreate extends Controller
              * */
             $update = DB::table('sk_font')->where('id_font',$request->id_font)->update([
                 'font' => $folder_image,
+                'font_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -740,6 +758,7 @@ class ControllerAjaxCreate extends Controller
              * */
             $update = DB::table('sk_font')->where('id_font',$request->id_font)->update([
                 'font' => $folder_image,
+                'font_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -790,6 +809,7 @@ class ControllerAjaxCreate extends Controller
             'image_name' => $file_name,
             'image_mime' => $mime_file,
             'image_url' => $folder_image,
+            'image_menu_child' => $request->id_menu,
             'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
         ]);
     }
@@ -840,6 +860,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }elseif(isset($request->section11_upload_background22)){
@@ -881,6 +902,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -933,6 +955,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }elseif(isset($request->section12_upload_background22)){
@@ -974,6 +997,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -1026,6 +1050,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }elseif(isset($request->section13_upload_img)){
@@ -1067,6 +1092,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -1110,6 +1136,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }elseif(isset($request->section13_upload_img2)){
@@ -1151,6 +1178,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -1194,6 +1222,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }elseif(isset($request->section13_upload_img3)){
@@ -1235,6 +1264,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -1278,6 +1308,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }elseif(isset($request->section13_upload_img4)){
@@ -1319,6 +1350,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -1369,6 +1401,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -1419,6 +1452,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -1462,6 +1496,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -1505,6 +1540,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -1555,6 +1591,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -1605,6 +1642,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -1655,6 +1693,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_zip' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -1698,6 +1737,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -1741,6 +1781,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -1784,6 +1825,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }
@@ -1827,6 +1869,7 @@ class ControllerAjaxCreate extends Controller
                 'image_name' => $file_name,
                 'image_mime' => $mime_file,
                 'image_url' => $folder_image,
+                'image_menu_child' => $request->id_menu,
                 'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
         }

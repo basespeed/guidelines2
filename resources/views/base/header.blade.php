@@ -15,3 +15,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 </head>
 <body>
+<div id="font_face"></div>
+<div id="font_face2"></div>
+<div id="font_face3"></div>

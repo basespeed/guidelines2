@@ -87,6 +87,8 @@ class controllerCreateProject extends Controller
                 $table->bigIncrements('id_image');
                 $table->bigInteger('id_project_image')->nullable();
                 $table->bigInteger('layout_image')->nullable();
+                $table->bigInteger('image_menu')->nullable();
+                $table->bigInteger('image_menu_child')->nullable();
                 $table->string('image_name')->nullable();
                 $table->string('image_mime')->nullable();
                 $table->string('image_url')->nullable();
@@ -108,6 +110,8 @@ class controllerCreateProject extends Controller
                 $table->bigIncrements('id_info');
                 $table->bigInteger('id_project_info')->nullable();
                 $table->bigInteger('layout_info')->nullable();
+                $table->bigInteger('info_menu')->nullable();
+                $table->bigInteger('info_menu_child')->nullable();
                 $table->string('title_info')->nullable();
                 $table->string('des_info')->nullable();
                 $table->string('content_info')->nullable();
@@ -125,6 +129,8 @@ class controllerCreateProject extends Controller
             Schema::create('sk_font', function (Blueprint $table){
                 $table->bigIncrements('id_font');
                 $table->bigInteger('id_project_font')->nullable();
+                $table->bigInteger('font_menu')->nullable();
+                $table->bigInteger('font_menu_child')->nullable();
                 $table->bigInteger('layout_font')->nullable();
                 $table->string('font')->nullable();
                 $table->string('order_font')->nullable();
@@ -143,6 +149,8 @@ class controllerCreateProject extends Controller
                 $table->bigIncrements('id_color');
                 $table->bigInteger('id_project_color')->nullable();
                 $table->bigInteger('layout_color')->nullable();
+                $table->bigInteger('color_menu')->nullable();
+                $table->bigInteger('color_menu_child')->nullable();
                 $table->string('hex')->nullable();
                 $table->string('rgb')->nullable();
                 $table->string('cmyk')->nullable();
