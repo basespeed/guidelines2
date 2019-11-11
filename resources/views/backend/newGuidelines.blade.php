@@ -44,6 +44,24 @@
     <input type="hidden" name="id_img2_layout18" class="id_img2_layout18" value="{{$id_img2_layout18}}">
     <input type="hidden" name="id_img3_layout18" class="id_img3_layout18" value="{{$id_img3_layout18}}">
     <input type="hidden" name="id_img4_layout18" class="id_img4_layout18" value="{{$id_img4_layout18}}">
+
+    <input type="hidden" name="check_type_menu_layout1" class="check_type_menu_layout1" value="image_menu">
+    <input type="hidden" name="check_type_menu_layout3" class="check_type_menu_layout3" value="image_menu">
+    <input type="hidden" name="check_type_menu_layout4" class="check_type_menu_layout4" value="image_menu_child">
+    <input type="hidden" name="check_type_menu_layout5" class="check_type_menu_layout5" value="image_menu_child">
+    <input type="hidden" name="check_type_menu_layout6" class="check_type_menu_layout6" value="image_menu_child">
+    <input type="hidden" name="check_type_menu_layout7" class="check_type_menu_layout7" value="image_menu_child">
+    <input type="hidden" name="check_type_menu_layout8" class="check_type_menu_layout8" value="image_menu_child">
+    <input type="hidden" name="check_type_menu_layout9" class="check_type_menu_layout9" value="image_menu_child">
+    <input type="hidden" name="check_type_menu_layout10" class="check_type_menu_layout10" value="image_menu_child">
+    <input type="hidden" name="check_type_menu_layout11" class="check_type_menu_layout11" value="image_menu_child">
+    <input type="hidden" name="check_type_menu_layout12" class="check_type_menu_layout12" value="image_menu_child">
+    <input type="hidden" name="check_type_menu_layout13" class="check_type_menu_layout13" value="image_menu_child">
+    <input type="hidden" name="check_type_menu_layout14" class="check_type_menu_layout14" value="image_menu_child">
+    <input type="hidden" name="check_type_menu_layout15" class="check_type_menu_layout15" value="image_menu_child">
+    <input type="hidden" name="check_type_menu_layout16" class="check_type_menu_layout16" value="image_menu_child">
+    <input type="hidden" name="check_type_menu_layout17" class="check_type_menu_layout17" value="image_menu_child">
+    <input type="hidden" name="check_type_menu_layout18" class="check_type_menu_layout18" value="image_menu_child">
 <div class="fullpage_fix">
     <div class="sidebar menu_admin">
         <div class="logo">

@@ -1,4 +1,5 @@
 <section data-id="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" class="section section13">
+    <input type="hidden" name="check_type_menu_layout13" class="check_type_menu_layout13" value="{{$check_menu}}">
     <div class="in">
         <h2>11. <p>Logo màu hạn chế</p></h2>
 
@@ -13,7 +14,7 @@
             <div class="item">
                 <div class="list_logo">
                     @foreach($data_image as $data)
-                        @if($data->image_order == 1 && $data->layout_image == 13)
+                        @if($data->image_order == 1 && $data->layout_image == 13 && $data->$check_menu == $id_menu_check)
                             @php
                                 $data1 = url('/').'/public'.$data->image_url;
                             @endphp

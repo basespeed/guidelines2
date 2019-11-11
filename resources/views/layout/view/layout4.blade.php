@@ -3,33 +3,34 @@
         <h2>0.2 <p>Logo chuẩn</p></h2>
         <div class="list_logo">
             @foreach($data_image as $data)
-            @if($data->layout_image == 4)
-            @if($data->image_order == 1)
-            @php
-            $image1 = url('/').'/public'.$data->image_url;
-            @endphp
-            @elseif($data->image_order == 2)
-            @php
-            $vector1 = url('/').'/public'.$data->image_url;
-            @endphp
-            @elseif($data->image_order == 3)
-            @php
-            $image_zip1 = url('/').'/public'.$data->image_url;
-            @endphp
-            @elseif($data->image_order == 4)
-            @php
-            $image2 = url('/').'/public'.$data->image_url;
-            @endphp
-            @elseif($data->image_order == 5)
-            @php
-            $vector2 = url('/').'/public'.$data->image_url;
-            @endphp
-            @elseif($data->image_order == 6)
-            @php
-            $image_zip2 = url('/').'/public'.$data->image_url;
-            @endphp
-            @endif
-            @endif
+                @if($data->layout_image == 4 && $data->$check_menu == $id_menu_check)
+
+                    @if($data->image_order == 1)
+                        @php
+                        $image1 = url('/').'/public'.$data->image_url;
+                        @endphp
+                    @elseif($data->image_order == 2)
+                        @php
+                        $vector1 = url('/').'/public'.$data->image_url;
+                        @endphp
+                    @elseif($data->image_order == 3)
+                        @php
+                        $image_zip1 = url('/').'/public'.$data->image_url;
+                        @endphp
+                    @elseif($data->image_order == 4)
+                        @php
+                        $image2 = url('/').'/public'.$data->image_url;
+                        @endphp
+                    @elseif($data->image_order == 5)
+                        @php
+                        $vector2 = url('/').'/public'.$data->image_url;
+                        @endphp
+                    @elseif($data->image_order == 6)
+                        @php
+                        $image_zip2 = url('/').'/public'.$data->image_url;
+                        @endphp
+                    @endif
+                @endif
             @endforeach
 
             <div class="item">

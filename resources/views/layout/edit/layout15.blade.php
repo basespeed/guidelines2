@@ -1,4 +1,5 @@
 <section  data-id="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" class="section section15">
+    <input type="hidden" name="check_type_menu_layout15" class="check_type_menu_layout15" value="{{$check_menu}}">
     <div class="in">
         <h2>13. <p>Logo đặt trên nền ảnh</p></h2>
 
@@ -14,7 +15,7 @@
                 <div class="content">
                     <div class="list_logo">
                         @foreach($data_image as $data)
-                            @if($data->image_order == 1 && $data->layout_image == 15)
+                            @if($data->image_order == 1 && $data->layout_image == 15 && $data->$check_menu == $id_menu_check)
                                 @if(!empty($data->image_url))
                                     <div class="item">
                                         <div class="insider">
@@ -41,7 +42,7 @@
                                     </div>
                                 @endif
                                 <input type="hidden" class="id_logo1_layout15" name="id_logo1_layout15" value="{{$data->id_image}}" />
-                            @elseif($data->image_order == 2 && $data->layout_image == 15)
+                            @elseif($data->image_order == 2 && $data->layout_image == 15 && $data->$check_menu == $id_menu_check)
                                 @if(!empty($data->image_url))
                                     <div class="item">
                                         <div class="insider">
@@ -70,7 +71,7 @@
                                     </div>
                                 @endif
                                 <input type="hidden" class="id_logo2_layout15" name="id_logo2_layout15" value="{{$data->id_image}}" />
-                            @elseif($data->image_order == 3 && $data->layout_image == 15)
+                            @elseif($data->image_order == 3 && $data->layout_image == 15 && $data->$check_menu == $id_menu_check)
                                 @if(!empty($data->image_url))
                                     <div class="item">
                                         <div class="insider">
@@ -99,6 +100,43 @@
                                     </div>
                                 @endif
                                 <input type="hidden" class="id_logo3_layout15" name="id_logo3_layout15" value="{{$data->id_image}}" />
+                            @else
+                                <div class="item">
+                                    <div class="insider">
+                                        <div class="logo">
+                                            <button class="btn_ground_logo" type="button">
+                                                <img src="images/upto4.png" alt="icon" />
+                                                <input type="file" data-menu="{{$id_menu_check}}" name="section15_upload_background1" class="upload_background section15_upload_background1" alt="logo"/>
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="insider">
+                                        <div class="logo">
+                                            <button class="btn_ground_logo" type="button">
+                                                <img src="images/upto4.png" alt="icon" />
+                                                <input type="file" data-menu="{{$id_menu_check}}" name="section15_upload_background2" class="upload_background section15_upload_background2" alt="logo"/>
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                        <h3>Chuyển logo thành dạng có nền trắng bên dưới</h3>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="insider">
+                                        <div class="logo">
+                                            <button class="btn_ground_logo" type="button">
+                                                <img src="images/upto4.png" alt="icon" />
+                                                <input type="file" data-menu="{{$id_menu_check}}" name="section15_upload_background3" class="upload_background section15_upload_background3" alt="logo"/>
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                        <h3>Chuyển logo thành âm bản và đặt trên nền màu nhận diện</h3>
+                                    </div>
+                                </div>
+                                @break
                             @endif
                         @endforeach
                     </div>

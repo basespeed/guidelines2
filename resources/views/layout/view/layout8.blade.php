@@ -15,7 +15,7 @@
             <div class="item">
                 <div class="content">
                     @foreach($data_color as $color)
-                    @if($color->layout_color == 8)
+                    @if($color->layout_color == 8 && $color->color_menu == $id_menu_check || $color->layout_color == 8 && $color->color_menu_child == $id_menu_check)
                     <div class="list_color">
                         <div class="list">
                             @if(isset($color->hex) && isset($color->hex2))

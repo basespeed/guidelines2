@@ -239,6 +239,7 @@
                     /*$menu->id_layout_menu*/
                     $id_menu = $menu->id_menu;
                     $count_child = $count;
+                    $check_menu = 'image_menu';
                 @endphp
 
                 @if($menu->id_layout_menu == 1)
@@ -337,6 +338,7 @@
                     @if($child->id_menu_menu_child == $id_menu)
                         @php
                             $count_child++;
+                            $check_menu = 'image_menu_child';
                         @endphp
                         {{--{{$child->id_layout_menu_child}}--}}
                         @if($child->id_layout_menu_child == 1)

@@ -14,7 +14,7 @@
                 <div class="content">
                     <div class="list_logo">
                         @foreach($data_image as $data)
-                        @if($data->image_order == 1 && $data->layout_image == 15)
+                        @if($data->image_order == 1 && $data->layout_image == 15 && $data->$check_menu == $id_menu_check)
                         <div class="item">
                             <div class="insider">
                                 <div class="logo">
@@ -22,7 +22,7 @@
                                 </div>
                             </div>
                         </div>
-                        @elseif($data->image_order == 2 && $data->layout_image == 15)
+                        @elseif($data->image_order == 2 && $data->layout_image == 15 && $data->$check_menu == $id_menu_check)
                         <div class="item">
                             <div class="insider">
                                 <div class="logo">
@@ -31,7 +31,7 @@
                                 <h3>Chuyển logo thành dạng có nền trắng bên dưới</h3>
                             </div>
                         </div>
-                        @elseif($data->image_order == 3 && $data->layout_image == 15)
+                        @elseif($data->image_order == 3 && $data->layout_image == 15 && $data->$check_menu == $id_menu_check)
                         <div class="item">
                             <div class="insider">
                                 <div class="logo">

@@ -1,5 +1,5 @@
 @foreach($data_image as $data)
-    @if($data->image_type == 2 && $data->layout_image == 3)
+    @if($data->image_type == 2 && $data->layout_image == 3 && $data->$check_menu == $id_menu_check)
         @if(isset($data->image_url))
             @php
                 $back_url = url('/').'/public'.$data->image_url;

@@ -1,4 +1,5 @@
 <section data-id="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" class="section section8">
+    <input type="hidden" name="check_type_menu_layout8" class="check_type_menu_layout8" value="{{$check_menu}}">
     <div class="in">
         <h2>0.6 <p>Màu sắc chuyển</p></h2>
 
@@ -19,7 +20,7 @@
                         $b = 0;
                     @endphp
                     @foreach($data_color as $color)
-                        @if($color->layout_color == 8)
+                        @if($color->layout_color == 8 && $color->color_menu == $id_menu_check && !empty($color->rgb) || $color->layout_color == 8 && $color->color_menu_child == $id_menu_check && !empty($color->rgb) )
                             @php
                                 $a++;
                                 $b++;
@@ -93,6 +94,85 @@
                             @php
                                 $a += 1;
                             @endphp
+                        @else
+                            @foreach($data_color as $color)
+                                @if($color->layout_color == 8)
+                                    @php
+                                        $b++;
+                                    @endphp
+                                    <input type="hidden" name="insert_color{{$b}}" class="insert_color{{$b}}" value="{{$color->id_color}}">
+                                @endif
+                            @endforeach
+                            @if($color->layout_color == 8 && empty($color->rgb))
+                            <div class="list_color">
+                                <div class="get_input_gradient1">
+                                    <div class="input">
+                                        <input type="text" data-menu="{{$id_menu_check}}" name="section8_ga1" class="ga1 section8_ga1" placeholder="Nhập mã màu" />
+                                    </div>
+                                    <div class="input">
+                                        <span>+</span>
+                                    </div>
+                                    <div class="input">
+                                        <input type="text" data-menu="{{$id_menu_check}}" name="section8_ga2" class="ga2 section8_ga1" placeholder="Nhập mã màu" />
+                                    </div>
+                                </div>
+                                <div class="list">
+                                    <div class="color_item get_gar1" style="background-image: linear-gradient(to right, #7b400a, #f67f13);"></div>
+                                </div>
+                                <div class="info">
+                                    <ul class="ul1">
+                                        <li>RGB: 240   131  0</li>
+                                        <li>CMYK: 0   57    100    0</li>
+                                        <li>HEX CODE: #F08300</li>
+                                    </ul>
+                                    <input type="hidden" name="section8_rgb1" class="section8_rgb1"/>
+                                    <input type="hidden" name="section8_cmyk1" class="section8_cmyk1"/>
+                                    <div class="flex-grow"></div>
+                                    <ul class="ul2">
+                                        <li>RGB: 240   131  0</li>
+                                        <li>CMYK: 0   57    100    0</li>
+                                        <li>HEX CODE: #F08300</li>
+                                    </ul>
+                                    <input type="hidden" name="section8_rgb2" class="section8_rgb2"/>
+                                    <input type="hidden" name="section8_cmyk2" class="section8_cmyk2"/>
+                                </div>
+                            </div>
+
+                            <div class="list_color">
+                                <div class="get_input_gradient2">
+                                    <div class="input">
+                                        <input type="text" data-menu="{{$id_menu_check}}" name="section8_ga3" class="ga3 section8_ga3" placeholder="Nhập mã màu" />
+                                    </div>
+                                    <div class="input">
+                                        <span>+</span>
+                                    </div>
+                                    <div class="input">
+                                        <input type="text" data-menu="{{$id_menu_check}}" name="section8_ga4" class="ga4 section8_ga4" placeholder="Nhập mã màu" />
+                                    </div>
+                                </div>
+                                <div class="list">
+                                    <div class="color_item get_gar2" style="background-image: linear-gradient(to right, #ffc48e, #ff7900);"></div>
+                                </div>
+                                <div class="info">
+                                    <ul class="ul1">
+                                        <li>RGB: 240   131  0</li>
+                                        <li>CMYK: 0   57    100    0</li>
+                                        <li>HEX CODE: #F08300</li>
+                                    </ul>
+                                    <input type="hidden" name="section8_rgb3" class="section8_rgb3"/>
+                                    <input type="hidden" name="section8_cmyk3" class="section8_cmyk3"/>
+                                    <div class="flex-grow"></div>
+                                    <ul class="ul2">
+                                        <li>RGB: 240   131  0</li>
+                                        <li>CMYK: 0   57    100    0</li>
+                                        <li>HEX CODE: #F08300</li>
+                                    </ul>
+                                    <input type="hidden" name="section8_rgb4" class="section8_rgb4"/>
+                                    <input type="hidden" name="section8_cmyk4" class="section8_cmyk4"/>
+                                </div>
+                            </div>
+                            @break
+                            @endif
                         @endif
                     @endforeach
                 </div>
@@ -100,3 +180,81 @@
         </div>
     </div>
 </section>
+
+
+
+{{--<div class="list_color">
+    <div class="get_input_gradient1">
+        <div class="input">
+            <input type="text" data-menu="{{$id_menu_check}}" name="section8_ga1" class="ga1 section8_ga1" placeholder="Nhập mã màu" />
+        </div>
+        <div class="input">
+            <span>+</span>
+        </div>
+        <div class="input">
+            <input type="text" data-menu="{{$id_menu_check}}" name="section8_ga2" class="ga2 section8_ga1" placeholder="Nhập mã màu" />
+        </div>
+    </div>
+    <div class="list">
+        <div class="color_item get_gar1" style="background-image: linear-gradient(to right, #7b400a, #f67f13);"></div>
+    </div>
+    <div class="info">
+        <ul class="ul1">
+            <li>RGB: 240   131  0</li>
+            <li>CMYK: 0   57    100    0</li>
+            <li>HEX CODE: #F08300</li>
+        </ul>
+        <input type="hidden" name="section8_rgb1" class="section8_rgb1"/>
+        <input type="hidden" name="section8_cmyk1" class="section8_cmyk1"/>
+        <div class="flex-grow"></div>
+        <ul class="ul2">
+            <li>RGB: 240   131  0</li>
+            <li>CMYK: 0   57    100    0</li>
+            <li>HEX CODE: #F08300</li>
+        </ul>
+        <input type="hidden" name="section8_rgb2" class="section8_rgb2"/>
+        <input type="hidden" name="section8_cmyk2" class="section8_cmyk2"/>
+    </div>
+</div>
+
+<div class="list_color">
+    <div class="get_input_gradient2">
+        <div class="input">
+            <input type="text" data-menu="{{$id_menu_check}}" name="section8_ga3" class="ga3 section8_ga3" placeholder="Nhập mã màu" />
+        </div>
+        <div class="input">
+            <span>+</span>
+        </div>
+        <div class="input">
+            <input type="text" data-menu="{{$id_menu_check}}" name="section8_ga4" class="ga4 section8_ga4" placeholder="Nhập mã màu" />
+        </div>
+    </div>
+    <div class="list">
+        <div class="color_item get_gar2" style="background-image: linear-gradient(to right, #ffc48e, #ff7900);"></div>
+    </div>
+    <div class="info">
+        <ul class="ul1">
+            <li>RGB: 240   131  0</li>
+            <li>CMYK: 0   57    100    0</li>
+            <li>HEX CODE: #F08300</li>
+        </ul>
+        <input type="hidden" name="section8_rgb3" class="section8_rgb3"/>
+        <input type="hidden" name="section8_cmyk3" class="section8_cmyk3"/>
+        <div class="flex-grow"></div>
+        <ul class="ul2">
+            <li>RGB: 240   131  0</li>
+            <li>CMYK: 0   57    100    0</li>
+            <li>HEX CODE: #F08300</li>
+        </ul>
+        <input type="hidden" name="section8_rgb4" class="section8_rgb4"/>
+        <input type="hidden" name="section8_cmyk4" class="section8_cmyk4"/>
+    </div>
+</div>--}}
+{{--@foreach($data_color as $color)
+    @if($color->layout_color == 8)
+        @php
+            $b++;
+        @endphp
+        <input type="hidden" name="insert_color{{$b}}" class="insert_color{{$b}}" value="{{$color->id_color}}">
+    @endif
+@endforeach--}}

@@ -1,4 +1,5 @@
 <section  data-id="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" class="section section16">
+    <input type="hidden" name="check_type_menu_layout16" class="check_type_menu_layout16" value="{{$check_menu}}">
     <div class="in">
         <h2>13. <p>Không gian trống tối thiểu</p></h2>
 
@@ -13,7 +14,7 @@
             <div class="item">
                 <div class="content">
                     @foreach($data_image as $data)
-                        @if($data->image_type == 1 && $data->layout_image == 16)
+                        @if($data->image_type == 1 && $data->layout_image == 16 && $data->$check_menu == $id_menu_check && !empty($data->image_url))
                             @if(!empty($data->image_url))
                                 <button class="btn_ground_logo border-hide active" type="button">
                                     <img src="{{url('/').'/public'.$data->image_url}}" alt="icon" />
@@ -28,6 +29,13 @@
                                 </button>
                             @endif
                             <input type="hidden" class="id_logo_layout16" name="id_logo_layout16" value="{{$data->id_image}}" />
+                        @else
+                            <button class="btn_ground_logo" type="button">
+                                <img src="images/upto4.png" alt="icon" />
+                                <input type="file" data-menu="{{$id_menu_check}}" name="section16_upload_background1" class="upload_background section16_upload_background1" alt="logo"/>
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </button>
+                            @break
                         @endif
                     @endforeach
                 </div>

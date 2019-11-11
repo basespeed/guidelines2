@@ -13,7 +13,7 @@
             <div class="item">
                 <div class="content">
                     @foreach($data_image as $data)
-                    @if($data->image_type == 1 && $data->layout_image == 16)
+                    @if($data->image_type == 1 && $data->layout_image == 16 && $data->$check_menu == $id_menu_check)
                     <div class="list">
                         <img src="{{url('/').'/public'.$data->image_url}}" alt="logo" />
                     </div>

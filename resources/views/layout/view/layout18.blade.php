@@ -10,7 +10,7 @@
                     <p>Mọi sản phẩm truyền thông thương hiệu của AGRISECO đều bắt buộc phải sử dụng font chữ đã quy định để đảm bảo tính nhận diện cùng với tính đồng bộ nhất quán của thương hiệu.</p>
                 </div>
                 @foreach($data_image as $data)
-                @if($data->image_type == 4 && $data->layout_image == 18)
+                @if($data->image_type == 4 && $data->layout_image == 18 && $data->$check_menu == $id_menu_check)
                 <a href="{{url('/').'/public'.$data->image_zip}}">Dowload hình ảnh</a>
                 @endif
                 @endforeach
@@ -19,7 +19,7 @@
                 <div class="content">
                     <div class="insider">
                         @foreach($data_image as $data)
-                        @if($data->image_type == 1 && $data->layout_image == 18)
+                        @if($data->image_type == 1 && $data->layout_image == 18 && $data->$check_menu == $id_menu_check)
                         @if($data->image_order == 1)
                         <div class="item">
                             <div class="in"><img src="{{url('/').'/public'.$data->image_url}}" alt="logo" /></div>

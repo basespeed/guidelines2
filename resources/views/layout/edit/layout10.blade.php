@@ -1,4 +1,5 @@
 <section  data-id="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" class="section section10 section6">
+    <input type="hidden" name="check_type_menu_layout10" class="check_type_menu_layout10" value="{{$check_menu}}">
     <div class="in">
         <h2>0.8 <p>Không gian trống tối thiểu</p></h2>
 
@@ -12,7 +13,7 @@
             </div>
             <div class="item">
                 @foreach($data_image as $data)
-                    @if($data->image_type == 1 && $data->layout_image == 10)
+                    @if($data->image_type == 1 && $data->layout_image == 10 && $data->$check_menu == $id_menu_check)
                         @if(!empty($data->image_url))
                             <button class="btn_ground_size border-hide" type="button">
                                 <img src="{{url('/').'/public'.$data->image_url}}" alt="icon" />
@@ -20,13 +21,17 @@
                                 <i class="fa fa-times" aria-hidden="true"></i>
                             </button>
                         @else
-                            <button class="btn_ground_size" type="button">
-                                <img src="images/upto4.png" alt="icon" />
-                                <input type="file" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section10_upload_background2" class="upload_background section10_upload_background2"/>
-                                <i class="fa fa-times" aria-hidden="true"></i>
-                            </button>
+
                         @endif
                         <input type="hidden" class="id_logo_layout10" name="id_logo_layout10" value="{{$data->id_image}}" />
+                    @else
+                        <button class="btn_ground_size" type="button">
+                            <img src="images/upto4.png" alt="icon" />
+                            <input type="file" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section10_upload_background2" class="upload_background section10_upload_background2"/>
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </button>
+                        <input type="hidden" class="id_logo_layout10" name="id_logo_layout10" value="" />
+                        @break
                     @endif
                 @endforeach
             </div>

@@ -1,4 +1,5 @@
 <section data-id="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" class="section section7">
+    <input type="hidden" name="check_type_menu_layout7" class="check_type_menu_layout7" value="{{$check_menu}}">
     <div class="in">
         <h2>0.5 <p>Màu sắc đơn sắc</p></h2>
 
@@ -20,7 +21,7 @@
                         $count3 = 0;
                     @endphp
                     @foreach($data_color as $color)
-                        @if($color->layout_color == 7)
+                        @if($color->layout_color == 7 && $color->color_menu == $id_menu_check && !empty($color->rgb) || $color->layout_color == 7 && $color->color_menu_child == $id_menu_check && !empty($color->rgb))
                             @php
                                 $count1++;
                                 $count2++;
@@ -45,19 +46,6 @@
                                         <div class="color_item" style="background: rgba({{$rgb}},0.2);">20%</div>
                                         <div class="color_item" style="background: rgba({{$rgb}},0.1);">10%</div>
                                     </div>
-                                @else
-                                    <div class="list">
-                                        <div class="color_item" style="background: rgba(242,3,3,1);">100%</div>
-                                        <div class="color_item" style="background: rgba(242,3,3,0.9);">90%</div>
-                                        <div class="color_item" style="background: rgba(242,3,3,0.8);">80%</div>
-                                        <div class="color_item" style="background: rgba(242,3,3,0.7);">70%</div>
-                                        <div class="color_item" style="background: rgba(242,3,3,0.6);">60%</div>
-                                        <div class="color_item" style="background: rgba(242,3,3,0.5);">50%</div>
-                                        <div class="color_item" style="background: rgba(242,3,3,0.4);">40%</div>
-                                        <div class="color_item" style="background: rgba(242,3,3,0.3);">30%</div>
-                                        <div class="color_item" style="background: rgba(242,3,3,0.2);">20%</div>
-                                        <div class="color_item" style="background: rgba(242,3,3,0.1);">10%</div>
-                                    </div>
                                 @endif
 
                                 <div class="info">
@@ -79,6 +67,73 @@
                                 </div>
                             </div>
                             <input type="hidden" name="id_color{{$count1}}_layout7" class="id_color{{$count1}}_layout7" value="{{$color->id_color}}">
+                        @else
+                            @if($color->layout_color == 7 && empty($color->rgb))
+                                <div class="list_color">
+                                    <div class="edit_color">
+                                        @php
+                                            $count = 0;
+                                        @endphp
+                                        @foreach($data_color as $color)
+                                            @if($color->layout_color == 7)
+                                                @php
+                                                    $count++;
+                                                @endphp
+                                                <input type="hidden" name="id_color{{$count}}_layout7" class="id_color{{$count}}_layout7" value="{{$color->id_color}}">
+                                            @endif
+                                        @endforeach
+                                        <input type="text" data-menu="{{$id_menu_check}}" class="cp-full1 section7_color1" value="" name="section7_color1" placeholder="Nhập mã màu" style="width:350px" /></div>
+                                    <div class="list">
+                                        <div class="color_item" style="background: rgba(246,127,19,1);">100%</div>
+                                        <div class="color_item" style="background: rgba(246,127,19,0.9);">90%</div>
+                                        <div class="color_item" style="background: rgba(246,127,19,0.8);">80%</div>
+                                        <div class="color_item" style="background: rgba(246,127,19,0.7);">70%</div>
+                                        <div class="color_item" style="background: rgba(246,127,19,0.6);">60%</div>
+                                        <div class="color_item" style="background: rgba(246,127,19,0.5);">50%</div>
+                                        <div class="color_item" style="background: rgba(246,127,19,0.4);">40%</div>
+                                        <div class="color_item" style="background: rgba(246,127,19,0.3);">30%</div>
+                                        <div class="color_item" style="background: rgba(246,127,19,0.2);">20%</div>
+                                        <div class="color_item" style="background: rgba(246,127,19,0.1);">10%</div>
+                                    </div>
+                                    <div class="info">
+                                        <ul>
+                                            <li>RGB: 240   131  0</li>
+                                            <li>CMYK: 0   57    100    0</li>
+                                            <li>HEX CODE: #F08300</li>
+                                            {{--<li>PANTONE P24-8 C</li>--}}
+                                        </ul>
+                                        <input type="hidden" name="section7_rgb1" class="section7_rgb1"/>
+                                        <input type="hidden" name="section7_cmyk1" class="section7_cmyk1"/>
+                                    </div>
+                                </div>
+
+                                <div class="list_color list_color2">
+                                    <div class="edit_color"><input type="text" data-menu="{{$id_menu_check}}" class="cp-full2 section7_color2" name="section7_color2" placeholder="Nhập mã màu"/></div>
+                                    <div class="list">
+                                        <div class="color_item" style="background: rgba(26,24,24,1);color: #FFF;">100%</div>
+                                        <div class="color_item" style="background: rgba(26,24,24,0.9);color: #FFF;">90%</div>
+                                        <div class="color_item" style="background: rgba(26,24,24,0.8);color: #FFF;">80%</div>
+                                        <div class="color_item" style="background: rgba(26,24,24,0.7);color: #FFF;">70%</div>
+                                        <div class="color_item" style="background: rgba(26,24,24,0.6);color: #FFF;">60%</div>
+                                        <div class="color_item" style="background: rgba(26,24,24,0.5);color: #FFF;">50%</div>
+                                        <div class="color_item" style="background: rgba(26,24,24,0.4);color: #FFF;">40%</div>
+                                        <div class="color_item" style="background: rgba(26,24,24,0.3);color: #FFF;">30%</div>
+                                        <div class="color_item" style="background: rgba(26,24,24,0.2);color: #FFF;">20%</div>
+                                        <div class="color_item" style="background: rgba(26,24,24,0.1);color: #FFF;">10%</div>
+                                    </div>
+                                    <div class="info">
+                                        <ul>
+                                            <li>RGB: 240   131  0</li>
+                                            <li>CMYK: 0   57    100    0</li>
+                                            <li>HEX CODE: #F08300</li>
+                                            {{--<li>PANTONE P24-8 C</li>--}}
+                                        </ul>
+                                        <input type="hidden" name="section7_rgb2" class="section7_rgb2"/>
+                                        <input type="hidden" name="section7_cmyk2" class="section7_cmyk2"/>
+                                    </div>
+                                </div>
+                            @endif
+                            @break
                         @endif
                     @endforeach
                 </div>

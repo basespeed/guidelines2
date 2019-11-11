@@ -137,43 +137,97 @@
                 /*$menu->id_layout_menu*/
                 $id_menu = $menu->id_menu;
                 $count_child = $count;
+                $check_menu = 'image_menu';
             @endphp
-
             @if($menu->id_layout_menu == 1)
+                @php
+                    $id_menu_check = $menu->id_menu;
+                @endphp
                 @include('layout.view.layout1')
             @elseif($menu->id_layout_menu == 2)
+                @php
+                    $id_menu_check = $menu->id_menu;
+                @endphp
                 @include('layout.view.layout2')
             @elseif($menu->id_layout_menu == 3)
+                @php
+                    $id_menu_check = $menu->id_menu;
+                @endphp
                 @include('layout.view.layout3')
             @elseif($menu->id_layout_menu == 4)
+                @php
+                    $id_menu_check = $menu->id_menu;
+                @endphp
                 @include('layout.view.layout4')
             @elseif($menu->id_layout_menu == 5)
+                @php
+                    $id_menu_check = $menu->id_menu;
+                @endphp
                 @include('layout.view.layout5')
             @elseif($menu->id_layout_menu == 6)
+                @php
+                    $id_menu_check = $menu->id_menu;
+                @endphp
                 @include('layout.view.layout6')
             @elseif($menu->id_layout_menu == 7)
+                @php
+                    $id_menu_check = $menu->id_menu;
+                @endphp
                 @include('layout.view.layout7')
             @elseif($menu->id_layout_menu == 8)
+                @php
+                    $id_menu_check = $menu->id_menu;
+                @endphp
                 @include('layout.view.layout8')
             @elseif($menu->id_layout_menu == 9)
+                @php
+                    $id_menu_check = $menu->id_menu;
+                @endphp
                 @include('layout.view.layout9')
             @elseif($menu->id_layout_menu == 10)
+                @php
+                    $id_menu_check = $menu->id_menu;
+                @endphp
                 @include('layout.view.layout10')
             @elseif($menu->id_layout_menu == 11)
+                @php
+                    $id_menu_check = $menu->id_menu;
+                @endphp
                 @include('layout.view.layout11')
             @elseif($menu->id_layout_menu == 12)
+                @php
+                    $id_menu_check = $menu->id_menu;
+                @endphp
                 @include('layout.view.layout12')
             @elseif($menu->id_layout_menu == 13)
+                @php
+                    $id_menu_check = $menu->id_menu;
+                @endphp
                 @include('layout.view.layout13')
             @elseif($menu->id_layout_menu == 14)
+                @php
+                    $id_menu_check = $menu->id_menu;
+                @endphp
                 @include('layout.view.layout14')
             @elseif($menu->id_layout_menu == 15)
+                @php
+                    $id_menu_check = $menu->id_menu;
+                @endphp
                 @include('layout.view.layout15')
             @elseif($menu->id_layout_menu == 16)
+                @php
+                    $id_menu_check = $menu->id_menu;
+                @endphp
                 @include('layout.view.layout16')
             @elseif($menu->id_layout_menu == 17)
+                @php
+                    $id_menu_check = $menu->id_menu;
+                @endphp
                 @include('layout.view.layout17')
             @elseif($menu->id_layout_menu == 18)
+                @php
+                    $id_menu_check = $menu->id_menu;
+                @endphp
                 @include('layout.view.layout18')
             @endif
 
@@ -181,43 +235,99 @@
                 @if($child->id_menu_menu_child == $id_menu)
                     @php
                         $count_child++;
+                        $id_menu_check = $child->id_menu_child;
+                        $check_menu = 'image_menu_child';
                     @endphp
-                    {{--{{$child->id_layout_menu_child}}--}}
+
                     @if($child->id_layout_menu_child == 1)
+                        @php
+                            $id_menu_check = $child->id_menu_child;
+                        @endphp
                         @include('layout.view.layout1')
                     @elseif($child->id_layout_menu_child == 2)
+                        @php
+                            $id_menu_check = $child->id_menu_child;
+                        @endphp
                         @include('layout.view.layout2')
                     @elseif($child->id_layout_menu_child == 3)
+                        @php
+                            $id_menu_check = $child->id_menu_child;
+                        @endphp
                         @include('layout.view.layout3')
                     @elseif($child->id_layout_menu_child == 4)
+                        @php
+                            $id_menu_check = $child->id_menu_child;
+                        @endphp
                         @include('layout.view.layout4')
                     @elseif($child->id_layout_menu_child == 5)
+                        @php
+                            $id_menu_check = $child->id_menu_child;
+                        @endphp
                         @include('layout.view.layout5')
                     @elseif($child->id_layout_menu_child == 6)
+                        @php
+                            $id_menu_check = $child->id_menu_child;
+                        @endphp
                         @include('layout.view.layout6')
                     @elseif($child->id_layout_menu_child == 7)
+                        @php
+                            $id_menu_check = $child->id_menu_child;
+                        @endphp
                         @include('layout.view.layout7')
                     @elseif($child->id_layout_menu_child == 8)
+                        @php
+                            $id_menu_check = $child->id_menu_child;
+                        @endphp
                         @include('layout.view.layout8')
                     @elseif($child->id_layout_menu_child == 9)
+                        @php
+                            $id_menu_check = $child->id_menu_child;
+                        @endphp
                         @include('layout.view.layout9')
                     @elseif($child->id_layout_menu_child == 10)
+                        @php
+                            $id_menu_check = $child->id_menu_child;
+                        @endphp
                         @include('layout.view.layout10')
                     @elseif($child->id_layout_menu_child == 11)
+                        @php
+                            $id_menu_check = $child->id_menu_child;
+                        @endphp
                         @include('layout.view.layout11')
                     @elseif($child->id_layout_menu_child == 12)
+                        @php
+                            $id_menu_check = $child->id_menu_child;
+                        @endphp
                         @include('layout.view.layout12')
                     @elseif($child->id_layout_menu_child == 13)
+                        @php
+                            $id_menu_check = $child->id_menu_child;
+                        @endphp
                         @include('layout.view.layout13')
                     @elseif($child->id_layout_menu_child == 14)
+                        @php
+                            $id_menu_check = $child->id_menu_child;
+                        @endphp
                         @include('layout.view.layout14')
                     @elseif($child->id_layout_menu_child == 15)
+                        @php
+                            $id_menu_check = $child->id_menu_child;
+                        @endphp
                         @include('layout.view.layout15')
                     @elseif($child->id_layout_menu_child == 16)
+                        @php
+                            $id_menu_check = $child->id_menu_child;
+                        @endphp
                         @include('layout.view.layout16')
                     @elseif($child->id_layout_menu_child == 17)
+                        @php
+                            $id_menu_check = $child->id_menu_child;
+                        @endphp
                         @include('layout.view.layout17')
                     @elseif($child->id_layout_menu_child == 18)
+                        @php
+                            $id_menu_check = $child->id_menu_child;
+                        @endphp
                         @include('layout.view.layout18')
                     @endif
                 @endif

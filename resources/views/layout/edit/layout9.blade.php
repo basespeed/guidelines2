@@ -1,4 +1,5 @@
 <section data-id="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" class="section section9">
+    <input type="hidden" name="check_type_menu_layout9" class="check_type_menu_layout9" value="{{$check_menu}}">
     <div class="in">
         <h2>0.7 <p>Font chữ sử dụng</p></h2>
 
@@ -10,12 +11,14 @@
                     <p>Mọi sản phẩm truyền thông thương hiệu của AGRISECO đều bắt buộc phải sử dụng font chữ đã quy định để đảm bảo tính nhận diện cùng với tính đồng bộ nhất quán của thương hiệu.</p>
                     <div class="btn_front">
                         @foreach($data_font as $key => $font)
-                            @if($key == 0)
-                                <input type="hidden" name="id_font1_layout9" class="id_font1_layout9" value="{{$font->id_font}}">
-                            @elseif($key == 1)
-                                <input type="hidden" name="id_font2_layout9" class="id_font2_layout9" value="{{$font->id_font}}">
-                            @elseif($key == 2)
-                                <input type="hidden" name="id_font3_layout9" class="id_font3_layout9" value="{{$font->id_font}}">
+                            @if($font->layout_font == 9 && $font->font_menu == $id_menu_check || $font->layout_font == 9 && $font->font_menu_child == $id_menu_check)
+                                @if($key == 0)
+                                    <input type="hidden" name="id_font1_layout9" class="id_font1_layout9" value="{{$font->id_font}}">
+                                @elseif($key == 1)
+                                    <input type="hidden" name="id_font2_layout9" class="id_font2_layout9" value="{{$font->id_font}}">
+                                @elseif($key == 2)
+                                    <input type="hidden" name="id_font3_layout9" class="id_font3_layout9" value="{{$font->id_font}}">
+                                @endif
                             @endif
                         @endforeach
                         <div class="button">
@@ -35,7 +38,7 @@
             </div>
             <div class="item">
                 @foreach($data_font as $key => $font)
-                    @if($font->layout_font == 9)
+                    @if($font->layout_font == 9 && $font->font_menu == $id_menu_check || $font->layout_font == 9 && $font->font_menu_child == $id_menu_check)
                         @if($key == 0)
                             @php
                                 $url1 = url('/').'/public'.$font->font;
@@ -54,15 +57,15 @@
                 <style>
                     @font-face {
                         font-family: myfont;
-                        src: url({{$url1}});
+                        src: url( <?php if(isset($url1)){echo $url1;} ?>);
                     }
                     @font-face {
                         font-family: myfont2;
-                        src: url({{$url2}});
+                        src: url(<?php if(isset($url2)){echo $url2;} ?>);
                     }
                     @font-face {
                         font-family: myfont3;
-                        src: url({{$url3}});
+                        src: url(<?php if(isset($url3)){echo $url3;} ?>);
                     }
                 </style>
                 <div class="content">

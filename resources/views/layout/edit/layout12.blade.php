@@ -1,4 +1,5 @@
 <section data-id="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" class="section section12">
+    <input type="hidden" name="check_type_menu_layout12" class="check_type_menu_layout12" value="{{$check_menu}}">
     <div class="in">
         <h2>0.10 <p>Kích thước logo tối thiểu</p></h2>
 
@@ -13,48 +14,68 @@
             <div class="item">
                 <div class="content">
                     @foreach($data_image as $data)
-                        @if($data->image_type == 1 && $data->layout_image == 12 && $data->image_order == 1)
-                            @if(isset($data->image_url))
-                                <div class="list_g">
-                                    <button class="btn_ground_logo border-hide active" type="button">
-                                        <img src="{{url('/').'/public'.$data->image_url}}" alt="icon" height="100%"/>
-                                        <input type="file" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section12_upload_background2" class="upload_background section12_upload_background2" alt="logo"/>
-                                        <i class="fa fa-times" aria-hidden="true"></i>
-                                    </button>
-                                    <h3>Khi chỉ có biểu tượng</h3>
-                                </div>
-                            @else
-                                <div class="list_g">
-                                    <button class="btn_ground_logo" type="button">
-                                        <img src="images/upto4.png" alt="icon" />
-                                        <input type="file" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section12_upload_background2" class="upload_background section12_upload_background2" alt="logo"/>
-                                        <i class="fa fa-times" aria-hidden="true"></i>
-                                    </button>
-                                    <h3>Khi chỉ có biểu tượng</h3>
-                                </div>
+                        @if($data->$check_menu == $id_menu_check && !empty($data->image_url))
+                            @if($data->image_type == 1 && $data->layout_image == 12 && $data->image_order == 1)
+                                @if(isset($data->image_url))
+                                    <div class="list_g">
+                                        <button class="btn_ground_logo border-hide active" type="button">
+                                            <img src="{{url('/').'/public'.$data->image_url}}" alt="icon" height="100%"/>
+                                            <input type="file" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section12_upload_background2" class="upload_background section12_upload_background2" alt="logo"/>
+                                            <i class="fa fa-times" aria-hidden="true"></i>
+                                        </button>
+                                        <h3>Khi chỉ có biểu tượng</h3>
+                                    </div>
+                                @else
+                                    <div class="list_g">
+                                        <button class="btn_ground_logo" type="button">
+                                            <img src="images/upto4.png" alt="icon" />
+                                            <input type="file" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section12_upload_background2" class="upload_background section12_upload_background2" alt="logo"/>
+                                            <i class="fa fa-times" aria-hidden="true"></i>
+                                        </button>
+                                        <h3>Khi chỉ có biểu tượng</h3>
+                                    </div>
+                                @endif
+                                <input type="hidden" class="id_logo1_layout12" name="id_logo1_layout12" value="{{$data->id_image}}" />
+                            @elseif($data->image_type == 1 && $data->layout_image == 12 && $data->image_order == 2)
+                                @if(isset($data->image_url))
+                                    <div class="list_g">
+                                        <button class="btn_ground_logo border-hide active" type="button">
+                                            <img src="{{url('/').'/public'.$data->image_url}}" alt="icon" height="100%"/>
+                                            <input type="file" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section12_upload_background22" class="upload_background section12_upload_background22" alt="logo"/>
+                                            <i class="fa fa-times" aria-hidden="true"></i>
+                                        </button>
+                                        <h3>Khi hiển thị đầy đủ</h3>
+                                    </div>
+                                @else
+                                    <div class="list_g">
+                                        <button class="btn_ground_logo" type="button">
+                                            <img src="images/upto4.png" alt="icon" />
+                                            <input type="file" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section12_upload_background22" class="upload_background section12_upload_background22" alt="logo"/>
+                                            <i class="fa fa-times" aria-hidden="true"></i>
+                                        </button>
+                                        <h3>Khi hiển thị đầy đủ</h3>
+                                    </div>
+                                @endif
+                                <input type="hidden" class="id_logo2_layout12" name="id_logo2_layout12" value="{{$data->id_image}}" />
                             @endif
-                            <input type="hidden" class="id_logo1_layout12" name="id_logo1_layout12" value="{{$data->id_image}}" />
-                        @elseif($data->image_type == 1 && $data->layout_image == 12 && $data->image_order == 2)
-                            @if(isset($data->image_url))
-                                <div class="list_g">
-                                    <button class="btn_ground_logo border-hide active" type="button">
-                                        <img src="{{url('/').'/public'.$data->image_url}}" alt="icon" height="100%"/>
-                                        <input type="file" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section12_upload_background22" class="upload_background section12_upload_background22" alt="logo"/>
-                                        <i class="fa fa-times" aria-hidden="true"></i>
-                                    </button>
-                                    <h3>Khi hiển thị đầy đủ</h3>
-                                </div>
-                            @else
-                                <div class="list_g">
-                                    <button class="btn_ground_logo" type="button">
-                                        <img src="images/upto4.png" alt="icon" />
-                                        <input type="file" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section12_upload_background22" class="upload_background section12_upload_background22" alt="logo"/>
-                                        <i class="fa fa-times" aria-hidden="true"></i>
-                                    </button>
-                                    <h3>Khi hiển thị đầy đủ</h3>
-                                </div>
-                            @endif
-                            <input type="hidden" class="id_logo2_layout12" name="id_logo2_layout12" value="{{$data->id_image}}" />
+                        @else
+                            <div class="list_g">
+                                <button class="btn_ground_logo" type="button">
+                                    <img src="images/upto4.png" alt="icon" />
+                                    <input type="file" data-menu="{{$id_menu_check}}" name="section12_upload_background2" class="upload_background section12_upload_background2" alt="logo"/>
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                </button>
+                                <h3>Khi chỉ có biểu tượng</h3>
+                            </div>
+                            <div class="list_g">
+                                <button class="btn_ground_logo" type="button">
+                                    <img src="images/upto4.png" alt="icon" />
+                                    <input type="file" data-menu="{{$id_menu_check}}" name="section12_upload_background22" class="upload_background section12_upload_background22" alt="logo"/>
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                </button>
+                                <h3>Khi hiển thị đầy đủ</h3>
+                            </div>
+                            @break
                         @endif
                     @endforeach
                 </div>

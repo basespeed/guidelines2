@@ -104,6 +104,7 @@
                 var section7_color1 = $('.section7_color1').val();
                 var id_color1 = $('.id_color1_layout7').val();
                 var id_menu = $(this).attr('data-menu');
+                var type_menu = $('.check_type_menu_layout7').val();
 
                 setTimeout(function () {
                     var hex = section7_color1;
@@ -124,6 +125,7 @@
                     form_data.append("cmyk", cmyk);
                     form_data.append("id_color1", id_color1);
                     form_data.append("id_menu", id_menu);
+                    form_data.append("type_menu", type_menu);
 
                     $.ajax({
                         type: 'POST',
@@ -209,6 +211,7 @@
                 var section7_color2 = $('.section7_color2').val();
                 var id_color2 = $('.id_color2_layout7').val();
                 var id_menu = $(this).attr('data-menu');
+                var type_menu = $('.check_type_menu_layout7').val();
 
                 /*color2*/
                 setTimeout(function () {
@@ -231,6 +234,7 @@
                     form_data.append("cmyk", cmyk);
                     form_data.append("id_color2", id_color2);
                     form_data.append("id_menu", id_menu);
+                    form_data.append("type_menu", type_menu);
 
                     $.ajax({
                         type: 'POST',
@@ -310,6 +314,7 @@
                 var section8_ga1 = $('.section8_ga1').val();
                 var id_color1 = $('.insert_color1').val();
                 var id_menu = $(this).attr('data-menu');
+                var type_menu = $('.check_type_menu_layout8').val();
 
                 setTimeout(function () {
                     var hex = section8_ga1;
@@ -331,6 +336,7 @@
                     form_data.append("cmyk", cmyk);
                     form_data.append("id_color1", id_color1);
                     form_data.append("id_menu", id_menu);
+                    form_data.append("type_menu", type_menu);
 
                     $.ajax({
                         type: 'POST',
@@ -410,6 +416,7 @@
                 var section8_ga2 = $('.ga2').val();
                 var id_color1 = $('.insert_color1').val();
                 var id_menu = $(this).attr('data-menu');
+                var type_menu = $('.check_type_menu_layout8').val();
 
                 setTimeout(function () {
                     var hex = section8_ga2;
@@ -431,6 +438,7 @@
                     form_data.append("cmyk", cmyk);
                     form_data.append("id_color1", id_color1);
                     form_data.append("id_menu", id_menu);
+                    form_data.append("type_menu", type_menu);
 
                     $.ajax({
                         type: 'POST',
@@ -510,6 +518,7 @@
                 var section8_ga3 = $('.ga3').val();
                 var id_color2 = $('.insert_color2').val();
                 var id_menu = $(this).attr('data-menu');
+                var type_menu = $('.check_type_menu_layout8').val();
 
                 setTimeout(function () {
                     var hex = section8_ga3;
@@ -531,6 +540,7 @@
                     form_data.append("cmyk", cmyk);
                     form_data.append("id_color2", id_color2);
                     form_data.append("id_menu", id_menu);
+                    form_data.append("type_menu", type_menu);
 
                     $.ajax({
                         type: 'POST',
@@ -610,6 +620,7 @@
                 var section8_ga4 = $('.ga4').val();
                 var id_color2 = $('.insert_color2').val();
                 var id_menu = $(this).attr('data-menu');
+                var type_menu = $('.check_type_menu_layout8').val();
 
 
                 setTimeout(function () {
@@ -632,6 +643,7 @@
                     form_data.append("cmyk", cmyk);
                     form_data.append("id_color2", id_color2);
                     form_data.append("id_menu", id_menu);
+                    form_data.append("type_menu", type_menu);
 
                     $.ajax({
                         type: 'POST',
@@ -1348,6 +1360,7 @@
             var id_back = $('.id_background_layout1').val();
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
+            var type_menu = $('.check_type_menu_layout1').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -1356,6 +1369,7 @@
             form_data.append("slug", slug);
             form_data.append("id_back", id_back);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -1381,6 +1395,7 @@
             var id = $('.id_project').val();
             var id_back = $('.id_background_layout3').val();
             var slug = $('.slug_project').val();
+            var type_menu = $('.check_type_menu_layout3').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -1389,6 +1404,7 @@
             form_data.append("slug", slug);
             form_data.append("id_back", id_back);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -1415,6 +1431,7 @@
             var id = $('.id_project').val();
             var id_logo = $('.id_logo1_layout4').val();
             var slug = $('.slug_project').val();
+            var type_menu = $('.check_type_menu_layout4').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -1423,6 +1440,7 @@
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -1447,6 +1465,7 @@
             var id_vector1 = $('.id_vector1_layout4').val();
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
+            var type_menu = $('.check_type_menu_layout4').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -1455,6 +1474,7 @@
             form_data.append("slug", slug);
             form_data.append("id_vector1", id_vector1);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -1479,6 +1499,7 @@
             var id_zip_image1 = $('.id_zip_img1').val();
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
+            var type_menu = $('.check_type_menu_layout4').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -1487,6 +1508,7 @@
             form_data.append("slug", slug);
             form_data.append("id_zip_image1", id_zip_image1);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -1511,6 +1533,7 @@
             var id_logo2 = $('.id_logo2_layout4').val();
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
+            var type_menu = $('.check_type_menu_layout4').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -1519,6 +1542,7 @@
             form_data.append("slug", slug);
             form_data.append("id_logo2", id_logo2);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -1543,6 +1567,7 @@
             var id_vector2 = $('.id_vector2_layout4').val();
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
+            var type_menu = $('.check_type_menu_layout4').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -1551,6 +1576,7 @@
             form_data.append("slug", slug);
             form_data.append("id_vector2", id_vector2);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -1575,6 +1601,7 @@
             var id_image_zip2 = $('.id_zip_img2_layout4').val();
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
+            var type_menu = $('.check_type_menu_layout4').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -1583,6 +1610,7 @@
             form_data.append("slug", slug);
             form_data.append("id_image_zip2", id_image_zip2);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -1609,6 +1637,7 @@
             var id_logo = $('.id_logo_layout5').val();
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
+            var type_menu = $('.check_type_menu_layout5').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -1617,6 +1646,7 @@
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -1639,12 +1669,14 @@
             var id = $('.id_project').val();
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
+            var type_menu = $('.check_type_menu_layout5').val();
 
             var form_data = new FormData();
             form_data.append("section5_text", val);
             form_data.append("id", id);
             form_data.append("slug", slug);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -1670,6 +1702,7 @@
             var id_logo = $('.id_logo_layout6').val();
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
+            var type_menu = $('.check_type_menu_layout6').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -1678,6 +1711,7 @@
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -1705,6 +1739,7 @@
             var id_font = $('.id_font1_layout9').val();
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
+            var type_menu = $('.check_type_menu_layout9').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -1713,6 +1748,7 @@
             form_data.append("slug", slug);
             form_data.append("id_font", id_font);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $("#font_face").html('<style type="text/css">@font-face{font-family: myfont_change1;src: url('+tmppath+');}</style>');
             $('.section9 .item .content .list1 p').css('font-family','myfont_change1');
@@ -1741,6 +1777,7 @@
             var id_font = $('.id_font2_layout9').val();
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
+            var type_menu = $('.check_type_menu_layout9').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -1749,6 +1786,7 @@
             form_data.append("slug", slug);
             form_data.append("id_font", id_font);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $("#font_face2").html('<style type="text/css">@font-face{font-family: myfont_change2;src: url('+tmppath+');}</style>');
             $('.section9 .item .content .list2 p').css('font-family','myfont_change2');
@@ -1777,6 +1815,7 @@
             var id_font = $('.id_font3_layout9').val();
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
+            var type_menu = $('.check_type_menu_layout9').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -1785,6 +1824,7 @@
             form_data.append("slug", slug);
             form_data.append("id_font", id_font);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $("#font_face3").html('<style type="text/css">@font-face{font-family: myfont_change3;src: url('+tmppath+');}</style>');
             $('.section9 .item .content .list3 p').css('font-family','myfont_change3');
@@ -1813,6 +1853,7 @@
             var id_logo = $('.id_logo_layout10').val();
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
+            var type_menu = $('.check_type_menu_layout10').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -1821,6 +1862,8 @@
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
+
 
             $.ajax({
                 type: 'POST',
@@ -1846,6 +1889,7 @@
             var id_logo = $('.id_logo1_layout11').val();
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
+            var type_menu = $('.check_type_menu_layout11').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -1854,6 +1898,7 @@
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -1877,6 +1922,7 @@
             var id_logo = $('.id_logo2_layout11').val();
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
+            var type_menu = $('.check_type_menu_layout11').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -1885,6 +1931,7 @@
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -1910,6 +1957,7 @@
             var id_logo = $('.id_logo1_layout12').val();
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
+            var type_menu = $('.check_type_menu_layout12').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -1918,6 +1966,7 @@
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -1941,6 +1990,7 @@
             var id_logo = $('.id_logo2_layout12').val();
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
+            var type_menu = $('.check_type_menu_layout12').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -1949,6 +1999,7 @@
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -1974,7 +2025,7 @@
             var id = $('.id_project').val();
             var id_logo = $('.id_vector1_layout13').val();
             var id_menu = $(this).attr('data-menu');
-
+            var type_menu = $('.check_type_menu_layout13').val();
             var slug = $('.slug_project').val();
 
             var form_data = new FormData();
@@ -1984,6 +2035,7 @@
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -2007,6 +2059,7 @@
             var id_logo = $('.id_image1_layout13').val();
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
+            var type_menu = $('.check_type_menu_layout13').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -2015,6 +2068,7 @@
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -2039,6 +2093,7 @@
             var id_logo = $('.id_vector2_layout13').val();
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
+            var type_menu = $('.check_type_menu_layout13').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -2047,6 +2102,7 @@
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -2070,6 +2126,7 @@
             var id_logo = $('.id_image2_layout13').val();
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
+            var type_menu = $('.check_type_menu_layout13').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -2078,6 +2135,7 @@
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -2102,6 +2160,7 @@
             var id_logo = $('.id_vector3_layout13').val();
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
+            var type_menu = $('.check_type_menu_layout13').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -2110,6 +2169,7 @@
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -2133,6 +2193,7 @@
             var id_logo = $('.id_image3_layout13').val();
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
+            var type_menu = $('.check_type_menu_layout13').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -2141,6 +2202,7 @@
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -2165,6 +2227,7 @@
             var id_logo = $('.id_vector4_layout13').val();
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
+            var type_menu = $('.check_type_menu_layout13').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -2173,6 +2236,7 @@
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -2196,6 +2260,7 @@
             var id_logo = $('.id_image4_layout13').val();
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
+            var type_menu = $('.check_type_menu_layout13').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -2204,6 +2269,7 @@
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -2228,7 +2294,7 @@
             var id = $('.id_project').val();
             var id_logo = $('.id_logo_layout14').val();
             var id_menu = $(this).attr('data-menu');
-
+            var type_menu = $('.check_type_menu_layout14').val();
             var slug = $('.slug_project').val();
 
             var form_data = new FormData();
@@ -2238,6 +2304,7 @@
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -2262,7 +2329,7 @@
             var id = $('.id_project').val();
             var id_logo = $('.id_logo1_layout15').val();
             var id_menu = $(this).attr('data-menu');
-
+            var type_menu = $('.check_type_menu_layout15').val();
             var slug = $('.slug_project').val();
 
             var form_data = new FormData();
@@ -2272,6 +2339,7 @@
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -2294,7 +2362,7 @@
             var id = $('.id_project').val();
             var id_logo = $('.id_logo2_layout15').val();
             var id_menu = $(this).attr('data-menu');
-
+            var type_menu = $('.check_type_menu_layout15').val();
             var slug = $('.slug_project').val();
 
             var form_data = new FormData();
@@ -2304,6 +2372,7 @@
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -2327,6 +2396,7 @@
             var id_logo = $('.id_logo3_layout15').val();
             var id_menu = $(this).attr('data-menu');
             var slug = $('.slug_project').val();
+            var type_menu = $('.check_type_menu_layout15').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -2335,6 +2405,7 @@
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -2360,6 +2431,7 @@
             var id_logo = $('.id_logo_layout16').val();
             var id_menu = $(this).attr('data-menu');
             var slug = $('.slug_project').val();
+            var type_menu = $('.check_type_menu_layout16').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -2368,6 +2440,7 @@
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -2393,6 +2466,7 @@
             var id_logo = $('.id_logo_layout17').val();
             var id_menu = $(this).attr('data-menu');
             var slug = $('.slug_project').val();
+            var type_menu = $('.check_type_menu_layout17').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -2401,6 +2475,7 @@
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -2426,6 +2501,7 @@
             var id_logo = $('.id_zip_layout18').val();
             var id_menu = $(this).attr('data-menu');
             var slug = $('.slug_project').val();
+            var type_menu = $('.check_type_menu_layout18').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -2434,6 +2510,7 @@
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -2457,6 +2534,7 @@
             var id_logo = $('.id_img1_layout18').val();
             var id_menu = $(this).attr('data-menu');
             var slug = $('.slug_project').val();
+            var type_menu = $('.check_type_menu_layout18').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -2465,6 +2543,7 @@
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -2488,6 +2567,7 @@
             var id_logo = $('.id_img2_layout18').val();
             var id_menu = $(this).attr('data-menu');
             var slug = $('.slug_project').val();
+            var type_menu = $('.check_type_menu_layout18').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -2496,6 +2576,7 @@
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -2519,6 +2600,7 @@
             var id_logo = $('.id_img3_layout18').val();
             var id_menu = $(this).attr('data-menu');
             var slug = $('.slug_project').val();
+            var type_menu = $('.check_type_menu_layout18').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -2527,6 +2609,7 @@
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',
@@ -2550,6 +2633,7 @@
             var id_logo = $('.id_img4_layout18').val();
             var id_menu = $(this).attr('data-menu');
             var slug = $('.slug_project').val();
+            var type_menu = $('.check_type_menu_layout18').val();
 
             var form_data = new FormData();
             var attachment_data = $(this)[0].files[0];
@@ -2558,6 +2642,7 @@
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
+            form_data.append("type_menu", type_menu);
 
             $.ajax({
                 type: 'POST',

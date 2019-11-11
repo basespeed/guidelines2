@@ -12,12 +12,12 @@
             <div class="item">
                 <div class="content">
                     @foreach($data_image as $data)
-                    @if($data->image_type == 1 && $data->layout_image == 11 && $data->image_order == 1)
+                    @if($data->image_type == 1 && $data->layout_image == 11 && $data->image_order == 1 && $data->$check_menu == $id_menu_check)
                     <div class="list">
                         <img src="{{url('/').'/public'.$data->image_url}}" alt="logo">
                         <h3>Logo định dạng nguyên bản</h3>
                     </div>
-                    @elseif($data->image_type == 1 && $data->layout_image == 11 && $data->image_order == 2)
+                    @elseif($data->image_type == 1 && $data->layout_image == 11 && $data->image_order == 2 && $data->$check_menu == $id_menu_check)
                     <div class="list">
                         <img src="{{url('/').'/public'.$data->image_url}}" alt="logo">
                         <h3>Logo trên nền nhận diện</h3>

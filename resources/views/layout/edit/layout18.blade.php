@@ -1,4 +1,5 @@
 <section  data-id="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" class="section section18">
+    <input type="hidden" name="check_type_menu_layout18" class="check_type_menu_layout18" value="{{$check_menu}}">
     <div class="in">
         <h2>15. <p>Phối cảnh logo</p></h2>
 
@@ -25,7 +26,7 @@
                 <div class="content">
                     <div class="insider">
                         @foreach($data_image as $data)
-                            @if($data->image_type == 1 && $data->layout_image == 18)
+                            @if($data->image_type == 1 && $data->layout_image == 18 && $data->$check_menu == $id_menu_check && !empty($data->image_url))
                                 @if($data->image_order == 1)
                                     @if(!empty($data->image_url))
                                         <div class="item">
@@ -123,6 +124,44 @@
                                     @endif
                                     <input type="hidden" class="id_img4_layout18" name="id_img4_layout18" value="{{$data->id_image}}" />
                                 @endif
+                            @else
+                                <div class="item">
+                                    <div class="in">
+                                        <button class="btn_ground_logo" type="button">
+                                            <img src="images/upto4.png" alt="icon" />
+                                            <input type="file" data-menu="{{$id_menu_check}}" name="section18_upload_background1" class="upload_background section18_upload_background1" alt="logo"/>
+                                            <i class="fa fa-times" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="in">
+                                        <button class="btn_ground_logo" type="button">
+                                            <img src="images/upto4.png" alt="icon" />
+                                            <input type="file" data-menu="{{$id_menu_check}}" name="section18_upload_background2" class="upload_background section18_upload_background2" alt="logo"/>
+                                            <i class="fa fa-times" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="in">
+                                        <button class="btn_ground_logo" type="button">
+                                            <img src="images/upto4.png" alt="icon" />
+                                            <input type="file" data-menu="{{$id_menu_check}}" name="section18_upload_background3" class="upload_background section18_upload_background3" alt="logo"/>
+                                            <i class="fa fa-times" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="in">
+                                        <button class="btn_ground_logo" type="button">
+                                            <img src="images/upto4.png" alt="icon" />
+                                            <input type="file" data-menu="{{$id_menu_check}}" name="section18_upload_background4" class="upload_background section18_upload_background4" alt="logo"/>
+                                            <i class="fa fa-times" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                @break
                             @endif
                         @endforeach
                     </div>

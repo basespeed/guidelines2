@@ -49,6 +49,7 @@ class ControllerAjaxCreate extends Controller
          * 2 - background
          * 3 - vector
          * */
+
         $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
             'layout_image' => 0,
             'image_name' => $file_name,
@@ -58,8 +59,6 @@ class ControllerAjaxCreate extends Controller
             'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
         ]);
 
-
-        return response()->json(['success'=>$id]);
     }
 
 
@@ -105,15 +104,33 @@ class ControllerAjaxCreate extends Controller
          * 3 - vector
          * 4 - zip
          * */
-        $update = DB::table('sk_image')->where('id_image', $id_back)->update([
-            'image_name' => $file_name,
-            'image_mime' => $mime_file,
-            'image_url' => $folder_image,
-            'image_menu' => $request->id_menu,
-            'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-        ]);
+        if(isset($request->type_menu)){
+            if($request->type_menu == 'image_menu'){
+                $update = DB::table('sk_image')->where('id_image', $id_back)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $id_back)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
+        }else{
+            $update = DB::table('sk_image')->where('id_image', $id_back)->update([
+                'image_name' => $file_name,
+                'image_mime' => $mime_file,
+                'image_url' => $folder_image,
+                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+            ]);
+        }
 
-        return response()->json(['success'=>$id]);
+
+        return response()->json(['success'=>$id_back]);
     }
 
     //insert new layout3
@@ -157,13 +174,31 @@ class ControllerAjaxCreate extends Controller
          * 3 - vector
          * 4 - zip
          * */
-        $update = DB::table('sk_image')->where('id_image', $request->id_back)->update([
-            'image_name' => $file_name,
-            'image_mime' => $mime_file,
-            'image_url' => $folder_image,
-            'image_menu' => $request->id_menu,
-            'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-        ]);
+
+        if(isset($request->type_menu)){
+            if($request->type_menu == 'image_menu'){
+                $update = DB::table('sk_image')->where('id_image', $request->id_back)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_back)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
+        }else{
+            $update = DB::table('sk_image')->where('id_image', $request->id_back)->update([
+                'image_name' => $file_name,
+                'image_mime' => $mime_file,
+                'image_url' => $folder_image,
+                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+            ]);
+        }
 
         return response()->json(['success'=>$id]);
     }
@@ -212,13 +247,30 @@ class ControllerAjaxCreate extends Controller
                  * 3 - vector
                  * 4 - zip
                  * */
-                 $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
-                     'image_name' => $file_name,
-                     'image_mime' => $mime_file,
-                     'image_url' => $folder_image,
-                     'image_menu_child' => $request->id_menu,
-                     'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-                 ]);
+                if(isset($request->type_menu)){
+                    if($request->type_menu == 'image_menu'){
+                        $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                            'image_name' => $file_name,
+                            'image_mime' => $mime_file,
+                            'image_url' => $folder_image,
+                            'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                        ]);
+                    }else{
+                        $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                            'image_name' => $file_name,
+                            'image_mime' => $mime_file,
+                            'image_url' => $folder_image,
+                            'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                        ]);
+                    }
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
             }
         }
 
@@ -257,13 +309,31 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_vector1)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_vector1)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_vector1)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_vector1)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
 
 
@@ -303,13 +373,31 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_zip_image1)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_zip_image1)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_zip_image1)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_zip_image1)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
 
         //img2
@@ -348,13 +436,32 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_logo2)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo2)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo2)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo2)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
+
         }
 
         //zip vector
@@ -393,13 +500,31 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_vector2)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_vector2)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_vector2)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_vector2)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
 
         //zip image
@@ -438,13 +563,30 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_image_zip2)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_image_zip2)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_image_zip2)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_image_zip2)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
 
         return response()->json(['success'=>$id]);
@@ -491,19 +633,54 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
+
         }elseif(isset($request->section5_text)){
-            $update = DB::table('sk_info')->where('id_project_info', $id)->update([
-                'layout_info' => 5,
-                'content_info' => $request->section5_text,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_info')->where('id_project_info', $id)->update([
+                        'layout_info' => 5,
+                        'content_info' => $request->section5_text,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_info')->where('id_project_info', $id)->update([
+                        'layout_info' => 5,
+                        'content_info' => $request->section5_text,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_info')->where('id_project_info', $id)->update([
+                    'layout_info' => 5,
+                    'content_info' => $request->section5_text,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
     }
 
@@ -548,13 +725,31 @@ class ControllerAjaxCreate extends Controller
          * 3 - vector
          * 4 - zip
          * */
-        $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
-            'image_name' => $file_name,
-            'image_mime' => $mime_file,
-            'image_url' => $folder_image,
-            'image_menu_child' => $request->id_menu,
-            'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-        ]);
+
+        if(isset($request->type_menu)){
+            if($request->type_menu == 'image_menu'){
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
+        }else{
+            $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                'image_name' => $file_name,
+                'image_mime' => $mime_file,
+                'image_url' => $folder_image,
+                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+            ]);
+        }
     }
 
     //insert new layout7
@@ -564,23 +759,57 @@ class ControllerAjaxCreate extends Controller
 
         /*layout7*/
         if(isset($request->section7_color1)){
-            $update = DB::table('sk_color')->where('id_color', $request->id_color1)->update([
-                'hex' => $request->section7_color1,
-                'rgb' => $request->rgb,
-                'cmyk' => $request->cmyk,
-                'color_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_color')->where('id_color', $request->id_color1)->update([
+                        'hex' => $request->section7_color1,
+                        'rgb' => $request->rgb,
+                        'cmyk' => $request->cmyk,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_color')->where('id_color', $request->id_color1)->update([
+                        'hex' => $request->section7_color1,
+                        'rgb' => $request->rgb,
+                        'cmyk' => $request->cmyk,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_color')->where('id_color', $request->id_color1)->update([
+                    'hex' => $request->section7_color1,
+                    'rgb' => $request->rgb,
+                    'cmyk' => $request->cmyk,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
 
         if(isset($request->section7_color2)){
-            $update = DB::table('sk_color')->where('id_color', $request->id_color2)->update([
-                'hex' => $request->section7_color2,
-                'rgb' => $request->rgb,
-                'cmyk' => $request->cmyk,
-                'color_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_color')->where('id_color', $request->id_color2)->update([
+                        'hex' => $request->section7_color2,
+                        'rgb' => $request->rgb,
+                        'cmyk' => $request->cmyk,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_color')->where('id_color', $request->id_color2)->update([
+                        'hex' => $request->section7_color2,
+                        'rgb' => $request->rgb,
+                        'cmyk' => $request->cmyk,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_color')->where('id_color', $request->id_color2)->update([
+                    'hex' => $request->section7_color2,
+                    'rgb' => $request->rgb,
+                    'cmyk' => $request->cmyk,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
     }
 
@@ -593,39 +822,108 @@ class ControllerAjaxCreate extends Controller
 
         /*layout8*/
         if(isset($request->section8_ga1)){
-            $update = DB::table('sk_color')->where('id_color',$id_color1)->update([
-                'hex' => $request->section8_ga1,
-                'rgb' => $request->rgb,
-                'cmyk' => $request->cmyk,
-                'color_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_color')->where('id_color',$id_color1)->update([
+                        'hex' => $request->section8_ga1,
+                        'rgb' => $request->rgb,
+                        'cmyk' => $request->cmyk,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_color')->where('id_color',$id_color1)->update([
+                        'hex' => $request->section8_ga1,
+                        'rgb' => $request->rgb,
+                        'cmyk' => $request->cmyk,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_color')->where('id_color',$id_color1)->update([
+                    'hex' => $request->section8_ga1,
+                    'rgb' => $request->rgb,
+                    'cmyk' => $request->cmyk,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }elseif(isset($request->section8_ga2)){
-            $update = DB::table('sk_color')->where('id_color',$id_color1)->update([
-                'hex2' => $request->section8_ga2,
-                'rgb2' => $request->rgb,
-                'cmyk2' => $request->cmyk,
-                'color_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_color')->where('id_color',$id_color1)->update([
+                        'hex2' => $request->section8_ga2,
+                        'rgb2' => $request->rgb,
+                        'cmyk2' => $request->cmyk,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_color')->where('id_color',$id_color1)->update([
+                        'hex2' => $request->section8_ga2,
+                        'rgb2' => $request->rgb,
+                        'cmyk2' => $request->cmyk,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_color')->where('id_color',$id_color1)->update([
+                    'hex2' => $request->section8_ga2,
+                    'rgb2' => $request->rgb,
+                    'cmyk2' => $request->cmyk,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
 
         if(isset($request->section8_ga3)){
-            $update = DB::table('sk_color')->where('id_color',$id_color2)->update([
-                'hex' => $request->section8_ga3,
-                'rgb' => $request->rgb,
-                'cmyk' => $request->cmyk,
-                'color_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_color')->where('id_color',$id_color2)->update([
+                        'hex' => $request->section8_ga3,
+                        'rgb' => $request->rgb,
+                        'cmyk' => $request->cmyk,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_color')->where('id_color',$id_color2)->update([
+                        'hex' => $request->section8_ga3,
+                        'rgb' => $request->rgb,
+                        'cmyk' => $request->cmyk,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_color')->where('id_color',$id_color2)->update([
+                    'hex' => $request->section8_ga3,
+                    'rgb' => $request->rgb,
+                    'cmyk' => $request->cmyk,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
+
         }elseif(isset($request->section8_ga4)){
-            $update = DB::table('sk_color')->where('id_color',$id_color2)->update([
-                'hex2' => $request->section8_ga4,
-                'rgb2' => $request->rgb,
-                'cmyk2' => $request->cmyk,
-                'color_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_color')->where('id_color',$id_color2)->update([
+                        'hex2' => $request->section8_ga4,
+                        'rgb2' => $request->rgb,
+                        'cmyk2' => $request->cmyk,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_color')->where('id_color',$id_color2)->update([
+                        'hex2' => $request->section8_ga4,
+                        'rgb2' => $request->rgb,
+                        'cmyk2' => $request->cmyk,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_color')->where('id_color',$id_color2)->update([
+                    'hex2' => $request->section8_ga4,
+                    'rgb2' => $request->rgb,
+                    'cmyk2' => $request->cmyk,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
 
         return response()->json(['success'=>$id_color1.'-'.$id_color2]);
@@ -672,11 +970,24 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_font')->where('id_font',$request->id_font)->update([
-                'font' => $folder_image,
-                'font_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_font')->where('id_font',$request->id_font)->update([
+                        'font' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_font')->where('id_font',$request->id_font)->update([
+                        'font' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_font')->where('id_font',$request->id_font)->update([
+                    'font' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
 
         if ($request->hasFile('section9_upload_font_bt')) {
@@ -714,11 +1025,25 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_font')->where('id_font',$request->id_font)->update([
-                'font' => $folder_image,
-                'font_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_font')->where('id_font',$request->id_font)->update([
+                        'font' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_font')->where('id_font',$request->id_font)->update([
+                        'font' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_font')->where('id_font',$request->id_font)->update([
+                    'font' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
 
         if ($request->hasFile('section9_upload_font_vb')) {
@@ -756,11 +1081,25 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_font')->where('id_font',$request->id_font)->update([
-                'font' => $folder_image,
-                'font_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_font')->where('id_font',$request->id_font)->update([
+                        'font' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_font')->where('id_font',$request->id_font)->update([
+                        'font' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_font')->where('id_font',$request->id_font)->update([
+                    'font' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
     }
 
@@ -805,13 +1144,31 @@ class ControllerAjaxCreate extends Controller
          * 3 - vector
          * 4 - zip
          * */
-        $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
-            'image_name' => $file_name,
-            'image_mime' => $mime_file,
-            'image_url' => $folder_image,
-            'image_menu_child' => $request->id_menu,
-            'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-        ]);
+
+        if(isset($request->type_menu)){
+            if($request->type_menu == 'image_menu'){
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
+        }else{
+            $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                'image_name' => $file_name,
+                'image_mime' => $mime_file,
+                'image_url' => $folder_image,
+                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+            ]);
+        }
     }
 
     //insert new layout11
@@ -856,13 +1213,32 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
+
         }elseif(isset($request->section11_upload_background22)){
             $file = $request->section11_upload_background22;
             //name file
@@ -898,13 +1274,31 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
 
     }
@@ -951,13 +1345,32 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
+
         }elseif(isset($request->section12_upload_background22)){
             $file = $request->section12_upload_background22;
             //name file
@@ -993,13 +1406,31 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
 
     }
@@ -1046,13 +1477,32 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
+
         }elseif(isset($request->section13_upload_img)){
             $file = $request->section13_upload_img;
             //name file
@@ -1088,13 +1538,32 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
+
         }
 
         if(isset($request->section13_upload_vector2)){
@@ -1132,13 +1601,32 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
+
         }elseif(isset($request->section13_upload_img2)){
             $file = $request->section13_upload_img2;
             //name file
@@ -1174,13 +1662,31 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
 
         if(isset($request->section13_upload_vector3)){
@@ -1218,13 +1724,32 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
+
         }elseif(isset($request->section13_upload_img3)){
             $file = $request->section13_upload_img3;
             //name file
@@ -1260,13 +1785,30 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
 
         if(isset($request->section13_upload_vector4)){
@@ -1304,13 +1846,30 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }elseif(isset($request->section13_upload_img4)){
             $file = $request->section13_upload_img4;
             //name file
@@ -1346,13 +1905,30 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
     }
 
@@ -1397,13 +1973,30 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
     }
 
@@ -1448,13 +2041,30 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
 
         if (isset($request->section15_upload_background2)) {
@@ -1492,13 +2102,30 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
 
         if (isset($request->section15_upload_background3)) {
@@ -1536,13 +2163,30 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
     }
 
@@ -1587,13 +2231,30 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
     }
 
@@ -1638,13 +2299,30 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
     }
 
@@ -1689,13 +2367,30 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_zip' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
 
         if (isset($request->section18_upload_background1)) {
@@ -1733,13 +2428,30 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
 
         if (isset($request->section18_upload_background2)) {
@@ -1777,13 +2489,30 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
 
         if (isset($request->section18_upload_background3)) {
@@ -1821,13 +2550,30 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
 
         if (isset($request->section18_upload_background4)) {
@@ -1865,13 +2611,30 @@ class ControllerAjaxCreate extends Controller
              * 3 - vector
              * 4 - zip
              * */
-            $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
-                'image_name' => $file_name,
-                'image_mime' => $mime_file,
-                'image_url' => $folder_image,
-                'image_menu_child' => $request->id_menu,
-                'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            ]);
+            if(isset($request->type_menu)){
+                if($request->type_menu == 'image_menu'){
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }else{
+                    $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                        'image_name' => $file_name,
+                        'image_mime' => $mime_file,
+                        'image_url' => $folder_image,
+                        'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]);
+                }
+            }else{
+                $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
+                    'image_name' => $file_name,
+                    'image_mime' => $mime_file,
+                    'image_url' => $folder_image,
+                    'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                ]);
+            }
         }
     }
 }

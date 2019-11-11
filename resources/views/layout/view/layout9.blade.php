@@ -10,7 +10,7 @@
                     <p>Mọi sản phẩm truyền thông thương hiệu của AGRISECO đều bắt buộc phải sử dụng font chữ đã quy định để đảm bảo tính nhận diện cùng với tính đồng bộ nhất quán của thương hiệu.</p>
                     <div class="btn">
                         @foreach($data_font as $key => $font)
-                        @if($font->layout_font == 9)
+                        @if($font->layout_font == 9 && $font->font_menu == $id_menu_check || $font->layout_font == 9 && $font->font_menu_child == $id_menu_check)
                         @if($key == 0)
                         @php
                         $url = url('/').'/public'.$font->font;
@@ -34,34 +34,34 @@
             </div>
             <div class="item">
                 @foreach($data_font as $key => $font)
-                @if($font->layout_font == 9)
-                @if($key == 0)
-                @php
-                $url1 = url('/').'/public'.$font->font;
-                @endphp
-                @elseif($key == 1)
-                @php
-                $url2 = url('/').'/public'.$font->font;
-                @endphp
-                @elseif($key == 2)
-                @php
-                $url3 = url('/').'/public'.$font->font;
-                @endphp
-                @endif
-                @endif
+                    @if($font->layout_font == 9 && $font->font_menu == $id_menu_check || $font->layout_font == 9 && $font->font_menu_child == $id_menu_check)
+                        @if($key == 0)
+                            @php
+                            $url1 = url('/').'/public'.$font->font;
+                            @endphp
+                        @elseif($key == 1)
+                            @php
+                            $url2 = url('/').'/public'.$font->font;
+                            @endphp
+                            @elseif($key == 2)
+                            @php
+                            $url3 = url('/').'/public'.$font->font;
+                            @endphp
+                        @endif
+                    @endif
                 @endforeach
                 <style>
                     @font-face {
                         font-family: myfont;
-                        src: url({{$url1}});
+                        src: url( <?php if(isset($url1)){echo $url1;} ?>);
                     }
                     @font-face {
                         font-family: myfont2;
-                        src: url({{$url2}});
+                        src: url(<?php if(isset($url2)){echo $url2;} ?>);
                     }
                     @font-face {
                         font-family: myfont3;
-                        src: url({{$url3}});
+                        src: url(<?php if(isset($url3)){echo $url3;} ?>);
                     }
                 </style>
                 <div class="content">

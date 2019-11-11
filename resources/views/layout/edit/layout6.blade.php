@@ -10,24 +10,34 @@
             </div>
             <div class="item">
                 @foreach($data_image as $data)
-                    @if($data->image_type == 1 && $data->layout_image == 6)
+                    @if($data->image_type == 1 && $data->layout_image == 6 && $data->$check_menu == $id_menu_check)
                         @if(!empty($data->image_url))
-                            <button class="btn_ground_size border-hide" type="button">
-                                <img src="{{url('/').'/public'.$data->image_url}}" alt="icon" />
-                                <input type="file" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section6_upload_background2" class="upload_background section6_upload_background2"/>
-                                <i class="fa fa-times" aria-hidden="true"></i>
-                            </button>
-                        @else
-                            <button class="btn_ground_size" type="button">
-                                <img src="images/upto4.png" alt="icon" />
-                                <input type="file" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section6_upload_background2" class="upload_background section6_upload_background2"/>
-                                <i class="fa fa-times" aria-hidden="true"></i>
-                            </button>
+                            @php
+                                $url = $data->image_url;
+                            @endphp
                         @endif
-                        <input type="hidden" name="id_logo_layout6" class="id_logo_layout6" value="{{$data->id_image}}">
+                    @endif
+                    @if($data->image_type == 1 && $data->layout_image == 6)
+                        @php
+                            $id_image = $data->id_image;
+                        @endphp
                     @endif
                 @endforeach
-
+                @if(isset($url))
+                    <button class="btn_ground_size border-hide" type="button">
+                        <img src="{{url('/').'/public'.$url}}" alt="icon" />
+                        <input type="file" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section6_upload_background2" class="upload_background section6_upload_background2"/>
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </button>
+                @else
+                    <button class="btn_ground_size" type="button">
+                        <img src="images/upto4.png" alt="icon" />
+                        <input type="file" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section6_upload_background2" class="upload_background section6_upload_background2"/>
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </button>
+                @endif
+                    <input type="hidden" name="id_logo_layout6" class="id_logo_layout6" value="{{$id_image}}">
+                    <input type="hidden" name="check_type_menu_layout6" class="check_type_menu_layout6" value="{{$check_menu}}">
             </div>
         </div>
     </div>
