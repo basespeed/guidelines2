@@ -12,7 +12,7 @@
             <div class="item">
                 <div class="insider">
                     <h3>Kiểm duyệt</h3>
-                    <p>Tất cả các ứng dụng truyền thông của GS GROUP trước khi được xuất bản và sử dụng cần phải được thông qua bởi Ban quản lý thương hiệu. Điều này là bắt buộc và là trách nhiệm của bạn để có được sự chấp thuận về mặt pháp lý. Ban quản lý thương hiệu GS GROUP sẽ hỗ trợ bạn trong quá trình thực hiện. Mọi yêu cầu chỉnh sửa đều cần được thông qua sự giám sát của Ban quản lý thương hiệu.</p>
+                    <p>Tất cả các ứng dụng truyền thông của {{$name_project}} trước khi được xuất bản và sử dụng cần phải được thông qua bởi Ban quản lý thương hiệu. Điều này là bắt buộc và là trách nhiệm của bạn để có được sự chấp thuận về mặt pháp lý. Ban quản lý thương hiệu {{$name_project}} sẽ hỗ trợ bạn trong quá trình thực hiện. Mọi yêu cầu chỉnh sửa đều cần được thông qua sự giám sát của Ban quản lý thương hiệu.</p>
                 </div>
             </div>
             <div class="item">

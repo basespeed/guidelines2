@@ -15,6 +15,7 @@
 Route::get('/','controllerBase@getBase');
 
 Route::get('/getclear','controllerBase@getclear');
+Route::get('/pdf','controllerBase@getpdf');
 
 Route::group(['namespace'=>'admin'],function(){
     //login
@@ -108,11 +109,13 @@ Route::group(['namespace'=>'ajax\create'],function (){
         Route::post('/getLayout17','ControllerAjaxCreate@getLayout17')->name('getLayout17');
         Route::post('/getLayout18','ControllerAjaxCreate@getLayout18')->name('getLayout18');
    });
-   Route::group(['namespace' => 'ajax\del'], function (){
-      Route::group(['prefix'=>'ajax/del'],function (){
-          Route::post('/delLogo','ControllerAjaxDel@getLogo')->name('delLogo');
-      });
-   });
+});
+
+Route::group(['namespace' => 'ajax\del'], function (){
+    Route::group(['prefix'=>'ajax/del'],function (){
+        Route::post('/delMenuLayout','ControllerAjaxDel@delMenuLayout')->name('delMenuLayout');
+        Route::post('/dellogo','ControllerAjaxDel@dellogo')->name('dellogo');
+    });
 });
 
 Route::any('/{page?}',function(){

@@ -28,6 +28,11 @@
             }
         });
 
+        $('.edit_guide .list_slt .item').on('click', function () {
+            var val = $(this).attr('data-id');
+           $('.get_menu').val(val);
+        });
+
         function toHexRgb(color) {
             var rgb = color.getRGB();
             return "#" + Math.floor(rgb.r * 255.0).toString(16) + Math.floor(rgb.g * 255.0).toString(16) + Math.floor(rgb.b * 255.0).toString(16);
@@ -102,7 +107,7 @@
                 //Layout7
                 /*color1*/
                 var section7_color1 = $('.section7_color1').val();
-                var id_color1 = $('.id_color1_layout7').val();
+                var id_color1 = $(this).attr('data-id');
                 var id_menu = $(this).attr('data-menu');
                 var type_menu = $('.check_type_menu_layout7').val();
 
@@ -126,6 +131,7 @@
                     form_data.append("id_color1", id_color1);
                     form_data.append("id_menu", id_menu);
                     form_data.append("type_menu", type_menu);
+                    form_data.append("baseUrl", baseUrl);
 
                     $.ajax({
                         type: 'POST',
@@ -135,7 +141,7 @@
                         headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                         data: form_data,
                         success: function (data) {
-                            console.log(data.success);
+                            
                         }
                     });
                 },100);
@@ -209,7 +215,7 @@
 
                 //layout7
                 var section7_color2 = $('.section7_color2').val();
-                var id_color2 = $('.id_color2_layout7').val();
+                var id_color2 = $(this).attr('data-id');
                 var id_menu = $(this).attr('data-menu');
                 var type_menu = $('.check_type_menu_layout7').val();
 
@@ -235,6 +241,7 @@
                     form_data.append("id_color2", id_color2);
                     form_data.append("id_menu", id_menu);
                     form_data.append("type_menu", type_menu);
+                    form_data.append("baseUrl", baseUrl);
 
                     $.ajax({
                         type: 'POST',
@@ -244,7 +251,7 @@
                         headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                         data: form_data,
                         success: function (data) {
-                            console.log(data.success);
+                            
                         }
                     });
                 },100);
@@ -312,7 +319,7 @@
 
                 /*layout8*/
                 var section8_ga1 = $('.section8_ga1').val();
-                var id_color1 = $('.insert_color1').val();
+                var id_color1 = $(this).attr('data-id');
                 var id_menu = $(this).attr('data-menu');
                 var type_menu = $('.check_type_menu_layout8').val();
 
@@ -337,6 +344,7 @@
                     form_data.append("id_color1", id_color1);
                     form_data.append("id_menu", id_menu);
                     form_data.append("type_menu", type_menu);
+                    form_data.append("baseUrl", baseUrl);
 
                     $.ajax({
                         type: 'POST',
@@ -346,7 +354,7 @@
                         headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                         data: form_data,
                         success: function (data) {
-                            console.log(data.success);
+                            
                         }
                     });
                 },100);
@@ -414,7 +422,7 @@
 
                 //Layout8
                 var section8_ga2 = $('.ga2').val();
-                var id_color1 = $('.insert_color1').val();
+                var id_color1 = $(this).attr('data-id');
                 var id_menu = $(this).attr('data-menu');
                 var type_menu = $('.check_type_menu_layout8').val();
 
@@ -439,6 +447,7 @@
                     form_data.append("id_color1", id_color1);
                     form_data.append("id_menu", id_menu);
                     form_data.append("type_menu", type_menu);
+                    form_data.append("baseUrl", baseUrl);
 
                     $.ajax({
                         type: 'POST',
@@ -448,7 +457,7 @@
                         headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                         data: form_data,
                         success: function (data) {
-                            console.log(data.success);
+                            
                         }
                     });
                 },100);
@@ -516,7 +525,7 @@
 
                 //Layout8
                 var section8_ga3 = $('.ga3').val();
-                var id_color2 = $('.insert_color2').val();
+                var id_color2 = $(this).attr('data-id');
                 var id_menu = $(this).attr('data-menu');
                 var type_menu = $('.check_type_menu_layout8').val();
 
@@ -541,6 +550,7 @@
                     form_data.append("id_color2", id_color2);
                     form_data.append("id_menu", id_menu);
                     form_data.append("type_menu", type_menu);
+                    form_data.append("baseUrl", baseUrl);
 
                     $.ajax({
                         type: 'POST',
@@ -550,7 +560,7 @@
                         headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                         data: form_data,
                         success: function (data) {
-                            console.log(data.success);
+                            
                         }
                     });
                 },100);
@@ -618,7 +628,7 @@
 
                 //Layout8
                 var section8_ga4 = $('.ga4').val();
-                var id_color2 = $('.insert_color2').val();
+                var id_color2 = $(this).attr('data-id');
                 var id_menu = $(this).attr('data-menu');
                 var type_menu = $('.check_type_menu_layout8').val();
 
@@ -644,6 +654,7 @@
                     form_data.append("id_color2", id_color2);
                     form_data.append("id_menu", id_menu);
                     form_data.append("type_menu", type_menu);
+                    form_data.append("baseUrl", baseUrl);
 
                     $.ajax({
                         type: 'POST',
@@ -653,7 +664,7 @@
                         headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                         data: form_data,
                         success: function (data) {
-                            console.log(data.success);
+                            
                         }
                     });
                 },100);
@@ -855,14 +866,11 @@
 
     function scroll_menu_active() {
         var myFullpage = new fullpage('#fullpage', {
-            anchors: ['sec1', 'sec2', 'sec3', 'sec4', 'sec5', 'sec6', 'sec7', 'sec8', 'sec9', 'sec10', 'sec11', 'sec12', 'sec13', 'sec14', 'sec15', 'sec16', 'sec17', 'sec18', 'sec19', 'sec20'],
+            anchors: ['sec1', 'sec2', 'sec3', 'sec4', 'sec5', 'sec6', 'sec7', 'sec8', 'sec9', 'sec10', 'sec11', 'sec12', 'sec13', 'sec14', 'sec15', 'sec16', 'sec17', 'sec18', 'sec19', 'sec20','sec21', 'sec22', 'sec23', 'sec24', 'sec25', 'sec26', 'sec27', 'sec28', 'sec29', 'sec30', 'sec31', 'sec32', 'sec33', 'sec34', 'sec35', 'sec36', 'sec37', 'sec38', 'sec39', 'sec40', 'sec41', 'sec42', 'sec43', 'sec44', 'sec45', 'sec46', 'sec47', 'sec48', 'sec49', 'sec50'],
             menu: '#menu',
             loopTop: true,
             loopBottom: true,
             afterLoad: function(origin, destination, direction){
-                let check = 'true';
-
-
                 $('.sidebar ul li').filter(function () {
                     if($(this).find('ul li').hasClass('active')){
                         $(this).addClass('active');
@@ -882,7 +890,7 @@
             $('.close_logo_admin').addClass('show');
         });
 
-        $('.close_logo_admin').on('click',function () {
+        $(document).on('click','.close_logo_admin',function () {
             $('.menu_admin .logo img').attr('src','images/upload4.png');
             $(this).removeClass('show');
         });
@@ -890,7 +898,7 @@
         $('.fullpage_admin section.section1 .upload_background').on('change',function (event) {
             let tmppath2 = URL.createObjectURL(event.target.files[0]);
             let filename = event.target.files[0].name;
-            $('.fullpage_admin section.section1').css('background','url('+tmppath2+') no-repeat');
+            $(this).parent().parent().parent().css('background','url('+tmppath2+') no-repeat');
             $('.fullpage_admin section.section1 button span').text(filename);
         });
 
@@ -1178,8 +1186,11 @@
     function create_menu_layout() {
         $('.create_guide_new').on('click', function () {
             let menu_name = $('.get_name_menu').val();
+            let menu_id = $('.get_menu').val();
             let id = parseInt($('.menu_admin ul.nav li ul li:last-child').attr('data-id'));
             let id_add = id + 1;
+            let move_layout = $('.sidebar ul li:last-child').attr('data-menuanchor');
+            move_layout = parseInt(move_layout);
             if(menu_name !==""){
                 $('.new_guide').removeClass('active');
                 $('.slt_layout').addClass('active');
@@ -1191,7 +1202,9 @@
 
                 $('.get_id_menu_parent').val($('.sidebar ul li:nth-child(3)').attr('data-id'));
 
-                $('.sidebar ul li ul').append('<li data-id="'+id_add+'" data-menuanchor="sec'+id_add+'"><a href="'+$('.menu_admin ul.nav').attr('data-url')+'">'+menu_name+'</a></li>');
+                $('.move_layout').val(move_layout+1);
+
+                /*$('.sidebar ul li ul').append('<li data-id="'+id_add+'" data-menuanchor="sec'+id_add+'"><a href="'+$('.menu_admin ul.nav').attr('data-url')+'">'+menu_name+'</a></li>');*/
             }else{
                 $('.alert-danger').text('Vui lòng nhập tên menu !');
             }
@@ -1234,7 +1247,7 @@
                 data:{'length':length},
                 success:function(data){
                     let length_success = data.success.length;
-                    console.log(data.success);
+                    
                     if(length_success > 0){
                         var html;
                         $.each(data.success, (index, item) => {
@@ -1318,7 +1331,7 @@
 
     function ajaxCreateGuideline() {
         //logo
-        $('.menu_admin .logo .upload_logo').on('change',function () {
+        $(document).on('change','.menu_admin .logo .upload_logo',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
@@ -1327,7 +1340,7 @@
             var id = $('.id_project').val();
             var slug = $('.slug_project').val();
 
-            var id_logo = $('.id_logo').val();
+            var id_logo = $(this).attr('data-id');
 
             var form_data = new FormData();
             var attachment_data= $(this)[0].files[0];
@@ -1335,6 +1348,7 @@
             form_data.append("id", id);
             form_data.append("slug", slug);
             form_data.append("id_logo", id_logo);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type:'POST',
@@ -1344,22 +1358,23 @@
                 headers: { "X-CSRF-Token": $("meta[name='csrf-token']").attr("content") },
                 data:form_data,
                 success:function(data){
-                    console.log(data.success);
+
                 }
             });
         });
 
         //Layout1
-        $('.section1_upload_background').on('change',function () {
+        $(document).on('change','.section1_upload_background',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout1';
 
             var id = $('.id_project').val();
-            var id_back = $('.id_background_layout1').val();
+            var id_back = $(this).attr('data-id');
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
+
             var type_menu = $('.check_type_menu_layout1').val();
 
             var form_data = new FormData();
@@ -1370,6 +1385,7 @@
             form_data.append("id_back", id_back);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -1379,7 +1395,7 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
@@ -1393,7 +1409,7 @@
             var id_menu = $(this).attr('data-menu');
 
             var id = $('.id_project').val();
-            var id_back = $('.id_background_layout3').val();
+            var id_back = $(this).attr('data-id');
             var slug = $('.slug_project').val();
             var type_menu = $('.check_type_menu_layout3').val();
 
@@ -1405,6 +1421,7 @@
             form_data.append("id_back", id_back);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -1414,14 +1431,14 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
 
         //Layout4
         /*logo1*/
-        $('.section4_upload_background1').on('change',function () {
+        $(document).on('change','.section4_upload_background1',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
@@ -1429,7 +1446,7 @@
             var id_menu = $(this).attr('data-menu');
 
             var id = $('.id_project').val();
-            var id_logo = $('.id_logo1_layout4').val();
+            var id_logo = $(this).attr('data-id');
             var slug = $('.slug_project').val();
             var type_menu = $('.check_type_menu_layout4').val();
 
@@ -1441,6 +1458,7 @@
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -1450,19 +1468,19 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
         /*vector1*/
-        $('.section4_file_vector1').on('change',function () {
+        $(document).on('change','.section4_file_vector1',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout4';
 
             var id = $('.id_project').val();
-            var id_vector1 = $('.id_vector1_layout4').val();
+            var id_vector1 = $(this).attr('data-id');
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
             var type_menu = $('.check_type_menu_layout4').val();
@@ -1475,6 +1493,7 @@
             form_data.append("id_vector1", id_vector1);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -1484,19 +1503,19 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
         /*image zip1*/
-        $('.section4_file_img1').on('change',function () {
+        $(document).on('change','.section4_file_img1',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout4';
 
             var id = $('.id_project').val();
-            var id_zip_image1 = $('.id_zip_img1').val();
+            var id_zip_image1 = $(this).attr('data-id');
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
             var type_menu = $('.check_type_menu_layout4').val();
@@ -1509,6 +1528,7 @@
             form_data.append("id_zip_image1", id_zip_image1);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -1518,19 +1538,19 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
         /*image2*/
-        $('.section4_upload_background2').on('change',function () {
+        $(document).on('change','.section4_upload_background2',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout4';
 
             var id = $('.id_project').val();
-            var id_logo2 = $('.id_logo2_layout4').val();
+            var id_logo2 = $(this).attr('data-id');
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
             var type_menu = $('.check_type_menu_layout4').val();
@@ -1543,6 +1563,7 @@
             form_data.append("id_logo2", id_logo2);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -1552,19 +1573,19 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
         /*vector2*/
-        $('.section4_file_vector2').on('change',function () {
+        $(document).on('change','.section4_file_vector2',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout4';
 
             var id = $('.id_project').val();
-            var id_vector2 = $('.id_vector2_layout4').val();
+            var id_vector2 = $(this).attr('data-id');
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
             var type_menu = $('.check_type_menu_layout4').val();
@@ -1577,6 +1598,7 @@
             form_data.append("id_vector2", id_vector2);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -1586,19 +1608,19 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
         /*image zip2*/
-        $('.section4_file_img2').on('change',function () {
+        $(document).on('change','.section4_file_img2',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout4';
 
             var id = $('.id_project').val();
-            var id_image_zip2 = $('.id_zip_img2_layout4').val();
+            var id_image_zip2 = $(this).attr('data-id');
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
             var type_menu = $('.check_type_menu_layout4').val();
@@ -1611,6 +1633,7 @@
             form_data.append("id_image_zip2", id_image_zip2);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -1620,21 +1643,21 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
 
 
         //Layout5
-        $('.section5_upload_background2').on('change',function () {
+        $(document).on('change','.section5_upload_background2',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout5';
 
             var id = $('.id_project').val();
-            var id_logo = $('.id_logo_layout5').val();
+            var id_logo = $(this).attr('data-id');
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
             var type_menu = $('.check_type_menu_layout5').val();
@@ -1647,6 +1670,7 @@
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -1656,7 +1680,7 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
@@ -1667,6 +1691,7 @@
             var url = baseUrl + '/ajax/create/getLayout5';
 
             var id = $('.id_project').val();
+            var id_txt = $(this).attr('data-id');
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
             var type_menu = $('.check_type_menu_layout5').val();
@@ -1677,6 +1702,8 @@
             form_data.append("slug", slug);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("id_txt", id_txt);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -1686,20 +1713,20 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
 
         //Layout6
-        $('.section6_upload_background2').on('change',function () {
+        $(document).on('change','.section6_upload_background2',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout6';
 
             var id = $('.id_project').val();
-            var id_logo = $('.id_logo_layout6').val();
+            var id_logo = $(this).attr('data-id');
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
             var type_menu = $('.check_type_menu_layout6').val();
@@ -1712,6 +1739,7 @@
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -1721,14 +1749,14 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
 
 
         //Layout9
-        $('.section9_upload_font_th').on('change',function (event) {
+        $(document).on('change','.section9_upload_font_th',function (event) {
             var file_data = $(this).prop('files')[0];
             var tmppath = URL.createObjectURL(event.target.files[0]);
             var getUrl = window.location;
@@ -1736,7 +1764,7 @@
             var url = baseUrl + '/ajax/create/getLayout9';
 
             var id = $('.id_project').val();
-            var id_font = $('.id_font1_layout9').val();
+            var id_font = $(this).attr('data-id');
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
             var type_menu = $('.check_type_menu_layout9').val();
@@ -1749,6 +1777,7 @@
             form_data.append("id_font", id_font);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $("#font_face").html('<style type="text/css">@font-face{font-family: myfont_change1;src: url('+tmppath+');}</style>');
             $('.section9 .item .content .list1 p').css('font-family','myfont_change1');
@@ -1761,12 +1790,12 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
 
-        $('.section9_upload_font_bt').on('change',function (event) {
+        $(document).on('change','.section9_upload_font_bt',function (event) {
             var file_data = $(this).prop('files')[0];
             var tmppath = URL.createObjectURL(event.target.files[0]);
             var getUrl = window.location;
@@ -1774,7 +1803,7 @@
             var url = baseUrl + '/ajax/create/getLayout9';
 
             var id = $('.id_project').val();
-            var id_font = $('.id_font2_layout9').val();
+            var id_font = $(this).attr('data-id');
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
             var type_menu = $('.check_type_menu_layout9').val();
@@ -1787,6 +1816,7 @@
             form_data.append("id_font", id_font);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $("#font_face2").html('<style type="text/css">@font-face{font-family: myfont_change2;src: url('+tmppath+');}</style>');
             $('.section9 .item .content .list2 p').css('font-family','myfont_change2');
@@ -1799,12 +1829,12 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
 
-        $('.section9_upload_font_vb').on('change',function (event) {
+        $(document).on('change','.section9_upload_font_vb',function (event) {
             var file_data = $(this).prop('files')[0];
             var tmppath = URL.createObjectURL(event.target.files[0]);
             var getUrl = window.location;
@@ -1812,7 +1842,7 @@
             var url = baseUrl + '/ajax/create/getLayout9';
 
             var id = $('.id_project').val();
-            var id_font = $('.id_font3_layout9').val();
+            var id_font = $(this).attr('data-id');
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
             var type_menu = $('.check_type_menu_layout9').val();
@@ -1825,6 +1855,7 @@
             form_data.append("id_font", id_font);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $("#font_face3").html('<style type="text/css">@font-face{font-family: myfont_change3;src: url('+tmppath+');}</style>');
             $('.section9 .item .content .list3 p').css('font-family','myfont_change3');
@@ -1837,20 +1868,20 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
 
         //layout10
-        $('.section10_upload_background2').on('change',function () {
+        $(document).on('change','.section10_upload_background2',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout10';
 
             var id = $('.id_project').val();
-            var id_logo = $('.id_logo_layout10').val();
+            var id_logo = $(this).attr('data-id');
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
             var type_menu = $('.check_type_menu_layout10').val();
@@ -1863,7 +1894,7 @@
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
-
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -1873,20 +1904,20 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
 
         //layout11
-        $('.section11_upload_background2').on('change',function () {
+        $(document).on('change','.section11_upload_background2',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout11';
 
             var id = $('.id_project').val();
-            var id_logo = $('.id_logo1_layout11').val();
+            var id_logo = $(this).attr('data-id');
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
             var type_menu = $('.check_type_menu_layout11').val();
@@ -1899,6 +1930,7 @@
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -1908,18 +1940,18 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
-        $('.section11_upload_background22').on('change',function () {
+        $(document).on('change','.section11_upload_background22',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout11';
 
             var id = $('.id_project').val();
-            var id_logo = $('.id_logo2_layout11').val();
+            var id_logo = $(this).attr('data-id');
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
             var type_menu = $('.check_type_menu_layout11').val();
@@ -1932,6 +1964,7 @@
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -1941,20 +1974,20 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
 
         //layout12
-        $('.section12_upload_background2').on('change',function () {
+        $(document).on('change','.section12_upload_background2',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout12';
 
             var id = $('.id_project').val();
-            var id_logo = $('.id_logo1_layout12').val();
+            var id_logo = $(this).attr('data-id');
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
             var type_menu = $('.check_type_menu_layout12').val();
@@ -1967,6 +2000,7 @@
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -1976,18 +2010,18 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
-        $('.section12_upload_background22').on('change',function () {
+        $(document).on('change','.section12_upload_background22',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout12';
 
             var id = $('.id_project').val();
-            var id_logo = $('.id_logo2_layout12').val();
+            var id_logo = $(this).attr('data-id');
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
             var type_menu = $('.check_type_menu_layout12').val();
@@ -2000,6 +2034,7 @@
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -2009,21 +2044,21 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
 
         //layout13
         /*l1*/
-        $('.section13_upload_vector').on('change',function () {
+        $(document).on('change','.section13_upload_vector',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout13';
 
             var id = $('.id_project').val();
-            var id_logo = $('.id_vector1_layout13').val();
+            var id_logo = $(this).attr('data-id');
             var id_menu = $(this).attr('data-menu');
             var type_menu = $('.check_type_menu_layout13').val();
             var slug = $('.slug_project').val();
@@ -2036,6 +2071,7 @@
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -2045,18 +2081,18 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
-        $('.section13_upload_img').on('change',function () {
+        $(document).on('change','.section13_upload_img',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout13';
 
             var id = $('.id_project').val();
-            var id_logo = $('.id_image1_layout13').val();
+            var id_logo = $(this).attr('data-id');
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
             var type_menu = $('.check_type_menu_layout13').val();
@@ -2069,6 +2105,7 @@
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -2078,19 +2115,19 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
         /*l2*/
-        $('.section13_upload_vector2').on('change',function () {
+        $(document).on('change','.section13_upload_vector2',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout13';
 
             var id = $('.id_project').val();
-            var id_logo = $('.id_vector2_layout13').val();
+            var id_logo = $(this).attr('data-id');
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
             var type_menu = $('.check_type_menu_layout13').val();
@@ -2103,6 +2140,7 @@
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -2112,18 +2150,18 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
-        $('.section13_upload_img2').on('change',function () {
+        $(document).on('change','.section13_upload_img2',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout13';
 
             var id = $('.id_project').val();
-            var id_logo = $('.id_image2_layout13').val();
+            var id_logo = $(this).attr('data-id');
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
             var type_menu = $('.check_type_menu_layout13').val();
@@ -2136,6 +2174,7 @@
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -2145,19 +2184,19 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
         /*l3*/
-        $('.section13_upload_vector3').on('change',function () {
+        $(document).on('change','.section13_upload_vector3',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout13';
 
             var id = $('.id_project').val();
-            var id_logo = $('.id_vector3_layout13').val();
+            var id_logo = $(this).attr('data-id');
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
             var type_menu = $('.check_type_menu_layout13').val();
@@ -2170,6 +2209,7 @@
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -2179,18 +2219,18 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
-        $('.section13_upload_img3').on('change',function () {
+        $(document).on('change','.section13_upload_img3',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout13';
 
             var id = $('.id_project').val();
-            var id_logo = $('.id_image3_layout13').val();
+            var id_logo = $(this).attr('data-id');
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
             var type_menu = $('.check_type_menu_layout13').val();
@@ -2203,6 +2243,7 @@
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -2212,19 +2253,19 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
         /*L4*/
-        $('.section13_upload_vector4').on('change',function () {
+        $(document).on('change','.section13_upload_vector4',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout13';
 
             var id = $('.id_project').val();
-            var id_logo = $('.id_vector4_layout13').val();
+            var id_logo = $(this).attr('data-id');
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
             var type_menu = $('.check_type_menu_layout13').val();
@@ -2237,6 +2278,7 @@
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -2246,18 +2288,18 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
-        $('.section13_upload_img4').on('change',function () {
+        $(document).on('change','.section13_upload_img4',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout13';
 
             var id = $('.id_project').val();
-            var id_logo = $('.id_image4_layout13').val();
+            var id_logo = $(this).attr('data-id');
             var slug = $('.slug_project').val();
             var id_menu = $(this).attr('data-menu');
             var type_menu = $('.check_type_menu_layout13').val();
@@ -2270,6 +2312,7 @@
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -2279,20 +2322,20 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
 
         //layout14
-        $('.section14_upload_background2').on('change',function () {
+        $(document).on('change','.section14_upload_background2',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout14';
 
             var id = $('.id_project').val();
-            var id_logo = $('.id_logo_layout14').val();
+            var id_logo = $(this).attr('data-id');
             var id_menu = $(this).attr('data-menu');
             var type_menu = $('.check_type_menu_layout14').val();
             var slug = $('.slug_project').val();
@@ -2305,6 +2348,7 @@
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -2314,20 +2358,20 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
 
         //layout15
-        $('.section15_upload_background1').on('change',function () {
+        $(document).on('change','.section15_upload_background1',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout15';
 
             var id = $('.id_project').val();
-            var id_logo = $('.id_logo1_layout15').val();
+            var id_logo = $(this).attr('data-id');
             var id_menu = $(this).attr('data-menu');
             var type_menu = $('.check_type_menu_layout15').val();
             var slug = $('.slug_project').val();
@@ -2340,6 +2384,7 @@
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -2349,18 +2394,18 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
-        $('.section15_upload_background2').on('change',function () {
+        $(document).on('change','.section15_upload_background2',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout15';
 
             var id = $('.id_project').val();
-            var id_logo = $('.id_logo2_layout15').val();
+            var id_logo = $(this).attr('data-id');
             var id_menu = $(this).attr('data-menu');
             var type_menu = $('.check_type_menu_layout15').val();
             var slug = $('.slug_project').val();
@@ -2373,6 +2418,7 @@
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -2382,18 +2428,18 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
-        $('.section15_upload_background3').on('change',function () {
+        $(document).on('change','.section15_upload_background3',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout15';
 
             var id = $('.id_project').val();
-            var id_logo = $('.id_logo3_layout15').val();
+            var id_logo = $(this).attr('data-id');
             var id_menu = $(this).attr('data-menu');
             var slug = $('.slug_project').val();
             var type_menu = $('.check_type_menu_layout15').val();
@@ -2406,6 +2452,7 @@
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -2415,20 +2462,20 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
 
         //layout16
-        $('.section16_upload_background1').on('change',function () {
+        $(document).on('change','.section16_upload_background1',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout16';
 
             var id = $('.id_project').val();
-            var id_logo = $('.id_logo_layout16').val();
+            var id_logo = $(this).attr('data-id');
             var id_menu = $(this).attr('data-menu');
             var slug = $('.slug_project').val();
             var type_menu = $('.check_type_menu_layout16').val();
@@ -2441,6 +2488,7 @@
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -2450,20 +2498,20 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
 
         //layout17
-        $('.section17_upload_background2').on('change',function () {
+        $(document).on('change','.section17_upload_background2',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout17';
 
             var id = $('.id_project').val();
-            var id_logo = $('.id_logo_layout17').val();
+            var id_logo = $(this).attr('data-id');
             var id_menu = $(this).attr('data-menu');
             var slug = $('.slug_project').val();
             var type_menu = $('.check_type_menu_layout17').val();
@@ -2476,6 +2524,7 @@
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -2485,20 +2534,20 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
 
         //layout18
-        $('.section18_upload_img').on('change',function () {
+        $(document).on('change','.section18_upload_img',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout18';
 
             var id = $('.id_project').val();
-            var id_logo = $('.id_zip_layout18').val();
+            var id_logo = $(this).attr('data-id');
             var id_menu = $(this).attr('data-menu');
             var slug = $('.slug_project').val();
             var type_menu = $('.check_type_menu_layout18').val();
@@ -2511,6 +2560,7 @@
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -2520,18 +2570,18 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
-        $('.section18_upload_background1').on('change',function () {
+        $(document).on('change','.section18_upload_background1',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout18';
 
             var id = $('.id_project').val();
-            var id_logo = $('.id_img1_layout18').val();
+            var id_logo = $(this).attr('data-id');
             var id_menu = $(this).attr('data-menu');
             var slug = $('.slug_project').val();
             var type_menu = $('.check_type_menu_layout18').val();
@@ -2544,6 +2594,7 @@
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -2553,18 +2604,18 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
-        $('.section18_upload_background2').on('change',function () {
+        $(document).on('change','.section18_upload_background2',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout18';
 
             var id = $('.id_project').val();
-            var id_logo = $('.id_img2_layout18').val();
+            var id_logo = $(this).attr('data-id');
             var id_menu = $(this).attr('data-menu');
             var slug = $('.slug_project').val();
             var type_menu = $('.check_type_menu_layout18').val();
@@ -2577,6 +2628,7 @@
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -2586,18 +2638,18 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
-        $('.section18_upload_background3').on('change',function () {
+        $(document).on('change','.section18_upload_background3',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout18';
 
             var id = $('.id_project').val();
-            var id_logo = $('.id_img3_layout18').val();
+            var id_logo = $(this).attr('data-id');
             var id_menu = $(this).attr('data-menu');
             var slug = $('.slug_project').val();
             var type_menu = $('.check_type_menu_layout18').val();
@@ -2610,6 +2662,7 @@
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -2619,18 +2672,18 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
-        $('.section18_upload_background4').on('change',function () {
+        $(document).on('change','.section18_upload_background4',function () {
             var file_data = $(this).prop('files')[0];
             var getUrl = window.location;
             var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
             var url = baseUrl + '/ajax/create/getLayout18';
 
             var id = $('.id_project').val();
-            var id_logo = $('.id_img4_layout18').val();
+            var id_logo = $(this).attr('data-id');
             var id_menu = $(this).attr('data-menu');
             var slug = $('.slug_project').val();
             var type_menu = $('.check_type_menu_layout18').val();
@@ -2643,6 +2696,7 @@
             form_data.append("id_logo", id_logo);
             form_data.append("id_menu", id_menu);
             form_data.append("type_menu", type_menu);
+            form_data.append("baseUrl", baseUrl);
 
             $.ajax({
                 type: 'POST',
@@ -2652,7 +2706,7 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });
@@ -2673,10 +2727,37 @@
                 headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
                 data: form_data,
                 success: function (data) {
-                    console.log(data.success);
+                    
                 }
             });
         });*/
+    }
+    
+    function DelMenuLayout() {
+        $('.list_edit .del').on('click', function(){
+           let id_menu = $(this).attr('data-id');
+           let check_menu = $(this).attr('data-parent');
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            var url = baseUrl + '/ajax/del/delMenuLayout';
+            var form_data = new FormData();
+            form_data.append("id_menu", id_menu);
+            form_data.append("check_menu", check_menu);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                contentType: false,
+                processData: false,
+                headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+                data: form_data,
+                success: function (data) {
+                    location.reload();
+                }
+            });
+
+           return false;
+        });
     }
 
     function __init() {
@@ -2693,6 +2774,7 @@
         upload_font();
         searchProject();
         ajaxCreateGuideline();
+        DelMenuLayout();
     }
 
     __init();

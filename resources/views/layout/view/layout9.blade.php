@@ -7,7 +7,7 @@
                 <div class="content">
                     <p>Trong thiết kế logo việc lựa chọn và sử dụng font chữ là vô cùng quan trọng.</p>
                     <p>Ngoài ra chúng tôi cũng đưa ra font chữ trình bày văn bản (thể hiện trong các ứng dụng văn phòng) và font chữ gợi ý khác đồng bộ với font chữ thương hiệu và tạo bản sắc riêng cho thương hiệu.</p>
-                    <p>Mọi sản phẩm truyền thông thương hiệu của AGRISECO đều bắt buộc phải sử dụng font chữ đã quy định để đảm bảo tính nhận diện cùng với tính đồng bộ nhất quán của thương hiệu.</p>
+                    <p>Mọi sản phẩm truyền thông thương hiệu của {{$name_project}} đều bắt buộc phải sử dụng font chữ đã quy định để đảm bảo tính nhận diện cùng với tính đồng bộ nhất quán của thương hiệu.</p>
                     <div class="btn">
                         @foreach($data_font as $key => $font)
                         @if($font->layout_font == 9 && $font->font_menu == $id_menu_check || $font->layout_font == 9 && $font->font_menu_child == $id_menu_check)
@@ -66,12 +66,12 @@
                 </style>
                 <div class="content">
                     <div class="list">
-                        <h3>Phông chữ tên thương hiệu “AGRISECO” - bộ phông Aquawax</h3>
+                        <h3>Phông chữ tên thương hiệu “{{$name_project}}” - bộ phông Aquawax</h3>
                         <p  style="font-family: myfont;">ABCDEFGHIJKLMNO <br/>
                             PQRSTUVWXYZ</p>
                     </div>
                     <div class="list">
-                        <h3>Phông chữ phụ “AGRISECO” - bộ phông Montserrat Regular</h3>
+                        <h3>Phông chữ phụ “{{$name_project}}” - bộ phông Montserrat Regular</h3>
                         <p  style="font-family: myfont2;">ABCDEFGHIJKLMNO<br/>
                             PQRSTUVWXYZ<br/>
                             1234567890</p>

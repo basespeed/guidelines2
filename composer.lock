@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "96098e473b028cdb2529580554a1ae3e",
+    "content-hash": "113f0750d766bce26ae32f1e76657a77",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -682,6 +682,49 @@
                 "schedule"
             ],
             "time": "2017-01-23T04:29:33+00:00"
+        },
+        {
+            "name": "nahidulhasan/html2pdf",
+            "version": "1.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nahidulhasan/laravel-pdf.git",
+                "reference": "925a86056309b1ffe646d01e87e84867396829bc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nahidulhasan/laravel-pdf/zipball/925a86056309b1ffe646d01e87e84867396829bc",
+                "reference": "925a86056309b1ffe646d01e87e84867396829bc",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "NahidulHasan\\Html2pdf\\Html2pdfServiceProvider"
+                    ],
+                    "aliases": {
+                        "Pdf": "NahidulHasan\\Html2pdf\\Facades\\Pdf"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "NahidulHasan\\Html2pdf\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nahidul Hasan",
+                    "email": "nahidul.cse@gmail.com"
+                }
+            ],
+            "description": "A Simple package for easily generating PDF documents from HTML.This package is specially for laravel but you can use this without laravel.",
+            "time": "2019-09-11T16:24:03+00:00"
         },
         {
             "name": "nesbot/carbon",

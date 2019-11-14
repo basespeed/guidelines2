@@ -11,10 +11,11 @@ use Carbon\Carbon;
 class controllerNewGuidelines extends Controller
 {
     public function getEditGuidelines($slug){
-        $projects = DB::table('sk_project')->where('slug',$slug)->get();
+        $projects = DB::table('sk_project','name_project')->where('slug',$slug)->get();
         foreach ($projects as $project){
             $id_project = $project->id;
             $slug = $project->slug;
+            $name_edit = $project->name_project;
         }
 
         //menu
@@ -31,6 +32,11 @@ class controllerNewGuidelines extends Controller
         $data_color = DB::table('sk_color')->where('id_project_color',$id_project)->get();
         $data_font = DB::table('sk_font')->where('id_project_font',$id_project)->get();
 
+        $id_projects_edit = DB::table('dm_project')->select('project_name')->where('project_id',$name_edit)->get();
+        foreach ($id_projects_edit as $id_project_edit){
+            $name_project_edit = $id_project_edit->project_name;
+        }
+
         return view('backend.editGuidelines',[
             'id'=>$id_project,
             'slug'=>$slug,
@@ -41,6 +47,7 @@ class controllerNewGuidelines extends Controller
             'data_info'=>$data_info,
             'data_color'=>$data_color,
             'data_font'=>$data_font,
+            'name_project'=>$name_project_edit,
         ]);
     }
 
@@ -224,7 +231,7 @@ class controllerNewGuidelines extends Controller
                 )
             );
 
-            $insert_info = DB::table('sk_info')->insertGetId(
+            $insert_info5 = DB::table('sk_info')->insertGetId(
                 array(
                     'id_project_info' => $project_id,
                     'layout_info' => 5,
@@ -526,7 +533,7 @@ class controllerNewGuidelines extends Controller
                     'id_project_image' => $project_id,
                     'layout_image' => 18,
                     'image_type' => 4,
-                    'image_menu_child' => $insert_default_child17,
+                    'image_menu_child' => $insert_default_child18,
                     'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),
                 )
             );
@@ -586,6 +593,7 @@ class controllerNewGuidelines extends Controller
                 'id_vector2_layout4' => $id_vector2_layout4,
                 'id_zip_img2_layout4' => $id_zip_img2_layout4,
                 'id_logo_layout5' => $id_logo_layout5,
+                'id_info5' => $insert_info5,
                 'id_logo_layout6' => $id_logo_layout6,
                 'id_color1_layout7' => $id_color1_layout7,
                 'id_color2_layout7' => $id_color2_layout7,
@@ -635,7 +643,6 @@ class controllerNewGuidelines extends Controller
                 'id_menu17'=>$insert_default_child17,
                 'id_menu18'=>$insert_default_child18,
             ]);
-
         }else{
             return redirect()->intended('admin')->with([
                 'errors' => 'Project đã tồn tại !',

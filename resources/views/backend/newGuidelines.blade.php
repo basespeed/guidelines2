@@ -2,48 +2,6 @@
 <form action="{{Route('insertGuidelinesDetails')}}" method="post" enctype="multipart/form-data">
     <input type="hidden" name="id_project" class="id_project" value="{{$id}}">
     <input type="hidden" name="slug_project" class="slug_project" value="{{$slug_project_name}}">
-    <input type="hidden" name="insert_color1" class="insert_color1" value="{{$insert_color1}}">
-    <input type="hidden" name="insert_color2" class="insert_color2" value="{{$insert_color2}}">
-    <input type="hidden" name="id_logo" class="id_logo" value="{{$id_logo}}">
-    <input type="hidden" name="id_background_layout1" class="id_background_layout1" value="{{$id_background_layout1}}">
-    <input type="hidden" name="id_background_layout3" class="id_background_layout3" value="{{$id_background_layout3}}">
-    <input type="hidden" name="id_logo1_layout4" class="id_logo1_layout4" value="{{$id_logo1_layout4}}">
-    <input type="hidden" name="id_vector1_layout4" class="id_vector1_layout4" value="{{$id_vector1_layout4}}">
-    <input type="hidden" name="id_zip_img1" class="id_zip_img1" value="{{$id_zip_img1}}">
-    <input type="hidden" name="id_logo2_layout4" class="id_logo2_layout4" value="{{$id_logo2_layout4}}">
-    <input type="hidden" name="id_vector2_layout4" class="id_vector2_layout4" value="{{$id_vector2_layout4}}">
-    <input type="hidden" name="id_zip_img2_layout4" class="id_zip_img2_layout4" value="{{$id_zip_img2_layout4}}">
-    <input type="hidden" name="id_logo_layout5" class="id_logo_layout5" value="{{$id_logo_layout5}}">
-    <input type="hidden" name="id_logo_layout6" class="id_logo_layout6" value="{{$id_logo_layout6}}">
-    <input type="hidden" name="id_color1_layout7" class="id_color1_layout7" value="{{$id_color1_layout7}}">
-    <input type="hidden" name="id_color2_layout7" class="id_color2_layout7" value="{{$id_color2_layout7}}">
-    <input type="hidden" name="id_font1_layout9" class="id_font1_layout9" value="{{$id_font1_layout9}}">
-    <input type="hidden" name="id_font2_layout9" class="id_font2_layout9" value="{{$id_font2_layout9}}">
-    <input type="hidden" name="id_font3_layout9" class="id_font3_layout9" value="{{$id_font3_layout9}}">
-    <input type="hidden" name="id_logo_layout10" class="id_logo_layout10" value="{{$id_logo_layout10}}">
-    <input type="hidden" name="id_logo1_layout11" class="id_logo1_layout11" value="{{$id_logo1_layout11}}">
-    <input type="hidden" name="id_logo2_layout11" class="id_logo2_layout11" value="{{$id_logo2_layout11}}">
-    <input type="hidden" name="id_logo1_layout12" class="id_logo1_layout12" value="{{$id_logo1_layout12}}">
-    <input type="hidden" name="id_logo2_layout12" class="id_logo2_layout12" value="{{$id_logo2_layout12}}">
-    <input type="hidden" name="id_vector1_layout13" class="id_vector1_layout13" value="{{$id_vector1_layout13}}">
-    <input type="hidden" name="id_image1_layout13" class="id_image1_layout13" value="{{$id_image1_layout13}}">
-    <input type="hidden" name="id_vector2_layout13" class="id_vector2_layout13" value="{{$id_vector2_layout13}}">
-    <input type="hidden" name="id_image2_layout13" class="id_image2_layout13" value="{{$id_image2_layout13}}">
-    <input type="hidden" name="id_vector3_layout13" class="id_vector3_layout13" value="{{$id_vector3_layout13}}">
-    <input type="hidden" name="id_image3_layout13" class="id_image3_layout13" value="{{$id_image3_layout13}}">
-    <input type="hidden" name="id_vector4_layout13" class="id_vector4_layout13" value="{{$id_vector4_layout13}}">
-    <input type="hidden" name="id_image4_layout13" class="id_image4_layout13" value="{{$id_image4_layout13}}">
-    <input type="hidden" name="id_logo_layout14" class="id_logo_layout14" value="{{$id_logo_layout14}}">
-    <input type="hidden" name="id_logo1_layout15" class="id_logo1_layout15" value="{{$id_logo1_layout15}}">
-    <input type="hidden" name="id_logo2_layout15" class="id_logo2_layout15" value="{{$id_logo2_layout15}}">
-    <input type="hidden" name="id_logo3_layout15" class="id_logo3_layout15" value="{{$id_logo3_layout15}}">
-    <input type="hidden" name="id_logo_layout16" class="id_logo_layout16" value="{{$id_logo_layout16}}">
-    <input type="hidden" name="id_logo_layout17" class="id_logo_layout17" value="{{$id_logo_layout17}}">
-    <input type="hidden" name="id_zip_layout18" class="id_zip_layout18" value="{{$id_zip_layout18}}">
-    <input type="hidden" name="id_img1_layout18" class="id_img1_layout18" value="{{$id_img1_layout18}}">
-    <input type="hidden" name="id_img2_layout18" class="id_img2_layout18" value="{{$id_img2_layout18}}">
-    <input type="hidden" name="id_img3_layout18" class="id_img3_layout18" value="{{$id_img3_layout18}}">
-    <input type="hidden" name="id_img4_layout18" class="id_img4_layout18" value="{{$id_img4_layout18}}">
 
     <input type="hidden" name="check_type_menu_layout1" class="check_type_menu_layout1" value="image_menu">
     <input type="hidden" name="check_type_menu_layout3" class="check_type_menu_layout3" value="image_menu">
@@ -67,7 +25,7 @@
         <div class="logo">
             <div class="img"><img src="images/upload4.png" alt="logo" /></div>
             <div class="close_logo_admin" data-id="{{$id}}"><i class="fa fa-times" aria-hidden="true"></i></div>
-            <input type="file" class="upload_logo" name="upload_logo_menu"/>
+            <input type="file" data-id="{{$id_logo}}" class="upload_logo" name="upload_logo_menu"/>
         </div>
         {{--<h3>Client info</h3>--}}
         <br/>
@@ -114,7 +72,7 @@
         </div>--}}
 
         <div class="copyright_menu">
-            <button class="btn_save" type="submit">Save Guidelines</button>
+            <button class="btn_save" type="submit" name="save_new_guide" value="true">Save Guidelines</button>
             <p>Created by Saokim | Copyright 2019</p>
         </div>
     </div>
@@ -124,7 +82,7 @@
             <button class="btn_ground" type="button">
                 <img src="images/upload2.png" alt="icon" />
                 <span>Upload background</span>
-                <input type="file" data-menu="{{$id_menu1}}" name="section1_upload_background" class="upload_background section1_upload_background"/>
+                <input type="file" data-id="{{$id_background_layout1}}" data-menu="{{$id_menu1}}" name="section1_upload_background" class="upload_background section1_upload_background"/>
             </button>
             <div class="content_first">
                 <h2>Chào mừng bạn đến với cuốn cẩm nang hướng dẫn sử dụng Logo GS GROUP</h2>
@@ -166,7 +124,7 @@
             <button class="btn_ground" type="button">
                 <img src="images/upload2.png" alt="icon" />
                 <span>Upload background</span>
-                <input type="file" data-menu="{{$id_menu3}}" name="section3_upload_background" class="upload_background section3_upload_background"/>
+                <input type="file" data-id="{{$id_background_layout3}}" data-menu="{{$id_menu3}}" name="section3_upload_background" class="upload_background section3_upload_background"/>
             </button>
             <div class="intro">
                 <h2>LOGO GUIDELINES</h2>
@@ -184,18 +142,18 @@
                         <div class="insider">
                             <button class="btn_ground1" type="button">
                                 <img src="images/editlogo.png" alt="icon" />
-                                <input type="file" data-menu="{{$id_menu4}}" name="section4_upload_background1" class="upload_background section4_upload_background1"/>
+                                <input type="file" data-id="{{$id_logo1_layout4}}" data-menu="{{$id_menu4}}" name="section4_upload_background1" class="upload_background section4_upload_background1"/>
                                 <i class="fa fa-times" aria-hidden="true"></i>
                             </button>
                             <h3>Logo định dạng ngang</h3>
 
                             <button class="btn_input" type="button">
-                                <input type="file" data-menu="{{$id_menu4}}" name="section4_file_vector1" class="upload_filelogo file_vector1 section4_file_vector1"/>
+                                <input type="file" data-id="{{$id_vector1_layout4}}" data-menu="{{$id_menu4}}" name="section4_file_vector1" class="upload_filelogo file_vector1 section4_file_vector1"/>
                                 <span>Upload file vector</span>
                             </button>
 
                             <button class="btn_input" type="button">
-                                <input type="file" data-menu="{{$id_menu4}}" name="section4_file_img1" class="upload_filelogo file_img1 section4_file_img1"/>
+                                <input type="file" data-id="{{$id_zip_img1}}" data-menu="{{$id_menu4}}" name="section4_file_img1" class="upload_filelogo file_img1 section4_file_img1"/>
                                 <span>Upload hình ảnh</span>
                             </button>
                         </div>
@@ -204,18 +162,18 @@
                         <div class="insider">
                             <button class="btn_ground2" type="button">
                                 <img src="images/editlogo.png" alt="icon" />
-                                <input type="file" data-menu="{{$id_menu4}}" name="section4_upload_background2" class="upload_background section4_upload_background2"/>
+                                <input type="file" data-id="{{$id_logo2_layout4}}" data-menu="{{$id_menu4}}" name="section4_upload_background2" class="upload_background section4_upload_background2"/>
                                 <i class="fa fa-times" aria-hidden="true"></i>
                             </button>
                             <h3>Logo định dạng ngang</h3>
 
                             <button class="btn_input" type="button">
-                                <input type="file" data-menu="{{$id_menu4}}" name="section4_file_vector2" class="upload_filelogo file_vector2 section4_file_vector2"/>
+                                <input type="file" data-id="{{$id_vector2_layout4}}" data-menu="{{$id_menu4}}" name="section4_file_vector2" class="upload_filelogo file_vector2 section4_file_vector2"/>
                                 <span>Upload file vector</span>
                             </button>
 
                             <button class="btn_input" type="button">
-                                <input type="file" data-menu="{{$id_menu4}}" name="section4_file_img2" class="upload_filelogo file_img2 section4_file_img2"/>
+                                <input type="file" data-id="{{$id_zip_img2_layout4}}" data-menu="{{$id_menu4}}" name="section4_file_img2" class="upload_filelogo file_img2 section4_file_img2"/>
                                 <span>Upload hình ảnh</span>
                             </button>
                         </div>
@@ -230,11 +188,11 @@
 
                 <button class="btn_ground_idea" type="button">
                     <img src="images/upto4.png" alt="icon" />
-                    <input type="file" data-menu="{{$id_menu5}}" name="section5_upload_background2" class="upload_background section5_upload_background2"/>
+                    <input type="file" data-id="{{$id_logo_layout5}}" data-menu="{{$id_menu5}}" name="section5_upload_background2" class="upload_background section5_upload_background2"/>
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </button>
 
-                <textarea class="text_idea section5_text" data-menu="{{$id_menu5}}" name="section5_text" placeholder="Nội dung"></textarea>
+                <textarea class="text_idea section5_text" data-id="{{$id_info5}}" data-menu="{{$id_menu5}}" name="section5_text" placeholder="Nội dung"></textarea>
             </div>
         </section>
 
@@ -251,7 +209,7 @@
                     <div class="item">
                         <button class="btn_ground_size" type="button">
                             <img src="images/upto4.png" alt="icon" />
-                            <input type="file" data-menu="{{$id_menu6}}" name="section6_upload_background2" class="upload_background section6_upload_background2"/>
+                            <input type="file" data-id="{{$id_logo_layout6}}" data-menu="{{$id_menu6}}" name="section6_upload_background2" class="upload_background section6_upload_background2"/>
                             <i class="fa fa-times" aria-hidden="true"></i>
                         </button>
                     </div>
@@ -276,8 +234,7 @@
                     <div class="item">
                         <div class="content">
                             <div class="list_color">
-
-                                <div class="edit_color"><input type="text" data-menu="{{$id_menu7}}" class="cp-full1 section7_color1" value="" name="section7_color1" placeholder="Nhập mã màu" style="width:350px" /></div>
+                                <div class="edit_color"><input type="text" data-id="{{$id_color1_layout7}}" data-menu="{{$id_menu7}}" class="cp-full1 section7_color1" value="" name="section7_color1" placeholder="Nhập mã màu" style="width:350px" /></div>
                                 <div class="list">
                                     <div class="color_item" style="background: rgba(246,127,19,1);">100%</div>
                                     <div class="color_item" style="background: rgba(246,127,19,0.9);">90%</div>
@@ -303,7 +260,7 @@
                             </div>
 
                             <div class="list_color list_color2">
-                                <div class="edit_color"><input type="text" data-menu="{{$id_menu7}}" class="cp-full2 section7_color2" name="section7_color2" placeholder="Nhập mã màu"/></div>
+                                <div class="edit_color"><input type="text" data-id="{{$id_color2_layout7}}" data-menu="{{$id_menu7}}" class="cp-full2 section7_color2" name="section7_color2" placeholder="Nhập mã màu"/></div>
                                 <div class="list">
                                     <div class="color_item" style="background: rgba(26,24,24,1);color: #FFF;">100%</div>
                                     <div class="color_item" style="background: rgba(26,24,24,0.9);color: #FFF;">90%</div>
@@ -350,7 +307,6 @@
         <section class="section section8">
             <div class="in">
                 <h2>0.6 <p>Màu sắc chuyển</p></h2>
-
                 <div class="list_color">
                     <div class="item">
                         <div class="content">
@@ -366,13 +322,13 @@
                             <div class="list_color">
                                 <div class="get_input_gradient1">
                                     <div class="input">
-                                        <input type="text" data-menu="{{$id_menu8}}" name="section8_ga1" class="ga1 section8_ga1" placeholder="Nhập mã màu" />
+                                        <input type="text" data-id="{{$insert_color1}}" data-menu="{{$id_menu8}}" name="section8_ga1" class="ga1 section8_ga1" placeholder="Nhập mã màu" />
                                     </div>
                                     <div class="input">
                                         <span>+</span>
                                     </div>
                                     <div class="input">
-                                        <input type="text" data-menu="{{$id_menu8}}" name="section8_ga2" class="ga2 section8_ga1" placeholder="Nhập mã màu" />
+                                        <input type="text" data-id="{{$insert_color1}}" data-menu="{{$id_menu8}}" name="section8_ga2" class="ga2 section8_ga1" placeholder="Nhập mã màu" />
                                     </div>
                                 </div>
                                 <div class="list">
@@ -400,13 +356,13 @@
                             <div class="list_color">
                                 <div class="get_input_gradient2">
                                     <div class="input">
-                                        <input type="text" data-menu="{{$id_menu8}}" name="section8_ga3" class="ga3 section8_ga3" placeholder="Nhập mã màu" />
+                                        <input type="text" data-id="{{$insert_color2}}" data-menu="{{$id_menu8}}" name="section8_ga3" class="ga3 section8_ga3" placeholder="Nhập mã màu" />
                                     </div>
                                     <div class="input">
                                         <span>+</span>
                                     </div>
                                     <div class="input">
-                                        <input type="text" data-menu="{{$id_menu8}}" name="section8_ga4" class="ga4 section8_ga4" placeholder="Nhập mã màu" />
+                                        <input type="text" data-id="{{$insert_color2}}" data-menu="{{$id_menu8}}" name="section8_ga4" class="ga4 section8_ga4" placeholder="Nhập mã màu" />
                                     </div>
                                 </div>
                                 <div class="list">
@@ -458,15 +414,15 @@
                             <div class="btn_front">
                                 <div class="button">
                                     <span>Upload font thương hiệu</span>
-                                    <input type="file" data-menu="{{$id_menu9}}" name="section9_upload_font_th" class="upload_font_th section9_upload_font_th"/>
+                                    <input type="file" data-id="{{$id_font1_layout9}}" data-menu="{{$id_menu9}}" name="section9_upload_font_th" class="upload_font_th section9_upload_font_th"/>
                                 </div>
                                 <div class="button">
                                     <span>Upload font bổ trợ</span>
-                                    <input type="file" data-menu="{{$id_menu9}}" name="section9_upload_font_bt" class="upload_font_bt section9_upload_font_bt"/>
+                                    <input type="file" data-id="{{$id_font2_layout9}}" data-menu="{{$id_menu9}}" name="section9_upload_font_bt" class="upload_font_bt section9_upload_font_bt"/>
                                 </div>
                                 <div class="button">
                                     <span>Upload font văn bản</span>
-                                    <input type="file" data-menu="{{$id_menu9}}" name="section9_upload_font_vb" class="upload_font_vb section9_upload_font_vb"/>
+                                    <input type="file" data-id="{{$id_font3_layout9}}" data-menu="{{$id_menu9}}" name="section9_upload_font_vb" class="upload_font_vb section9_upload_font_vb"/>
                                 </div>
                             </div>
                         </div>
@@ -511,7 +467,7 @@
                     <div class="item">
                         <button class="btn_ground_size" type="button">
                             <img src="images/upto4.png" alt="icon" />
-                            <input type="file" data-menu="{{$id_menu10}}" name="section10_upload_background2" class="upload_background section10_upload_background2"/>
+                            <input type="file" data-id="{{$id_logo_layout10}}" data-menu="{{$id_menu10}}" name="section10_upload_background2" class="upload_background section10_upload_background2"/>
                             <i class="fa fa-times" aria-hidden="true"></i>
                         </button>
                     </div>
@@ -535,7 +491,7 @@
                             <div class="list">
                                 <button class="btn_ground_logo" type="button">
                                     <img src="images/upto4.png" alt="icon" />
-                                    <input type="file" data-menu="{{$id_menu11}}" name="section11_upload_background2" class="upload_background section11_upload_background2" alt="logo"/>
+                                    <input type="file" data-id="{{$id_logo1_layout11}}" data-menu="{{$id_menu11}}" name="section11_upload_background2" class="upload_background section11_upload_background2" alt="logo"/>
                                     <i class="fa fa-times" aria-hidden="true"></i>
                                 </button>
                                 <h3>Logo định dạng nguyên bản</h3>
@@ -543,7 +499,7 @@
                             <div class="list">
                                 <button class="btn_ground_logo" type="button">
                                     <img src="images/upto4.png" alt="icon" />
-                                    <input type="file" data-menu="{{$id_menu11}}" name="section11_upload_background22" class="upload_background section11_upload_background22" alt="logo"/>
+                                    <input type="file" data-id="{{$id_logo2_layout11}}" data-menu="{{$id_menu11}}" name="section11_upload_background22" class="upload_background section11_upload_background22" alt="logo"/>
                                     <i class="fa fa-times" aria-hidden="true"></i>
                                 </button>
                                 <h3>Logo trên nền nhận diện</h3>
@@ -571,7 +527,7 @@
                             <div class="list_g">
                                 <button class="btn_ground_logo" type="button">
                                     <img src="images/upto4.png" alt="icon" />
-                                    <input type="file" data-menu="{{$id_menu12}}" name="section12_upload_background2" class="upload_background section12_upload_background2" alt="logo"/>
+                                    <input type="file" data-id="{{$id_logo1_layout12}}" data-menu="{{$id_menu12}}" name="section12_upload_background2" class="upload_background section12_upload_background2" alt="logo"/>
                                     <i class="fa fa-times" aria-hidden="true"></i>
                                 </button>
                                 <h3>Khi chỉ có biểu tượng</h3>
@@ -579,7 +535,7 @@
                             <div class="list_g">
                                 <button class="btn_ground_logo" type="button">
                                     <img src="images/upto4.png" alt="icon" />
-                                    <input type="file" data-menu="{{$id_menu12}}" name="section12_upload_background22" class="upload_background section12_upload_background22" alt="logo"/>
+                                    <input type="file" data-id="{{$id_logo2_layout12}}" data-menu="{{$id_menu12}}" name="section12_upload_background22" class="upload_background section12_upload_background22" alt="logo"/>
                                     <i class="fa fa-times" aria-hidden="true"></i>
                                 </button>
                                 <h3>Khi hiển thị đầy đủ</h3>
@@ -614,11 +570,11 @@
                                     <div class="btn_front btn_front_edit">
                                         <div class="button">
                                             <span>Upload file vector</span>
-                                            <input type="file" data-menu="{{$id_menu13}}" name="section13_upload_vector" class="upload_vector section13_upload_vector"/>
+                                            <input type="file" data-id="{{$id_vector1_layout13}}" data-menu="{{$id_menu13}}" name="section13_upload_vector" class="upload_vector section13_upload_vector"/>
                                         </div>
                                         <div class="button">
                                             <span>Upload hình ảnh</span>
-                                            <input type="file" data-menu="{{$id_menu13}}" name="section13_upload_img" class="upload_img section13_upload_img"/>
+                                            <input type="file" data-id="{{$id_image1_layout13}}" data-menu="{{$id_menu13}}" name="section13_upload_img" class="upload_img section13_upload_img"/>
                                         </div>
                                     </div>
                                 </div>
@@ -633,11 +589,11 @@
                                     <div class="btn_front btn_front_edit">
                                         <div class="button">
                                             <span>Upload file vector</span>
-                                            <input type="file" data-menu="{{$id_menu13}}" name="section13_upload_vector2" class="upload_vector section13_upload_vector2"/>
+                                            <input type="file" data-id="{{$id_vector2_layout13}}" data-menu="{{$id_menu13}}" name="section13_upload_vector2" class="upload_vector section13_upload_vector2"/>
                                         </div>
                                         <div class="button">
                                             <span>Upload hình ảnh</span>
-                                            <input type="file" data-menu="{{$id_menu13}}" name="section13_upload_img2" class="upload_img section13_upload_img2"/>
+                                            <input type="file" data-id="{{$id_image2_layout13}}" data-menu="{{$id_menu13}}" name="section13_upload_img2" class="upload_img section13_upload_img2"/>
                                         </div>
                                     </div>
                                 </div>
@@ -652,11 +608,11 @@
                                     <div class="btn_front btn_front_edit">
                                         <div class="button">
                                             <span>Upload file vector</span>
-                                            <input type="file" data-menu="{{$id_menu13}}" name="section13_upload_vector3" class="upload_vector section13_upload_vector3"/>
+                                            <input type="file" data-id="{{$id_vector3_layout13}}" data-menu="{{$id_menu13}}" name="section13_upload_vector3" class="upload_vector section13_upload_vector3"/>
                                         </div>
                                         <div class="button">
                                             <span>Upload hình ảnh</span>
-                                            <input type="file" data-menu="{{$id_menu13}}" name="section13_upload_img3" class="upload_img section13_upload_img3"/>
+                                            <input type="file" data-id="{{$id_image3_layout13}}" data-menu="{{$id_menu13}}" name="section13_upload_img3" class="upload_img section13_upload_img3"/>
                                         </div>
                                     </div>
                                 </div>
@@ -671,11 +627,11 @@
                                     <div class="btn_front btn_front_edit">
                                         <div class="button">
                                             <span>Upload file vector</span>
-                                            <input type="file" data-menu="{{$id_menu13}}" name="section13_upload_vector4" class="upload_vector section13_upload_vector4"/>
+                                            <input type="file" data-id="{{$id_vector4_layout13}}" data-menu="{{$id_menu13}}" name="section13_upload_vector4" class="upload_vector section13_upload_vector4"/>
                                         </div>
                                         <div class="button">
                                             <span>Upload hình ảnh</span>
-                                            <input type="file" data-menu="{{$id_menu13}}" name="section13_upload_img4" class="upload_img section13_upload_img4"/>
+                                            <input type="file" data-id="{{$id_image4_layout13}}" data-menu="{{$id_menu13}}" name="section13_upload_img4" class="upload_img section13_upload_img4"/>
                                         </div>
                                     </div>
                                 </div>
@@ -703,7 +659,7 @@
                             <div class="list">
                                 <button class="btn_ground_size" type="button">
                                     <img src="images/upto4.png" alt="icon" />
-                                    <input type="file" data-menu="{{$id_menu14}}" name="section14_upload_background2" class="upload_background section14_upload_background2"/>
+                                    <input type="file" data-id="{{$id_logo_layout14}}" data-menu="{{$id_menu14}}" name="section14_upload_background2" class="upload_background section14_upload_background2"/>
                                     <i class="fa fa-times" aria-hidden="true"></i>
                                 </button>
                             </div>
@@ -733,7 +689,7 @@
                                         <div class="logo">
                                             <button class="btn_ground_logo" type="button">
                                                 <img src="images/upto4.png" alt="icon" />
-                                                <input type="file" data-menu="{{$id_menu15}}" name="section15_upload_background1" class="upload_background section15_upload_background1" alt="logo"/>
+                                                <input type="file" data-id="{{$id_logo1_layout15}}" data-menu="{{$id_menu15}}" name="section15_upload_background1" class="upload_background section15_upload_background1" alt="logo"/>
                                                 <i class="fa fa-times" aria-hidden="true"></i>
                                             </button>
                                         </div>
@@ -744,7 +700,7 @@
                                         <div class="logo">
                                             <button class="btn_ground_logo" type="button">
                                                 <img src="images/upto4.png" alt="icon" />
-                                                <input type="file" data-menu="{{$id_menu15}}" name="section15_upload_background2" class="upload_background section15_upload_background2" alt="logo"/>
+                                                <input type="file" data-id="{{$id_logo2_layout15}}" data-menu="{{$id_menu15}}" name="section15_upload_background2" class="upload_background section15_upload_background2" alt="logo"/>
                                                 <i class="fa fa-times" aria-hidden="true"></i>
                                             </button>
                                         </div>
@@ -756,7 +712,7 @@
                                         <div class="logo">
                                             <button class="btn_ground_logo" type="button">
                                                 <img src="images/upto4.png" alt="icon" />
-                                                <input type="file" data-menu="{{$id_menu15}}" name="section15_upload_background3" class="upload_background section15_upload_background3" alt="logo"/>
+                                                <input type="file" data-id="{{$id_logo3_layout15}}" data-menu="{{$id_menu15}}" name="section15_upload_background3" class="upload_background section15_upload_background3" alt="logo"/>
                                                 <i class="fa fa-times" aria-hidden="true"></i>
                                             </button>
                                         </div>
@@ -786,7 +742,7 @@
                         <div class="content">
                             <button class="btn_ground_logo" type="button">
                                 <img src="images/upto4.png" alt="icon" />
-                                <input type="file" data-menu="{{$id_menu16}}" name="section16_upload_background1" class="upload_background section16_upload_background1" alt="logo"/>
+                                <input type="file" data-id="{{$id_logo_layout16}}" data-menu="{{$id_menu16}}" name="section16_upload_background1" class="upload_background section16_upload_background1" alt="logo"/>
                                 <i class="fa fa-times" aria-hidden="true"></i>
                             </button>
                         </div>
@@ -812,7 +768,7 @@
                             <div class="list">
                                 <button class="btn_ground_logo" type="button">
                                     <img src="images/upto4.png" alt="icon" />
-                                    <input type="file" data-menu="{{$id_menu17}}" name="section17_upload_background2" class="upload_background section17_upload_background2" alt="logo"/>
+                                    <input type="file" data-id="{{$id_logo_layout17}}" data-menu="{{$id_menu17}}" name="section17_upload_background2" class="upload_background section17_upload_background2" alt="logo"/>
                                     <i class="fa fa-times" aria-hidden="true"></i>
                                 </button>
                             </div>
@@ -836,7 +792,7 @@
                         <div class="btn_front btn_front_edit">
                             <div class="button">
                                 <span>Upload file ảnh</span>
-                                <input type="file" data-menu="{{$id_menu18}}" name="section18_upload_img" class="upload_img section18_upload_img"/>
+                                <input type="file" data-id="{{$id_zip_layout18}}" data-menu="{{$id_menu18}}" name="section18_upload_img" class="upload_img section18_upload_img"/>
                             </div>
                         </div>
                     </div>
@@ -847,7 +803,7 @@
                                     <div class="in">
                                         <button class="btn_ground_logo" type="button">
                                             <img src="images/upto4.png" alt="icon" />
-                                            <input type="file" data-menu="{{$id_menu18}}" name="section18_upload_background1" class="upload_background section18_upload_background1" alt="logo"/>
+                                            <input type="file" data-id="{{$id_img1_layout18}}" data-menu="{{$id_menu18}}" name="section18_upload_background1" class="upload_background section18_upload_background1" alt="logo"/>
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </button>
                                     </div>
@@ -856,7 +812,7 @@
                                     <div class="in">
                                         <button class="btn_ground_logo" type="button">
                                             <img src="images/upto4.png" alt="icon" />
-                                            <input type="file" data-menu="{{$id_menu18}}" name="section18_upload_background2" class="upload_background section18_upload_background2" alt="logo"/>
+                                            <input type="file" data-id="{{$id_img2_layout18}}" data-menu="{{$id_menu18}}" name="section18_upload_background2" class="upload_background section18_upload_background2" alt="logo"/>
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </button>
                                     </div>
@@ -865,7 +821,7 @@
                                     <div class="in">
                                         <button class="btn_ground_logo" type="button">
                                             <img src="images/upto4.png" alt="icon" />
-                                            <input type="file" data-menu="{{$id_menu18}}" name="section18_upload_background3" class="upload_background section18_upload_background3" alt="logo"/>
+                                            <input type="file" data-id="{{$id_img3_layout18}}" data-menu="{{$id_menu18}}" name="section18_upload_background3" class="upload_background section18_upload_background3" alt="logo"/>
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </button>
                                     </div>
@@ -874,7 +830,7 @@
                                     <div class="in">
                                         <button class="btn_ground_logo" type="button">
                                             <img src="images/upto4.png" alt="icon" />
-                                            <input type="file" data-menu="{{$id_menu18}}" name="section18_upload_background4" class="upload_background section18_upload_background4" alt="logo"/>
+                                            <input type="file" data-id="{{$id_img4_layout18}}" data-menu="{{$id_menu18}}" name="section18_upload_background4" class="upload_background section18_upload_background4" alt="logo"/>
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </button>
                                     </div>

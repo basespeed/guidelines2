@@ -63,7 +63,7 @@
 @endphp
 
 <div class="fullpage_fix">
-    <div class="sidebar">
+    <div class="sidebar menu_admin">
         <div class="logo">
             @foreach($data_image as $data)
                 @if($data->image_type == 0)
@@ -72,9 +72,9 @@
             @endforeach
         </div>
         <ul id="menu">
-            @php $count = 0; @endphp
+            @php $count = 0;$count2 = 0; @endphp
             @foreach($data_menu as $key => $menu)
-                @php $count++; @endphp
+                @php $count++;$count2++; @endphp
                 <li data-menuanchor="sec{{$count}}" data-id="{{$menu->id_menu}}"><a href="{{asset($slug.'#sec'.$count)}}">{{$menu->name_menu}}</a>
                     @php
                         $id_menu = $menu->id_menu;
@@ -92,9 +92,6 @@
                                     <div class="edit">
                                         <a href="{{asset('edit/guidelines/'.$slug)}}#sec{{$count_child}}"><img src="images/writing.png" alt="edit"></a>
                                     </div>
-                                    <div class="del">
-                                        <a href="{{asset('edit/guidelines/'.$slug)}}#sec{{$count_child}}"><img src="images/rubbish-bin.png" alt="delete"></a>
-                                    </div>
                                 </div>
                                 @endif
                             </li>
@@ -108,10 +105,7 @@
                     @if(Session::has('session_guideline_admin'))
                     <div class="list_edit">
                         <div class="edit">
-                            <a href="{{asset('edit/guidelines/'.$slug)}}#sec1"><img src="images/writing.png" alt="edit"></a>
-                        </div>
-                        <div class="del">
-                            <a href="{{asset('edit/guidelines/'.$slug)}}#sec1"><img src="images/rubbish-bin.png" alt="delete"></a>
+                            <a href="{{asset('edit/guidelines/'.$slug)}}#sec{{$count2}}"><img src="images/writing.png" alt="edit"></a>
                         </div>
                     </div>
                     @endif
@@ -122,9 +116,6 @@
         </ul>
 
         <div class="copyright_menu">
-            @if(Session::has('session_guideline_admin'))
-            <button class="btn_send_menu_admin">+ Create new item</button>
-            @endif
             <p>Created by Saokim | Copyright 2019</p>
         </div>
     </div>

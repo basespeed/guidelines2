@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="images/favicon.png">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/fullpage.min.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="css/jquery.colorpicker.css">
     <link rel="stylesheet" href="css/style.min.css">

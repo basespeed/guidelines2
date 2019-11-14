@@ -17,6 +17,25 @@ class ControllerAjaxCreate extends Controller
         $slug = $request->slug;
         $file = $request->file;
 
+        //delete file first
+        $current = $request->baseUrl;
+        $current = $current.'/public';
+
+        $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+        foreach ($images as $image){
+            $path = $image->image_url;
+        }
+
+        $path = str_replace($current, '', $path);
+
+        if(File::delete('public/'.$path)){
+            $current = "has file";
+        }else{
+            $current = 'not file';
+        }
+        //end delete
+
         //name file
         $file_name = uniqid() . '_' . $file->getClientOriginalName();
         //mime file
@@ -69,6 +88,25 @@ class ControllerAjaxCreate extends Controller
         $slug = $request->slug;
         $file = $request->file;
         $id_back = $request->id_back;
+
+        //delete file first
+        $current = $request->baseUrl;
+        $current = $current.'/public';
+
+        $images = DB::table('sk_image')->select('image_url')->where('id_image',$id_back)->get();
+
+        foreach ($images as $image){
+            $path = $image->image_url;
+        }
+
+        $path = str_replace($current, '', $path);
+
+        if(File::delete('public/'.$path)){
+            $current = "has file";
+        }else{
+            $current = 'not file';
+        }
+        //end delete
 
         /*layout1*/
         //name file
@@ -139,6 +177,25 @@ class ControllerAjaxCreate extends Controller
         $id = $request->id;
         $slug = $request->slug;
         $file = $request->file;
+
+        //delete file first
+        $current = $request->baseUrl;
+        $current = $current.'/public';
+
+        $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_back)->get();
+
+        foreach ($images as $image){
+            $path = $image->image_url;
+        }
+
+        $path = str_replace($current, '', $path);
+
+        if(File::delete('public/'.$path)){
+            $current = "has file";
+        }else{
+            $current = 'not file';
+        }
+        //end delete
 
         /*layout3*/
         //name file
@@ -213,6 +270,26 @@ class ControllerAjaxCreate extends Controller
         //img1
         if(isset($request->section4_upload_background1)){
             if ($request->hasFile('section4_upload_background1')) {
+
+                //delete file first
+                $current = $request->baseUrl;
+                $current = $current.'/public';
+
+                $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+                foreach ($images as $image){
+                    $path = $image->image_url;
+                }
+
+                $path = str_replace($current, '', $path);
+
+                if(File::delete('public/'.$path)){
+                    $current = "has file";
+                }else{
+                    $current = 'not file';
+                }
+                //end delete
+
                 $file = $request->section4_upload_background1;
                 //name file
                 $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -275,6 +352,25 @@ class ControllerAjaxCreate extends Controller
         }
 
         if(isset($request->section4_file_vector1)){
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_vector1)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section4_file_vector1;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -339,6 +435,25 @@ class ControllerAjaxCreate extends Controller
 
         //zip image1
         if(isset($request->section4_file_img1)){
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_zip_image1)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section4_file_img1;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -402,6 +517,25 @@ class ControllerAjaxCreate extends Controller
 
         //img2
         if(isset($request->section4_upload_background2)){
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo2)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section4_upload_background2;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -466,6 +600,25 @@ class ControllerAjaxCreate extends Controller
 
         //zip vector
         if(isset($request->section4_file_vector2)){
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_vector2)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section4_file_vector2;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -529,6 +682,25 @@ class ControllerAjaxCreate extends Controller
 
         //zip image
         if(isset($request->section4_file_img2)){
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_image_zip2)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section4_file_img2;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -597,6 +769,25 @@ class ControllerAjaxCreate extends Controller
         $id = $request->id;
         $slug = $request->slug;
 
+        //delete file first
+        $current = $request->baseUrl;
+        $current = $current.'/public';
+
+        $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+        foreach ($images as $image){
+            $path = $image->image_url;
+        }
+
+        $path = str_replace($current, '', $path);
+
+        if(File::delete('public/'.$path)){
+            $current = "has file";
+        }else{
+            $current = 'not file';
+        }
+        //end delete
+
         /*layout5*/
         if(isset($request->section5_upload_background2)){
             $file = $request->section5_upload_background2;
@@ -662,20 +853,20 @@ class ControllerAjaxCreate extends Controller
         }elseif(isset($request->section5_text)){
             if(isset($request->type_menu)){
                 if($request->type_menu == 'image_menu'){
-                    $update = DB::table('sk_info')->where('id_project_info', $id)->update([
+                    $update = DB::table('sk_info')->where('id_info', $request->id_txt)->update([
                         'layout_info' => 5,
                         'content_info' => $request->section5_text,
                         'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
                     ]);
                 }else{
-                    $update = DB::table('sk_info')->where('id_project_info', $id)->update([
+                    $update = DB::table('sk_info')->where('id_info', $request->id_txt)->update([
                         'layout_info' => 5,
                         'content_info' => $request->section5_text,
                         'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
                     ]);
                 }
             }else{
-                $update = DB::table('sk_info')->where('id_project_info', $id)->update([
+                $update = DB::table('sk_info')->where('id_info', $request->id_txt)->update([
                     'layout_info' => 5,
                     'content_info' => $request->section5_text,
                     'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
@@ -689,6 +880,25 @@ class ControllerAjaxCreate extends Controller
     public function getLayout6(Request $request){
         $id = $request->id;
         $slug = $request->slug;
+
+        //delete file first
+        $current = $request->baseUrl;
+        $current = $current.'/public';
+
+        $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+        foreach ($images as $image){
+            $path = $image->image_url;
+        }
+
+        $path = str_replace($current, '', $path);
+
+        if(File::delete('public/'.$path)){
+            $current = "has file";
+        }else{
+            $current = 'not file';
+        }
+        //end delete
 
         /*layout6*/
         $file = $request->section6_upload_background2;
@@ -1109,6 +1319,25 @@ class ControllerAjaxCreate extends Controller
         $id = $request->id;
         $slug = $request->slug;
 
+        //delete file first
+        $current = $request->baseUrl;
+        $current = $current.'/public';
+
+        $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+        foreach ($images as $image){
+            $path = $image->image_url;
+        }
+
+        $path = str_replace($current, '', $path);
+
+        if(File::delete('public/'.$path)){
+            $current = "has file";
+        }else{
+            $current = 'not file';
+        }
+        //end delete
+
         /*layout6*/
         $file = $request->section10_upload_background2;
         //name file
@@ -1179,6 +1408,25 @@ class ControllerAjaxCreate extends Controller
 
         /*layout11*/
         if(isset($request->section11_upload_background2)){
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section11_upload_background2;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -1240,6 +1488,25 @@ class ControllerAjaxCreate extends Controller
             }
 
         }elseif(isset($request->section11_upload_background22)){
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section11_upload_background22;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -1311,6 +1578,25 @@ class ControllerAjaxCreate extends Controller
 
         /*layout11*/
         if(isset($request->section12_upload_background2)){
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section12_upload_background2;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -1372,6 +1658,25 @@ class ControllerAjaxCreate extends Controller
             }
 
         }elseif(isset($request->section12_upload_background22)){
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section12_upload_background22;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -1443,6 +1748,25 @@ class ControllerAjaxCreate extends Controller
 
         /*layout11*/
         if(isset($request->section13_upload_vector)){
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section13_upload_vector;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -1504,6 +1828,25 @@ class ControllerAjaxCreate extends Controller
             }
 
         }elseif(isset($request->section13_upload_img)){
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section13_upload_img;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -1567,6 +1910,25 @@ class ControllerAjaxCreate extends Controller
         }
 
         if(isset($request->section13_upload_vector2)){
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section13_upload_vector2;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -1628,6 +1990,25 @@ class ControllerAjaxCreate extends Controller
             }
 
         }elseif(isset($request->section13_upload_img2)){
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section13_upload_img2;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -1690,6 +2071,25 @@ class ControllerAjaxCreate extends Controller
         }
 
         if(isset($request->section13_upload_vector3)){
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section13_upload_vector3;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -1751,6 +2151,25 @@ class ControllerAjaxCreate extends Controller
             }
 
         }elseif(isset($request->section13_upload_img3)){
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section13_upload_img3;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -1812,6 +2231,25 @@ class ControllerAjaxCreate extends Controller
         }
 
         if(isset($request->section13_upload_vector4)){
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section13_upload_vector4;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -1871,6 +2309,25 @@ class ControllerAjaxCreate extends Controller
                 ]);
             }
         }elseif(isset($request->section13_upload_img4)){
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section13_upload_img4;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -1939,6 +2396,25 @@ class ControllerAjaxCreate extends Controller
         $slug = $request->slug;
 
         if (isset($request->section14_upload_background2)) {
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section14_upload_background2;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -2007,6 +2483,25 @@ class ControllerAjaxCreate extends Controller
         $slug = $request->slug;
 
         if (isset($request->section15_upload_background1)) {
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section15_upload_background1;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -2068,6 +2563,25 @@ class ControllerAjaxCreate extends Controller
         }
 
         if (isset($request->section15_upload_background2)) {
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section15_upload_background2;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -2129,6 +2643,25 @@ class ControllerAjaxCreate extends Controller
         }
 
         if (isset($request->section15_upload_background3)) {
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section15_upload_background3;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -2197,6 +2730,25 @@ class ControllerAjaxCreate extends Controller
         $slug = $request->slug;
 
         if (isset($request->section16_upload_background1)) {
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section16_upload_background1;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -2265,6 +2817,25 @@ class ControllerAjaxCreate extends Controller
         $slug = $request->slug;
 
         if (isset($request->section17_upload_background2)) {
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section17_upload_background2;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -2333,6 +2904,25 @@ class ControllerAjaxCreate extends Controller
         $slug = $request->slug;
 
         if (isset($request->section18_upload_img)) {
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section18_upload_img;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -2372,14 +2962,14 @@ class ControllerAjaxCreate extends Controller
                     $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
                         'image_name' => $file_name,
                         'image_mime' => $mime_file,
-                        'image_url' => $folder_image,
+                        'image_zip' => $folder_image,
                         'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
                     ]);
                 }else{
                     $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
                         'image_name' => $file_name,
                         'image_mime' => $mime_file,
-                        'image_url' => $folder_image,
+                        'image_zip' => $folder_image,
                         'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
                     ]);
                 }
@@ -2387,13 +2977,32 @@ class ControllerAjaxCreate extends Controller
                 $update = DB::table('sk_image')->where('id_image', $request->id_logo)->update([
                     'image_name' => $file_name,
                     'image_mime' => $mime_file,
-                    'image_url' => $folder_image,
+                    'image_zip' => $folder_image,
                     'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
                 ]);
             }
         }
 
         if (isset($request->section18_upload_background1)) {
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section18_upload_background1;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -2455,6 +3064,25 @@ class ControllerAjaxCreate extends Controller
         }
 
         if (isset($request->section18_upload_background2)) {
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section18_upload_background2;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -2516,6 +3144,25 @@ class ControllerAjaxCreate extends Controller
         }
 
         if (isset($request->section18_upload_background3)) {
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section18_upload_background3;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
@@ -2577,6 +3224,25 @@ class ControllerAjaxCreate extends Controller
         }
 
         if (isset($request->section18_upload_background4)) {
+            //delete file first
+            $current = $request->baseUrl;
+            $current = $current.'/public';
+
+            $images = DB::table('sk_image')->select('image_url')->where('id_image',$request->id_logo)->get();
+
+            foreach ($images as $image){
+                $path = $image->image_url;
+            }
+
+            $path = str_replace($current, '', $path);
+
+            if(File::delete('public/'.$path)){
+                $current = "has file";
+            }else{
+                $current = 'not file';
+            }
+            //end delete
+
             $file = $request->section18_upload_background4;
             //name file
             $file_name = uniqid() . '_' . $file->getClientOriginalName();

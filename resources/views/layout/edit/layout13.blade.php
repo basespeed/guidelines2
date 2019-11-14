@@ -17,43 +17,43 @@
                         @if($data->image_order == 1 && $data->layout_image == 13 && $data->$check_menu == $id_menu_check)
                             @php
                                 $data1 = url('/').'/public'.$data->image_url;
+                                $id1 = $data->id_image;
                             @endphp
-                            <input type="hidden" class="id_vector1_layout13" name="id_vector1_layout13" value="{{$data->id_image}}" />
                         @elseif($data->image_order == 2 && $data->layout_image == 13)
                             @php
                                 $data2 = url('/').'/public'.$data->image_url;
+                                $id2 = $data->id_image;
                             @endphp
-                            <input type="hidden" class="id_image1_layout13" name="id_image1_layout13" value="{{$data->id_image}}" />
                         @elseif($data->image_order == 3 && $data->layout_image == 13)
                             @php
                                 $data3 = url('/').'/public'.$data->image_url;
+                                $id3 = $data->id_image;
                             @endphp
-                            <input type="hidden" class="id_vector2_layout13" name="id_vector2_layout13" value="{{$data->id_image}}" />
                         @elseif($data->image_order == 4 && $data->layout_image == 13)
                             @php
                                 $data4 = url('/').'/public'.$data->image_url;
+                                $id4 = $data->id_image;
                             @endphp
-                            <input type="hidden" class="id_image2_layout13" name="id_image2_layout13" value="{{$data->id_image}}" />
                         @elseif($data->image_order == 5 && $data->layout_image == 13)
                             @php
                                 $data5 = url('/').'/public'.$data->image_url;
+                                $id5 = $data->id_image;
                             @endphp
-                            <input type="hidden" class="id_vector3_layout13" name="id_vector3_layout13" value="{{$data->id_image}}" />
                         @elseif($data->image_order == 6 && $data->layout_image == 13)
                             @php
                                 $data6 = url('/').'/public'.$data->image_url;
+                                $id6 = $data->id_image;
                             @endphp
-                            <input type="hidden" class="id_image3_layout13" name="id_image3_layout13" value="{{$data->id_image}}" />
                         @elseif($data->image_order == 7 && $data->layout_image == 13)
                             @php
                                 $data7 = url('/').'/public'.$data->image_url;
+                                $id7 = $data->id_image;
                             @endphp
-                            <input type="hidden" class="id_vector4_layout13" name="id_vector4_layout13" value="{{$data->id_image}}" />
                         @elseif($data->image_order == 8 && $data->layout_image == 13)
                             @php
                                 $data8 = url('/').'/public'.$data->image_url;
+                                $id8 = $data->id_image;
                             @endphp
-                            <input type="hidden" class="id_image4_layout13" name="id_image4_layout13" value="{{$data->id_image}}" />
                         @endif
                     @endforeach
 
@@ -74,11 +74,11 @@
                             <div class="btn_front btn_front_edit">
                                 <div class="button">
                                     <span>Upload file vector</span>
-                                    <input type="file" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section13_upload_vector" class="upload_vector section13_upload_vector"/>
+                                    <input type="file" data-id="{{$id1}}" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section13_upload_vector" class="upload_vector section13_upload_vector"/>
                                 </div>
                                 <div class="button">
                                     <span>Upload hình ảnh</span>
-                                    <input type="file" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section13_upload_img" class="upload_img section13_upload_img"/>
+                                    <input type="file" data-id="{{$id2}}" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section13_upload_img" class="upload_img section13_upload_img"/>
                                 </div>
                             </div>
                         </div>
@@ -99,11 +99,11 @@
                             <div class="btn_front btn_front_edit">
                                 <div class="button">
                                     <span>Upload file vector</span>
-                                    <input type="file" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section13_upload_vector2" class="upload_vector section13_upload_vector2"/>
+                                    <input type="file" data-id="{{$id3}}" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section13_upload_vector2" class="upload_vector section13_upload_vector2"/>
                                 </div>
                                 <div class="button">
                                     <span>Upload hình ảnh</span>
-                                    <input type="file" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section13_upload_img2" class="upload_img section13_upload_img2"/>
+                                    <input type="file" data-id="{{$id4}}" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section13_upload_img2" class="upload_img section13_upload_img2"/>
                                 </div>
                             </div>
                         </div>
@@ -124,11 +124,11 @@
                             <div class="btn_front btn_front_edit">
                                 <div class="button">
                                     <span>Upload file vector</span>
-                                    <input type="file" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section13_upload_vector3" class="upload_vector section13_upload_vector3"/>
+                                    <input type="file" data-id="{{$id5}}" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section13_upload_vector3" class="upload_vector section13_upload_vector3"/>
                                 </div>
                                 <div class="button">
                                     <span>Upload hình ảnh</span>
-                                    <input type="file" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section13_upload_img3" class="upload_img section13_upload_img3"/>
+                                    <input type="file" data-id="{{$id6}}" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section13_upload_img3" class="upload_img section13_upload_img3"/>
                                 </div>
                             </div>
                         </div>
@@ -149,17 +149,26 @@
                             <div class="btn_front btn_front_edit">
                                 <div class="button">
                                     <span>Upload file vector</span>
-                                    <input type="file" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section13_upload_vector4" class="upload_vector section13_upload_vector4"/>
+                                    <input type="file" data-id="{{$id7}}" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section13_upload_vector4" class="upload_vector section13_upload_vector4"/>
                                 </div>
                                 <div class="button">
                                     <span>Upload hình ảnh</span>
-                                    <input type="file" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section13_upload_img4" class="upload_img section13_upload_img4"/>
+                                    <input type="file" data-id="{{$id8}}" data-menu="@php if(isset($id_menu_check)){echo $id_menu_check;} @endphp" name="section13_upload_img4" class="upload_img section13_upload_img4"/>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="alert_support">
+        <div class="insider">
+            <h3>Tương thích: </h3>
+            <ul>
+                <li><strong>Ảnh :</strong> 373 x 195</li>
+            </ul>
         </div>
     </div>
 </section>

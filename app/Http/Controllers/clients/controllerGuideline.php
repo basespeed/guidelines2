@@ -12,9 +12,15 @@ class controllerGuideline extends Controller
     public function getGuidelineEdit($slug){
         if(true){
             //id project
-            $id_project = DB::table('sk_project')->select('id')->where('slug',$slug)->get();
+            $id_project = DB::table('sk_project')->select('id','name_project')->where('slug',$slug)->get();
             foreach ($id_project as $project){
                 $id = $project->id;
+                $name = $project->name_project;
+            }
+
+            $id_projects = DB::table('dm_project')->select('project_name')->where('project_id',$name)->get();
+            foreach ($id_projects as $id_project){
+                $name_project = $id_project->project_name;
             }
 
             if(isset($id)){
@@ -40,6 +46,7 @@ class controllerGuideline extends Controller
                     'data_info'=>$data_info,
                     'data_color'=>$data_color,
                     'data_font'=>$data_font,
+                    'name_project' => $name_project
                 ]);
             }else{
                 return view('errors.404');
